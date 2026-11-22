@@ -2,7 +2,7 @@ import { SHEET_TABS, TRANSACTION_HEADERS, validateSheet, type SchemaCheck } from
 import { buildSeed } from "../domain/seed";
 import { todayISO } from "../domain/money";
 import { parseLedger, withRowNumbers } from "../domain/parse";
-import type { NewTransaction, ParsedRow, RawRow, RowIssue, StoredRow } from "../domain/types";
+import type { NewTransaction, ParsedRow, RowIssue, StoredRow } from "../domain/types";
 
 const STORAGE_KEY = "freya.ledger.v2";
 
@@ -61,14 +61,41 @@ export function readStored(): { rows: StoredRow[]; sample: boolean } {
 }
 
 export function snapshotFrom(rows: StoredRow[], sample: boolean): LedgerSnapshot {
-  const raw: RawRow[] = withRowNumbers(rows);
-  const parsed = parseLedger(raw);
+  return snapshotFromGrid([...TRANSACTION_HEADERS], rows.map(storedToCells), [...SHEET_TABS], sample);
+}
+
+export function snapshotFromGrid(headers: string[], dataRows: string[][], tabs: string[], sample: boolean): LedgerSnapshot {
+  const stored = dataRows.map((cells) => rowFromCells(headers, cells));
+  const parsed = parseLedger(withRowNumbers(stored));
   return {
     rows: parsed.rows,
     issues: parsed.issues,
-    schema: validateSheet({ tabs: [...SHEET_TABS], headers: [...TRANSACTION_HEADERS] }),
+    schema: validateSheet({ tabs, headers }),
     syncedAt: new Date(),
     isSample: sample,
+  };
+}
+
+function storedToCells(row: StoredRow): string[] {
+  return TRANSACTION_HEADERS.map((header) => row[header]);
+}
+
+function rowFromCells(headers: string[], cells: string[]): StoredRow {
+  const value = (name: keyof StoredRow) => {
+    const index = headers.indexOf(name);
+    return index >= 0 ? String(cells[index] ?? "") : "";
+  };
+  return {
+    transaction_id: value("transaction_id"),
+    date: value("date"),
+    type: value("type"),
+    amount: value("amount"),
+    category_l1: value("category_l1"),
+    category_l2: value("category_l2"),
+    item_name: value("item_name"),
+    notes: value("notes"),
+    wallet_id: value("wallet_id"),
+    beneficiary: value("beneficiary"),
   };
 }
 
