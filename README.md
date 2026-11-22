@@ -1,0 +1,31 @@
+# Freya
+
+Personal financial dashboard for logging income and expenses, then reading the month back as cashflow. The ledger can live in the browser, or in a Google Sheet that Freya creates and you can bulk-edit yourself.
+
+Live site: [anorexus.github.io/Freya](https://anorexus.github.io/Freya/)
+
+## What you can do
+
+- See the current month’s income, expense, and net, plus a 6-month cashflow chart and a 7-day expense chart.
+- Browse receipts grouped by month, and filter them by income or expense.
+- Log a single transaction or a multi-line receipt.
+- Load a sample ledger, or keep your own in this browser.
+- Sign in with Google and create a Freya ledger spreadsheet. Freya only asks for access to files it creates. Sync pulls the latest rows from that sheet.
+
+A row with a broken amount or date is left out of the totals and called out on the dashboard. Fix it in the sheet, then sync.
+
+## Run it locally
+
+```bash
+npm install
+cp .env.example .env.local
+npm run dev
+```
+
+The app opens at [http://localhost:5173](http://localhost:5173). Google sign-in needs `VITE_GOOGLE_CLIENT_ID` in `.env.local`, and that origin listed on the OAuth client. Without a client ID, the local ledger still works.
+
+## Change log
+
+- **Add the Freya dashboard scaffold, design system, and product specs.** First baseline: Vite and React dashboard, transaction log, categories, design tokens, and the product spec.
+- **Publish Freya on GitHub Pages.** Host the site from this repo, and add Google sign-in plus creating and reading a Freya sheet.
+- **Group transactions by month and create the ledger through Drive.** Month pager on the transactions page. Sheet creation uses Drive’s `drive.file` scope, asks again if that permission is missing, and removes the file if setup fails.
