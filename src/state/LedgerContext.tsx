@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
-import { clearSession, readSession, signInWithGoogle, type GoogleSession } from "../auth/google";
+import { clearSession, readSession, signInWithGoogle, tokenIncludesDriveFile, type GoogleSession } from "../auth/google";
 import { buildSeed } from "../domain/seed";
 import { todayISO } from "../domain/money";
 import type { NewTransaction, RowIssue } from "../domain/types";
@@ -156,16 +156,27 @@ export function LedgerProvider({ children }: { children: ReactNode }) {
           setAuthError("Sign in before creating a sheet.");
           return;
         }
+        const current = session;
         setBusy(true);
         setAuthError(null);
-        createFreyaSheet(session.accessToken)
-          .then(async (link) => {
+        void (async () => {
+          try {
+            let accessToken = current.accessToken;
+            if (!(await tokenIncludesDriveFile(accessToken))) {
+              const next = await signInWithGoogle("consent");
+              setSession(next);
+              accessToken = next.accessToken;
+            }
+            const link = await createFreyaSheet(accessToken);
             setSheet(link);
-            await pullSheet(session.accessToken, link);
+            await pullSheet(accessToken, link);
             setView("dashboard");
-          })
-          .catch((error: unknown) => setAuthError(error instanceof Error ? error.message : "Could not create the sheet."))
-          .finally(() => setBusy(false));
+          } catch (error: unknown) {
+            setAuthError(error instanceof Error ? error.message : "Could not create the sheet.");
+          } finally {
+            setBusy(false);
+          }
+        })();
       },
     };
   }, [snapshot, query, view, logOpen, busy, authError, session, sheet]);

@@ -52,27 +52,54 @@ export function transactionRows(input: NewTransaction): StoredRow[] {
 }
 
 export async function createFreyaSheet(accessToken: string): Promise<SheetLink> {
-  const created = await googleJson<{ spreadsheetId: string }>(accessToken, "https://sheets.googleapis.com/v4/spreadsheets", {
+  const created = await googleJson<{ id: string }>(accessToken, "https://www.googleapis.com/drive/v3/files", {
     method: "POST",
     body: JSON.stringify({
-      properties: { title: "Freya Ledger" },
-      sheets: SHEET_TABS.map((title) => ({ properties: { title } })),
+      name: "Freya Ledger",
+      mimeType: "application/vnd.google-apps.spreadsheet",
     }),
   });
 
-  await googleJson(accessToken, `https://sheets.googleapis.com/v4/spreadsheets/${created.spreadsheetId}/values:batchUpdate`, {
-    method: "POST",
-    body: JSON.stringify({
-      valueInputOption: "RAW",
-      data: [
-        { range: "Transactions!A1", values: [[...TRANSACTION_HEADERS]] },
-        { range: "Config_Categories!A1", values: [[...CATEGORY_HEADERS], ...categoryRows()] },
-        { range: "Assets_Wallets!A1", values: [[...WALLET_HEADERS]] },
-      ],
-    }),
-  });
+  try {
+    const meta = await googleJson<{ sheets?: { properties?: { sheetId?: number; title?: string } }[] }>(
+      accessToken,
+      `https://sheets.googleapis.com/v4/spreadsheets/${created.id}?fields=sheets.properties`,
+    );
+    const firstSheetId = meta.sheets?.[0]?.properties?.sheetId ?? 0;
+    await googleJson(accessToken, `https://sheets.googleapis.com/v4/spreadsheets/${created.id}:batchUpdate`, {
+      method: "POST",
+      body: JSON.stringify({
+        requests: [
+          {
+            updateSheetProperties: {
+              properties: { sheetId: firstSheetId, title: SHEET_TABS[0] },
+              fields: "title",
+            },
+          },
+          ...SHEET_TABS.slice(1).map((title) => ({ addSheet: { properties: { title } } })),
+        ],
+      }),
+    });
+    await googleJson(accessToken, `https://sheets.googleapis.com/v4/spreadsheets/${created.id}/values:batchUpdate`, {
+      method: "POST",
+      body: JSON.stringify({
+        valueInputOption: "RAW",
+        data: [
+          { range: "Transactions!A1", values: [[...TRANSACTION_HEADERS]] },
+          { range: "Config_Categories!A1", values: [[...CATEGORY_HEADERS], ...categoryRows()] },
+          { range: "Assets_Wallets!A1", values: [[...WALLET_HEADERS]] },
+        ],
+      }),
+    });
+  } catch (error) {
+    await fetch(`https://www.googleapis.com/drive/v3/files/${created.id}`, {
+      method: "DELETE",
+      headers: { Authorization: `Bearer ${accessToken}` },
+    }).catch(() => undefined);
+    throw error;
+  }
 
-  const link = { id: created.spreadsheetId, title: "Freya Ledger" };
+  const link = { id: created.id, title: "Freya Ledger" };
   writeSheetLink(link);
   return link;
 }
@@ -138,7 +165,11 @@ async function googleJson<T>(accessToken: string, url: string, init?: RequestIni
     let message = `Google request failed (${response.status}).`;
     try {
       const body = (await response.json()) as { error?: { message?: string } };
-      if (body.error?.message) message = body.error.message;
+      if (body.error?.message) {
+        message = body.error.message.includes("insufficient authentication scopes")
+          ? "Google did not grant Freya permission to create a file. Sign out, sign in again, and allow access to files Freya creates."
+          : body.error.message;
+      }
     } catch {
       /* The status line is enough. */
     }

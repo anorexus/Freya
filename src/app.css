@@ -21,6 +21,25 @@
   text-decoration: none;
 }
 
+.fy-tx-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--fy-space-4);
+}
+
+.fy-month-pager {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.fy-month-pager .fy-btn {
+  flex: none;
+}
+
 .fy-tx-static {
   display: grid;
   grid-template-columns: 16px minmax(0, 1fr) auto;
@@ -90,7 +109,12 @@
   }
 
   .fy-form-grid,
-  .fy-line {
+  .fy-line,
+  .fy-tx-header {
     grid-template-columns: 1fr;
+  }
+
+  .fy-tx-header {
+    display: grid;
   }
 }

@@ -50,6 +50,17 @@ export function groupReceipts(rows: ParsedRow[]): Receipt[] {
   return receipts;
 }
 
+export function groupByMonth(receipts: Receipt[]): { key: string; receipts: Receipt[] }[] {
+  const groups: { key: string; receipts: Receipt[] }[] = [];
+  for (const receipt of receipts) {
+    const key = receipt.date.slice(0, 7);
+    const current = groups[groups.length - 1];
+    if (current?.key === key) current.receipts.push(receipt);
+    else groups.push({ key, receipts: [receipt] });
+  }
+  return groups;
+}
+
 export function receiptMatches(receipt: Receipt, query: string): boolean {
   const needle = query.trim().toLowerCase();
   if (!needle) return true;

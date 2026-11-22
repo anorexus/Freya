@@ -33,10 +33,10 @@ export function clearSession() {
   sessionStorage.removeItem(SESSION_KEY);
 }
 
-export async function signInWithGoogle(): Promise<GoogleSession> {
+export async function signInWithGoogle(prompt: "select_account" | "consent" = "select_account"): Promise<GoogleSession> {
   const clientId = import.meta.env.VITE_GOOGLE_CLIENT_ID;
   if (!clientId) throw new Error("Missing Google client ID.");
-  const token = await requestToken(clientId);
+  const token = await requestToken(clientId, prompt);
   const profile = await fetchProfile(token.accessToken);
   const session: GoogleSession = {
     accessToken: token.accessToken,
@@ -48,7 +48,14 @@ export async function signInWithGoogle(): Promise<GoogleSession> {
   return session;
 }
 
-async function requestToken(clientId: string): Promise<{ accessToken: string; expiresAt: number }> {
+export async function tokenIncludesDriveFile(accessToken: string): Promise<boolean> {
+  const response = await fetch(`https://oauth2.googleapis.com/tokeninfo?access_token=${encodeURIComponent(accessToken)}`);
+  if (!response.ok) return false;
+  const body = (await response.json()) as { scope?: string };
+  return (body.scope ?? "").split(" ").includes("https://www.googleapis.com/auth/drive.file");
+}
+
+async function requestToken(clientId: string, prompt: "select_account" | "consent"): Promise<{ accessToken: string; expiresAt: number }> {
   await loadGis();
   const google = window.google;
   if (!google) throw new Error("Google sign-in failed to load.");
@@ -80,7 +87,7 @@ async function requestToken(clientId: string): Promise<{ accessToken: string; ex
         reject(new Error(error.message || "Google sign-in was blocked. Check that http://localhost:5173 is an authorized origin."));
       },
     });
-    client.requestAccessToken({ prompt: "select_account" });
+    client.requestAccessToken({ prompt });
   });
 }
 
