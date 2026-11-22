@@ -1,0 +1,94 @@
+.fy-app {
+  height: 100vh;
+  padding: 12px;
+  background: var(--fy-canvas);
+}
+
+.fy-app .fy-shell {
+  height: 100%;
+  min-height: 0;
+}
+
+.fy-app .fy-main,
+.fy-app .fy-sidebar {
+  overflow: auto;
+}
+
+.fy-sidebar-action {
+  justify-content: flex-start;
+  padding-left: 10px;
+}
+
+.fy-tx-static {
+  display: grid;
+  grid-template-columns: 16px minmax(0, 1fr) auto;
+  gap: var(--fy-space-3);
+  align-items: center;
+  padding: 10px 12px;
+  border-radius: var(--fy-radius-control);
+  background: var(--fy-shell);
+}
+
+.fy-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.fy-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.fy-filters {
+  max-width: 520px;
+}
+
+.fy-line {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1.2fr auto;
+  gap: 8px;
+  align-items: end;
+}
+
+.fy-input,
+.fy-select {
+  color-scheme: dark;
+}
+
+.fy-modal-back {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 48px 16px;
+  overflow: auto;
+  background: color-mix(in srgb, var(--fy-black) 62%, transparent);
+}
+
+.fy-modal {
+  width: min(760px, 100%);
+  padding: 20px;
+  border: 1px solid var(--fy-line);
+  border-radius: var(--fy-radius-shell);
+  background: var(--fy-shell);
+}
+
+@media (max-width: 800px) {
+  .fy-app {
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .fy-app .fy-shell {
+    height: auto;
+  }
+
+  .fy-form-grid,
+  .fy-line {
+    grid-template-columns: 1fr;
+  }
+}
