@@ -5,21 +5,38 @@ body {
   color: var(--liq-text);
 }
 
+.lib-shell {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  min-height: 100vh;
+  background: var(--liq-ground);
+}
+
+.lib-shell:has(.dash) {
+  gap: 8px;
+  background: #0e0e10;
+}
+
 .lib-page {
   display: flex;
+  flex: 1;
   flex-direction: column;
   gap: 16px;
-  width: min(560px, calc(100% - 48px));
-  margin: 0 auto;
+  width: auto;
+  max-width: 560px;
+  min-width: 0;
+  margin: 0;
   padding: 48px 0 64px;
 }
 
 .lib-kicker {
   margin: 0;
-  color: var(--liq-meta);
+  color: var(--liq-text);
   font-family: var(--liq-font-ui);
-  font-size: 12px;
-  font-weight: 500;
+  font-size: 32px;
+  font-weight: 300;
+  line-height: 40px;
 }
 
 .lib-swatches {

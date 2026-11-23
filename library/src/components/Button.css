@@ -1,0 +1,162 @@
+.fy-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  height: 40px;
+  padding: 8px 16px 8px 8px;
+  border: 0.5px solid rgba(255, 255, 255, 0.12);
+  border-radius: 32px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.08));
+  box-shadow: inset 0 0 4px rgba(255, 255, 255, 0.08);
+  color: #fff;
+  font-family: var(--liq-font-ui);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: -0.143px;
+  line-height: 18.85px;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.fy-btn:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.16));
+}
+
+.fy-btn:active {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.01), rgba(255, 255, 255, 0.05));
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.45);
+}
+
+.fy-btn.is-primary {
+  border-color: rgba(255, 255, 255, 0.24);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.32));
+  box-shadow: inset 0 0 4px rgba(255, 255, 255, 0.25);
+}
+
+.fy-btn.is-primary:hover {
+  border-color: rgba(255, 255, 255, 0.36);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.44));
+}
+
+.fy-btn.is-primary:active {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.18));
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.fy-btn.is-navigation {
+  width: 48px;
+  height: 28px;
+  padding: 0;
+  border-color: rgba(255, 255, 255, 0.16);
+  color: var(--liq-text);
+}
+
+.fy-btn:disabled,
+.fy-btn:disabled:hover,
+.fy-btn:disabled:active {
+  border-color: rgba(255, 255, 255, 0.08);
+  background: transparent;
+  box-shadow: none;
+  color: var(--liq-muted);
+  cursor: default;
+  opacity: 1;
+}
+
+.fy-btn:disabled .fy-glyph {
+  color: var(--liq-muted);
+}
+
+.fy-btn.is-dropdown {
+  padding: 8px 8px 8px 16px;
+  color: var(--liq-text);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 20px;
+}
+
+.fy-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  padding: 2px;
+}
+
+.fy-badge .fy-glyph {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border: 0.5px solid rgba(255, 255, 255, 0.04);
+  border-radius: 32px;
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.24), rgba(255, 255, 255, 0.04));
+  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.24);
+}
+
+.fy-glyph {
+  display: block;
+  color: var(--liq-text);
+}
+
+.fy-glyph svg {
+  display: block;
+}
+
+.fy-drop {
+  position: relative;
+}
+
+.fy-drop-list {
+  position: absolute;
+  z-index: 2;
+  top: calc(100% + 4px);
+  left: 0;
+  min-width: 100%;
+  margin: 0;
+  padding: 4px;
+  list-style: none;
+  border-radius: 12px;
+  background: var(--liq-panel);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.24);
+}
+
+.fy-drop-list button {
+  width: 100%;
+  padding: 8px 12px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--liq-text);
+  font-family: var(--liq-font-ui);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.4s ease;
+}
+
+.fy-drop-list button:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.fy-drop-list button:active {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.fy-drop-list button[aria-selected="true"] {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.lib-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}

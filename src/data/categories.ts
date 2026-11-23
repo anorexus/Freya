@@ -7,7 +7,7 @@ export type CategoryOption = {
 
 export const CATEGORIES: CategoryOption[] = [
   { type: "INCOME", l1: "Salary", l2: [], color: "#4CAF50" },
-  { type: "INCOME", l1: "Other income", l2: [], color: "#8D6E63" },
+  { type: "INCOME", l1: "Other income", l2: [], color: "#8BC34A" },
   { type: "EXPENSE", l1: "Groceries", l2: ["Dairy", "Produce", "Staples", "Snacks"], color: "#F44336" },
   { type: "EXPENSE", l1: "Transport", l2: ["Ride", "Fuel", "Transit"], color: "#FFC107" },
   { type: "EXPENSE", l1: "Food", l2: ["Cafe", "Restaurant"], color: "#3F51B5" },

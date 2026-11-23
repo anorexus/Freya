@@ -14,11 +14,22 @@
   --liq-meta: #9e9e9e;
   --liq-accent: #009688;
 
-  /* Level scale for the new color system. */
-  --liq-positive: #26a69a;
-  --liq-warning: #ffc107;
+  /* Status colors from the palette strip. */
+  --liq-positive: #4caf50;
+  --liq-warning: #ffeb3b;
   --liq-negative: #f44336;
-  --liq-accent-soft: rgba(38, 166, 154, 0.24);
+  --liq-notice: #ff9800;
+  --liq-chart: #2f2f31;
+  --liq-chart-selected: #d1d1d1;
+  --liq-accent-soft: rgba(0, 150, 136, 0.24);
+
+  /* Palette shades without a status role. */
+  --liq-pink: #e91e63;
+  --liq-deep-purple: #673ab7;
+  --liq-blue: #2196f3;
+  --liq-light-green: #8bc34a;
+  --liq-amber: #ffc107;
+  --liq-deep-orange: #ff5722;
   --liq-font-ui: "Manrope", sans-serif;
   --liq-font-num: "Space Grotesk", sans-serif;
 }
