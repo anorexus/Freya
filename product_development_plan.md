@@ -18,7 +18,7 @@ To prevent schema breakage across milestones, initialize the Google Sheet with f
 | J | `beneficiary` | String | Yes (Default: `Self`) | M4 | Who the expense was for (`Self`, `Spouse`, `Child`, etc.). |
 
 ### Tab 2: `Config_Categories`
-* Columns: `type` (`INCOME`/`EXPENSE`), `category_l1`, `category_l2`, `monthly_budget` (used in M3).
+* Columns: `type` (`INCOME`/`EXPENSE`), `category_l1`, `category_l2`, `color` (hex for that category in charts), `monthly_budget` (used in M3).
 
 ### Tab 3: `Assets_Wallets` *(Introduced in M2)*
 * Columns: `asset_id`, `name`, `asset_class` (`CASH`, `STOCK`, `CRYPTO`, `PROPERTY`, `VEHICLE`), `current_value`, `last_updated`, `notes`.
@@ -93,3 +93,26 @@ To prevent schema breakage across milestones, initialize the Google Sheet with f
    * Global dashboard filter to toggle between **All Spending**, **Self Only**, or **Specific Person**.
    * Summary breakdown showing total and % of monthly expenses spent per person.
 * **Out of Scope (M4):** Split-bill debt settlement / reimbursement tracking (IOUs).
+
+---
+
+### Milestone 5: Neutral movement, currencies, and amount display
+**Goal:** Record money that is neither income nor expense, support a main currency plus foreign currencies, and show amounts as `Rp 1,000`.
+
+Recorded only. Not part of M1–M4.
+
+#### Features
+1. **Neutral money movement.**
+   * A movement that is neither income nor expense, so it does not change income, expense, or net.
+   * M2 already names this `TRANSFER` between two `wallet_id`s. This milestone keeps that rule: transfers stay out of the income and expense charts.
+2. **Multiple currencies.**
+   * Settings page: choose the main currency. Default `IDR`.
+   * New sheet tab `Config_Currencies` for foreign currencies only. Columns: `currency_code`, `symbol`, `rate_to_main`, `updated_at`.
+   * `rate_to_main` is how many main-currency units equal 1 foreign unit (example: `1 USD = 16000 IDR`).
+   * Dashboard totals stay in the main currency, converted with that rate.
+3. **Thousands separator.**
+   * Show a comma after each thousand: `1,000` and `16,000.50`.
+   * Do not use the Indonesian dot grouping (`1.000`).
+4. **Currency prefix.**
+   * Show the currency symbol before the amount. For rupiah, `Rp 1,000`.
+   * The prefix follows the main currency in Settings, or the foreign currency on a foreign-currency amount.

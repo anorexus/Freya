@@ -18,7 +18,7 @@ export const TRANSACTION_HEADERS = [
   "beneficiary",
 ] as const satisfies readonly (keyof StoredRow)[];
 
-export const CATEGORY_HEADERS = ["type", "category_l1", "category_l2", "monthly_budget"] as const;
+export const CATEGORY_HEADERS = ["type", "category_l1", "category_l2", "color", "monthly_budget"] as const;
 
 export const WALLET_HEADERS = [
   "asset_id",

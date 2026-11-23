@@ -1,0 +1,226 @@
+.liq-card,
+.liq-card *,
+.liq-card *::before,
+.liq-card *::after {
+  box-sizing: border-box;
+}
+
+.liq-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: min(514px, 100%);
+  height: 304px;
+  padding: 4px;
+  border-radius: 16px;
+  background: var(--liq-card);
+  box-shadow:
+    0 1px 0.5px rgba(255, 255, 255, 0.04),
+    inset 0 2px 2px rgba(0, 0, 0, 0.08);
+}
+
+.liq-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  height: 48px;
+  margin: 0;
+  flex: none;
+  padding: 4px 16px;
+}
+
+.liq-card-head h2,
+.liq-card-head p,
+.liq-amount-label,
+.liq-foot p {
+  margin: 0;
+  font-family: var(--liq-font-ui);
+  font-weight: 500;
+}
+
+.liq-card-head h2 {
+  flex: 1;
+  color: var(--liq-muted);
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.liq-card-head p {
+  flex: 1;
+  color: var(--liq-text);
+  font-size: 14px;
+  line-height: 20px;
+  text-align: right;
+}
+
+.liq-card-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-height: 0;
+  border-radius: 12px;
+  background: var(--liq-frame);
+  overflow: hidden;
+}
+
+.liq-amount {
+  position: relative;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 0;
+  padding: 28px 16px 16px;
+  border-radius: 12px 12px 0 0;
+  background: var(--liq-panel);
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.04);
+}
+
+.liq-balance {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.liq-amount-label {
+  color: var(--liq-text);
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.liq-amount-value {
+  margin: 0;
+  color: var(--liq-text);
+  font-family: var(--liq-font-num);
+  font-weight: 300;
+  font-size: 40px;
+  line-height: 51px;
+  font-variant-numeric: tabular-nums;
+}
+
+.liq-timeline {
+  display: flex;
+  flex: none;
+  align-items: flex-end;
+  gap: 12px;
+  height: 32px;
+}
+
+.liq-timeline > span {
+  flex: none;
+  color: var(--liq-meta);
+  font-family: var(--liq-font-ui);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.liq-track {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  height: 16px;
+  padding: 2px 4px 2px 2px;
+  border-radius: 32px;
+  background: var(--liq-card);
+  box-shadow: 0 2px 1px rgba(255, 255, 255, 0.02);
+}
+
+.liq-scale {
+  position: relative;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  height: 8px;
+  min-width: 0;
+}
+
+.liq-slot {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  height: 8px;
+  min-width: 0;
+}
+
+.liq-slot img {
+  display: block;
+  flex: none;
+}
+
+.liq-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 8px;
+  border-radius: 32px;
+  background: linear-gradient(to left, var(--bar) 0%, transparent 72%);
+}
+
+.liq-fill.is-positive,
+.cf-fill.is-positive {
+  --bar: var(--liq-positive);
+}
+
+.liq-fill.is-warning,
+.cf-fill.is-warning {
+  --bar: var(--liq-warning);
+}
+
+.liq-fill.is-negative,
+.cf-fill.is-negative {
+  --bar: var(--liq-negative);
+}
+
+.liq-foot {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: 8px;
+  height: 56px;
+  padding: 0 16px;
+  background: var(--liq-footer);
+  box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.08);
+}
+
+.liq-foot p {
+  color: var(--liq-muted);
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.liq-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 8px;
+  border-radius: 32px;
+  background: var(--liq-accent-soft);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.12);
+  color: var(--liq-accent);
+  font-family: var(--liq-font-num);
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  font-variant-numeric: tabular-nums;
+}
+
+.liq-pill.is-positive,
+.liq-pill.is-warning,
+.liq-pill.is-negative {
+  background: color-mix(in srgb, var(--pill) 24%, transparent);
+  color: var(--pill);
+}
+
+.liq-pill.is-positive {
+  --pill: var(--liq-positive);
+}
+
+.liq-pill.is-warning {
+  --pill: var(--liq-warning);
+}
+
+.liq-pill.is-negative {
+  --pill: var(--liq-negative);
+}

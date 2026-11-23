@@ -1,0 +1,50 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--liq-ground);
+  color: var(--liq-text);
+}
+
+.lib-page {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: min(560px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 48px 0 64px;
+}
+
+.lib-kicker {
+  margin: 0;
+  color: var(--liq-meta);
+  font-family: var(--liq-font-ui);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.lib-swatches {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 20px;
+  margin-top: 28px;
+}
+
+.lib-swatch {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--liq-meta);
+  font-family: var(--liq-font-ui);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.lib-swatch span {
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+}
+
+.lib-swatch b {
+  font-weight: 500;
+}

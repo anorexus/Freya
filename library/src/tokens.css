@@ -1,0 +1,24 @@
+/*
+  Library color set, taken from the available-liquidity card.
+  Independent of design-system/tokens.css.
+*/
+
+:root {
+  --liq-ground: #08080a;
+  --liq-card: #0e0e10;
+  --liq-footer: #131315;
+  --liq-panel: #18181a;
+  --liq-frame: #2e2e2e;
+  --liq-text: #e8e8e8;
+  --liq-muted: #5d5d5f;
+  --liq-meta: #9e9e9e;
+  --liq-accent: #009688;
+
+  /* Level scale for the new color system. */
+  --liq-positive: #26a69a;
+  --liq-warning: #ffc107;
+  --liq-negative: #f44336;
+  --liq-accent-soft: rgba(38, 166, 154, 0.24);
+  --liq-font-ui: "Manrope", sans-serif;
+  --liq-font-num: "Space Grotesk", sans-serif;
+}
