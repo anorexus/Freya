@@ -1,0 +1,26 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="logo-logo/freya" clip-path="url(#logo-clip0_0_26)">
+<g id="logo-Vector" filter="url(#logo-filter0_d_0_26)">
+<path d="M25.4355 21.9073C27.5482 22.445 29.7153 22.8452 31.9079 23.0916C31.8535 22.7043 31.8151 22.8676 31.7895 22.6051C29.6545 22.3522 26.988 21.6032 25.3011 20.8157C24.917 18.5558 23.9311 16.8337 22.3466 15.6462C22.369 16.6993 22.2602 17.73 22.0201 18.7383C21.8376 16.9361 21.0566 15.723 19.6674 15.102C17.289 14.3754 15.5669 13.2422 14.5074 11.7057C14.3825 12.4196 13.992 13.335 13.3422 14.449C13.4863 12.7781 13.2238 11.2448 12.5484 9.85236C12.1771 10.8127 11.7705 11.6673 11.3288 12.4228C11.2328 11.5681 11.1623 10.3549 11.1111 8.78644C8.02537 6.32167 3.42235 8.69681 1.78984 6.69619C1.0056 11.1776 1.29689 15.8574 9.32177 20.6077C10.855 20.7997 12.2123 20.4732 13.3934 19.6282C13.0573 20.5213 12.6348 21.4207 12.129 22.3298C16.2871 24.4265 19.248 24.8714 22.4202 22.9828C21.7352 23.639 21.9977 24.0263 21.796 24.8202C22.4458 24.1544 24.1712 23.0692 25.5732 22.874C24.8274 22.6499 24.0943 22.4162 23.3773 22.1762C19.9523 21.027 16.8537 19.6954 14.0912 18.1621C8.68157 15.1596 4.5587 11.3856 1.78344 6.69299C3.68803 9.73073 6.60413 12.6084 10.1956 15.0892C10.9383 15.6013 11.7129 16.1007 12.51 16.5776C16.508 18.9656 20.9222 20.7581 25.4355 21.9073Z" fill-rule="evenodd" clip-rule="evenodd" fill="url(#logo-paint0_linear_0_26)"/>
+</g>
+</g>
+<defs>
+<filter id="logo-filter0_d_0_26" x="-0.500733" y="6.69299" width="34.4087" height="22.1272" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="2"/>
+<feGaussianBlur stdDeviation="1"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.24 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_26"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_26" result="shape"/>
+</filter>
+<linearGradient id="logo-paint0_linear_0_26" x1="1.69749" y1="6.74261" x2="27.1568" y2="27.8394" gradientUnits="userSpaceOnUse">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="#666666"/>
+</linearGradient>
+<clipPath id="logo-clip0_0_26">
+<rect width="32" height="32" fill="white"/>
+</clipPath>
+</defs>
+</svg>

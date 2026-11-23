@@ -144,10 +144,10 @@ function categoryRows(): string[][] {
   const rows: string[][] = [];
   for (const category of CATEGORIES) {
     if (category.l2.length === 0) {
-      rows.push([category.type, category.l1, "", ""]);
+      rows.push([category.type, category.l1, "", category.color, ""]);
       continue;
     }
-    for (const sub of category.l2) rows.push([category.type, category.l1, sub, ""]);
+    for (const sub of category.l2) rows.push([category.type, category.l1, sub, category.color, ""]);
   }
   return rows;
 }

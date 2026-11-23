@@ -1,0 +1,88 @@
+.cf-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+.cf-timeline.is-split {
+  gap: 8px;
+}
+
+.cf-split {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+}
+
+.cf-split p {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin: 0;
+  font-size: 14px;
+  line-height: 16px;
+  white-space: nowrap;
+}
+
+.cf-split p span:first-child {
+  color: var(--liq-meta);
+  font-family: var(--liq-font-ui);
+  font-weight: 500;
+}
+
+.cf-income,
+.cf-expense,
+.cf-avg {
+  font-family: var(--liq-font-num);
+  font-weight: 500;
+}
+
+.cf-income {
+  color: var(--liq-positive);
+}
+
+.cf-expense {
+  color: var(--liq-meta);
+}
+
+.cf-track {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 16px;
+  padding: 2px 4px 2px 2px;
+  border-radius: 32px;
+  background: var(--liq-card);
+  box-shadow: 0 2px 1px rgba(255, 255, 255, 0.02);
+}
+
+.cf-fill {
+  height: 8px;
+  max-width: 100%;
+  border-radius: 32px;
+  background: linear-gradient(to left, var(--bar) 0%, transparent 72%);
+}
+
+.cf-note {
+  display: flex;
+  flex: none;
+  align-items: baseline;
+  gap: 4px;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.cf-avg {
+  flex: none;
+  color: var(--liq-text);
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.liq-pill.is-down {
+  background: color-mix(in srgb, var(--liq-muted) 24%, transparent);
+  color: var(--liq-muted);
+}

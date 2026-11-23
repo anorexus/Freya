@@ -24,8 +24,12 @@ npm run dev
 
 The app opens at [http://localhost:5173](http://localhost:5173). Google sign-in needs `VITE_GOOGLE_CLIENT_ID` in `.env.local`, and that origin listed on the OAuth client. Without a client ID, the local ledger still works.
 
+The component library is a separate preview in `library/`. From that folder, run `npm install` and `npm run dev`.
+
 ## Change log
 
 - **Add the Freya dashboard scaffold, design system, and product specs.** First baseline: Vite and React dashboard, transaction log, categories, design tokens, and the product spec.
 - **Publish Freya on GitHub Pages.** Host the site from this repo, and add Google sign-in plus creating and reading a Freya sheet.
 - **Group transactions by month and create the ledger through Drive.** Month pager on the transactions page. Sheet creation uses Drive’s `drive.file` scope, asks again if that permission is missing, and removes the file if setup fails.
+- **Add the dashboard card library and category colors.** Preview liquidity, cashflow, and expense cards. Each category gets a chart color, stored on the sheet category tab. The product plan records a later milestone for neutral transfers, currencies, and amount formatting.
+- **Assemble the component library dashboard.** Sidebar, buttons, notifications, and a spending trend card, shown as a dashboard with a year of sample transactions. Other income uses light green.

@@ -1,0 +1,140 @@
+.dash {
+  flex: 1;
+  min-width: 0;
+  height: calc(100vh - 16px);
+  margin: 8px 8px 8px 0;
+  overflow: auto;
+  border-radius: 16px;
+  background: #18181a;
+  box-shadow:
+    0 2px 2px rgba(0, 0, 0, 0.24),
+    inset 0 2px 2px rgba(0, 0, 0, 0.08);
+}
+
+.dash-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.dash-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  color: var(--liq-text);
+  font-family: var(--liq-font-ui);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 32px;
+}
+
+.dash-title-icon {
+  display: block;
+  color: var(--liq-text);
+}
+
+.dash-actions,
+.dash-sync,
+.dash-period,
+.dash-period-main {
+  display: flex;
+  align-items: center;
+}
+
+.dash-actions,
+.dash-sync {
+  gap: 8px;
+}
+
+.dash-sync {
+  gap: 12px;
+  padding: 4px 4px 4px 16px;
+  border-radius: 32px;
+  background: var(--liq-card);
+}
+
+.dash-sync p,
+.dash-month,
+.dash-range {
+  margin: 0;
+}
+
+.dash-sync p {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--liq-text);
+  font-family: var(--liq-font-ui);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  white-space: nowrap;
+}
+
+.dash-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--liq-positive);
+}
+
+.dash-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 16px 24px 32px;
+}
+
+.dash-period {
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.dash-period-main {
+  gap: 24px;
+}
+
+.dash-prev .fy-glyph {
+  transform: rotate(180deg);
+}
+
+.dash-month {
+  color: var(--liq-text);
+  font-family: var(--liq-font-ui);
+  font-size: 32px;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.dash-range {
+  color: var(--liq-muted);
+  font-family: var(--liq-font-ui);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.dash-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.dash-grid.is-trends {
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+}
+
+.dash .liq-card {
+  width: 100%;
+}
+
+@media (max-width: 1200px) {
+  .dash-grid,
+  .dash-grid.is-trends {
+    grid-template-columns: 1fr;
+  }
+}
