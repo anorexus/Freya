@@ -419,7 +419,7 @@
   display: block;
 }
 
-@media (max-width: 720px) {
+@media (width < 1024px) {
   .side {
     position: fixed;
     z-index: 30;
