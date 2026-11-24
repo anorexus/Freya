@@ -34,7 +34,7 @@ export default function App() {
       if (event.key === "Escape") setMenuOpen(false);
     }
     function onResize() {
-      if (window.innerWidth > 720) setMenuOpen(false);
+      if (window.innerWidth >= 1024) setMenuOpen(false);
     }
     window.addEventListener("keydown", onKey);
     window.addEventListener("resize", onResize);
