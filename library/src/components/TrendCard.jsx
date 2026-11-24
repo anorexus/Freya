@@ -1,5 +1,6 @@
 import { useLayoutEffect, useRef, useState } from "react";
-import { Button, buttonIcons } from "./Button.jsx";
+import { Button, buttonIcons, useDismiss } from "./Button.jsx";
+import { CopyAmount } from "./CopyAmount.jsx";
 import { formatTrend } from "../cashflow.js";
 import { formatRupiah } from "../money.js";
 import { expenseTrend, formatCompactRupiah, trendChange } from "../trend.js";
@@ -32,6 +33,8 @@ export function TrendCard({ transactions, today = new Date() }) {
   const [count, setCount] = useState(7);
   const [open, setOpen] = useState(false);
   const rowRef = useRef(null);
+  const dropRef = useRef(null);
+  useDismiss(open, dropRef, () => setOpen(false));
   const summary = expenseTrend(transactions, range, today, page, count);
   const [selectedTime, setSelectedTime] = useState(null);
   const selected = summary.points.find((point) => point.date.getTime() === selectedTime) ?? summary.points.at(-1);
@@ -59,12 +62,12 @@ export function TrendCard({ transactions, today = new Date() }) {
     <article className="liq-card is-chart">
       <header className="liq-card-head trend-head">
         <h2>Expense trend</h2>
-        <div className="fy-drop">
+        <div className="fy-drop" ref={dropRef}>
           <Button variant="dropdown" aria-expanded={open} onClick={() => setOpen((current) => !current)}>
             {RANGES.find(([id]) => id === range)[1]}
           </Button>
           {open ? (
-            <ul className="fy-drop-list" role="listbox">
+            <ul className="fy-wallet-menu" role="listbox">
               {RANGES.map(([id, label]) => (
                 <li key={id}>
                   <button
@@ -90,7 +93,7 @@ export function TrendCard({ transactions, today = new Date() }) {
         <div className="trend-body">
           <div className="trend-summary">
             <p className="trend-label">Average spending</p>
-            <p className="trend-value">{formatRupiah(summary.average)}</p>
+            <p className="trend-value"><CopyAmount>{formatRupiah(summary.average)}</CopyAmount></p>
           </div>
           <div className={monthly ? "trend-row is-month" : "trend-row"} ref={rowRef} role="listbox" aria-label={monthly ? "Spending by month" : "Spending by day"}>
             {summary.points.map((point) => {
@@ -106,7 +109,9 @@ export function TrendCard({ transactions, today = new Date() }) {
                 >
                   <span className="trend-spacer" style={{ flexGrow: 1 - point.amount / max }} />
                   <span className="trend-mark">
-                    <span className={active ? "trend-tip" : "trend-tip is-off"} aria-hidden={active ? undefined : true}>{formatCompactRupiah(point.amount)}</span>
+                    <span className={active ? "trend-tip" : "trend-tip is-off"} aria-hidden={active ? undefined : true}>
+                      <CopyAmount>{formatCompactRupiah(point.amount)}</CopyAmount>
+                    </span>
                     <span className={active ? "trend-cap is-off" : "trend-cap"} aria-hidden={active ? true : undefined} />
                   </span>
                   <span className={active ? "trend-lower is-on" : "trend-lower"} style={{ flexGrow: point.amount / max }}>
@@ -122,7 +127,7 @@ export function TrendCard({ transactions, today = new Date() }) {
             <span className="trend-page-prev">
               <Button
                 variant="navigation"
-                icon={buttonIcons.expand}
+                icon={buttonIcons.arrowLeft}
                 aria-label={monthly ? "Previous month" : "Previous day"}
                 onClick={() => setPage((current) => current + 1)}
               />
@@ -130,7 +135,7 @@ export function TrendCard({ transactions, today = new Date() }) {
             <p className="trend-page-label">{pageLabel(summary.points, monthly)}</p>
             <Button
               variant="navigation"
-              icon={buttonIcons.expand}
+              icon={buttonIcons.arrowRight}
               aria-label={monthly ? "Next month" : "Next day"}
               disabled={page === 0}
               onClick={() => setPage((current) => Math.max(0, current - 1))}
@@ -150,7 +155,7 @@ export function TrendCard({ transactions, today = new Date() }) {
           )}
           <p className="cf-note">
             {selected ? `Spending ${monthly ? "in" : "on"} ${selected.weekday}` : "Spending"}
-            <span className="cf-avg">{selected ? formatRupiah(selected.amount) : formatRupiah(0)}</span>
+            <span className="cf-avg"><CopyAmount>{selected ? formatRupiah(selected.amount) : formatRupiah(0)}</CopyAmount></span>
           </p>
         </footer>
       </div>

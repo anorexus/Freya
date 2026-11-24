@@ -10,8 +10,10 @@ export function Notification({ tone = "notice", title, children }) {
 
   return (
     <div className={`note is-${tone}`} role="status">
-      <p className="note-title">{title}</p>
-      <p className="note-body">{children}</p>
+      <div className="note-copy">
+        <p className="note-title">{title}</p>
+        <p className="note-body">{children}</p>
+      </div>
       <button type="button" className="note-close" aria-label="Dismiss" onClick={() => setOpen(false)}>
         <svg width="7.65688" height="7.65688" viewBox="0 0 7.65688 7.65688" aria-hidden="true">
           <path d={CLOSE_PATH} fill="currentColor" />

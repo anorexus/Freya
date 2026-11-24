@@ -12,11 +12,9 @@
   width: min(514px, 100%);
   height: 304px;
   padding: 4px;
-  border-radius: 16px;
-  background: var(--liq-card);
-  box-shadow:
-    0 1px 0.5px rgba(255, 255, 255, 0.04),
-    inset 0 2px 2px rgba(0, 0, 0, 0.08);
+  border-radius: 24px;
+  background: var(--background-secondary);
+  box-shadow: 0 1px 0.5px rgba(255, 255, 255, 0.08);
 }
 
 .liq-card-head {
@@ -84,18 +82,18 @@
 }
 
 .liq-amount-label {
-  color: var(--liq-text);
+  color: var(--typography-body);
   font-size: 16px;
-  line-height: 20px;
+  line-height: 24px;
 }
 
 .liq-amount-value {
   margin: 0;
   color: var(--liq-text);
-  font-family: var(--liq-font-num);
-  font-weight: 300;
-  font-size: 40px;
-  line-height: 51px;
+  font-family: var(--liq-font-numeric);
+  font-weight: var(--type-numeric-xl-weight);
+  font-size: var(--type-numeric-xl-size);
+  line-height: var(--type-numeric-xl-line);
   font-variant-numeric: tabular-nums;
 }
 
@@ -109,11 +107,11 @@
 
 .liq-timeline > span {
   flex: none;
-  color: var(--liq-meta);
+  color: var(--typography-body);
   font-family: var(--liq-font-ui);
   font-weight: 500;
   font-size: 14px;
-  line-height: 16px;
+  line-height: 20px;
 }
 
 .liq-track {
@@ -136,42 +134,23 @@
   min-width: 0;
 }
 
-.liq-slot {
-  display: flex;
-  flex: 1;
-  align-items: center;
-  justify-content: center;
-  height: 8px;
-  min-width: 0;
-}
-
-.liq-slot img {
-  display: block;
-  flex: none;
-}
-
 .liq-fill {
   position: absolute;
   top: 0;
   left: 0;
   height: 8px;
   border-radius: 32px;
-  background: linear-gradient(to left, var(--bar) 0%, transparent 72%);
-}
-
-.liq-fill.is-positive,
-.cf-fill.is-positive {
-  --bar: var(--liq-positive);
+  background: var(--gradient-positive);
 }
 
 .liq-fill.is-warning,
 .cf-fill.is-warning {
-  --bar: var(--liq-warning);
+  background: var(--gradient-warning);
 }
 
 .liq-fill.is-negative,
 .cf-fill.is-negative {
-  --bar: var(--liq-negative);
+  background: var(--gradient-negative);
 }
 
 .liq-foot {
@@ -199,7 +178,7 @@
   background: var(--liq-accent-soft);
   box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.12);
   color: var(--liq-accent);
-  font-family: var(--liq-font-num);
+  font-family: var(--liq-font-ui);
   font-weight: 500;
   font-size: 12px;
   line-height: 16px;
@@ -209,18 +188,21 @@
 .liq-pill.is-positive,
 .liq-pill.is-warning,
 .liq-pill.is-negative {
-  background: color-mix(in srgb, var(--pill) 24%, transparent);
+  background: var(--pill-fill);
   color: var(--pill);
 }
 
 .liq-pill.is-positive {
-  --pill: var(--liq-positive);
+  --pill: var(--typography-positive);
+  --pill-fill: var(--typography-fill-pill-positive);
 }
 
 .liq-pill.is-warning {
-  --pill: var(--liq-warning);
+  --pill: var(--typography-warning);
+  --pill-fill: var(--typography-fill-pill-warning);
 }
 
 .liq-pill.is-negative {
-  --pill: var(--liq-negative);
+  --pill: var(--typography-negative);
+  --pill-fill: var(--typography-fill-pill-negative);
 }

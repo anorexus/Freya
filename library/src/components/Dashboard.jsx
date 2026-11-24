@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { CATEGORIES } from "../../../src/data/categories.ts";
-import dashboardIcon from "../assets/nav/dashboard.svg?raw";
+import dashboardIcon from "../assets/icons/dashboard.svg?raw";
 import { sampleTransactions } from "../cashflow.js";
 import { Button, WalletDropdown, buttonIcons } from "./Button.jsx";
 import { CashflowCard } from "./CashflowCard.jsx";
@@ -31,7 +31,7 @@ function formatRange(start, end) {
   return sameYear ? `${startLabel} – ${endLabel}` : `${startLabel} ${start.getFullYear()} – ${endLabel}`;
 }
 
-export function Dashboard() {
+export function Dashboard({ onMenu = () => {} }) {
   const [monthOffset, setMonthOffset] = useState(0);
   const now = new Date();
   const transactions = sampleTransactions(now);
@@ -44,6 +44,7 @@ export function Dashboard() {
   return (
     <main className="dash">
       <header className="dash-bar">
+        <Button className="dash-menu" variant="secondary" iconOnly icon={buttonIcons.menu} aria-label="Open menu" onClick={onMenu} />
         <h1 className="dash-title">
           <span className="dash-title-icon" dangerouslySetInnerHTML={{ __html: dashboardIcon }} />
           Dashboard
@@ -56,22 +57,22 @@ export function Dashboard() {
             </p>
             <Button variant="secondary" icon={buttonIcons.sync}>Sync</Button>
           </div>
-          <Button variant="primary" icon={buttonIcons.add}>Add transaction</Button>
+          <Button className="dash-add" variant="primary" icon={buttonIcons.add}>Add transaction</Button>
         </div>
       </header>
       <div className="dash-content">
         <div className="dash-period">
           <div className="dash-period-main">
             <span className="dash-prev">
-              <Button variant="navigation" icon={buttonIcons.expand} aria-label="Previous month" onClick={() => setMonthOffset((offset) => offset - 1)} />
+              <Button variant="navigation" icon={buttonIcons.arrowLeft} aria-label="Previous month" onClick={() => setMonthOffset((offset) => offset - 1)} />
             </span>
-            <div>
+            <div className="dash-period-copy">
               <p className="dash-month">{formatMonth(view)}</p>
               <p className="dash-range">{formatRange(rangeStart, rangeEnd)}</p>
             </div>
-            <Button variant="navigation" icon={buttonIcons.expand} aria-label="Next month" disabled={monthOffset >= 0} onClick={() => setMonthOffset((offset) => Math.min(0, offset + 1))} />
+            <Button variant="navigation" icon={buttonIcons.arrowRight} aria-label="Next month" disabled={monthOffset >= 0} onClick={() => setMonthOffset((offset) => Math.min(0, offset + 1))} />
           </div>
-          <WalletDropdown options={["All wallets", ...WALLETS.map((wallet) => wallet.name)]} />
+          <WalletDropdown wallets={WALLETS} />
         </div>
         <Notification tone="notice" title="Row 14 excluded.">
           Invalid amount. Fix it in the sheet, then sync. Logging stays available.
