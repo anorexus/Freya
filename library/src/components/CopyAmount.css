@@ -1,0 +1,25 @@
+.fy-copied {
+  position: fixed;
+  z-index: 30;
+  padding: 4px 12px;
+  border-radius: 32px;
+  background: var(--fill-primary);
+  box-shadow: var(--liq-shadow-medium);
+  color: var(--typography-inverted);
+  font-family: var(--font-family-sans);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  white-space: nowrap;
+  pointer-events: none;
+  animation: fy-copied-in var(--liq-duration) var(--liq-ease);
+}
+
+@keyframes fy-copied-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

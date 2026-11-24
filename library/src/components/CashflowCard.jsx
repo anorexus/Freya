@@ -1,3 +1,4 @@
+import { CopyAmount } from "./CopyAmount.jsx";
 import { cashflowSummary, formatTrend } from "../cashflow.js";
 import { formatRupiah, formatSignedRupiah } from "../money.js";
 import "./LiquidityCard.css";
@@ -22,17 +23,17 @@ export function CashflowCard({ transactions, today = new Date() }) {
         <div className="liq-amount">
           <div className="liq-balance">
             <p className="liq-amount-label">Cashflow</p>
-            <p className="liq-amount-value">{formatRupiah(summary.net)}</p>
+            <p className="liq-amount-value"><CopyAmount>{formatRupiah(summary.net)}</CopyAmount></p>
           </div>
           <div className="cf-timeline is-split">
             <div className="cf-split">
               <p>
                 <span>Income</span>
-                <span className="cf-income">{formatSignedRupiah(summary.income)}</span>
+                <span className="cf-income"><CopyAmount>{formatSignedRupiah(summary.income)}</CopyAmount></span>
               </p>
               <p>
                 <span>Expense</span>
-                <span className="cf-expense">{formatRupiah(summary.expense)}</span>
+                <span className="cf-expense"><CopyAmount>{formatRupiah(summary.expense)}</CopyAmount></span>
               </p>
             </div>
             <div className="cf-track" aria-hidden="true">
@@ -47,7 +48,7 @@ export function CashflowCard({ transactions, today = new Date() }) {
           <span className={trendLevel ? `liq-pill is-${trendLevel}` : "liq-pill is-down"}>{formatTrend(summary.trend)}</span>
           <p className="cf-note">
             Average daily spending
-            <span className="cf-avg">{formatRupiah(summary.averageSpend)}</span>
+            <span className="cf-avg"><CopyAmount>{formatRupiah(summary.averageSpend)}</CopyAmount></span>
           </p>
         </footer>
       </div>

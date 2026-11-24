@@ -1,4 +1,4 @@
-import dayDot from "../assets/day-dot.svg";
+import { CopyAmount } from "./CopyAmount.jsx";
 import { availableLiquidity, formatRupiah } from "../money.js";
 import { formatDay, liquidityPeriod } from "../period.js";
 import "./LiquidityCard.css";
@@ -32,7 +32,7 @@ export function LiquidityCard({ wallets, periodStartDay = 1, today = new Date() 
         <div className="liq-amount">
           <div className="liq-balance">
             <p className="liq-amount-label">Available liquidity</p>
-            <p className="liq-amount-value">{formatRupiah(total)}</p>
+            <p className="liq-amount-value"><CopyAmount>{formatRupiah(total)}</CopyAmount></p>
           </div>
           <div className="liq-timeline">
             <span>{formatDay(period.startDate)}</span>
@@ -49,11 +49,6 @@ export function LiquidityCard({ wallets, periodStartDay = 1, today = new Date() 
                     }}
                   />
                 )}
-                {Array.from({ length: period.totalDays }, (_, index) => (
-                  <span key={index} className="liq-slot">
-                    {index >= period.elapsedDays && <img src={dayDot} alt="" />}
-                  </span>
-                ))}
               </div>
             </div>
             <span>{formatDay(period.endDate)}</span>

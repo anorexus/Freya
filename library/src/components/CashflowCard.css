@@ -23,12 +23,12 @@
   gap: 4px;
   margin: 0;
   font-size: 14px;
-  line-height: 16px;
+  line-height: 20px;
   white-space: nowrap;
 }
 
 .cf-split p span:first-child {
-  color: var(--liq-meta);
+  color: var(--typography-body);
   font-family: var(--liq-font-ui);
   font-weight: 500;
 }
@@ -36,16 +36,16 @@
 .cf-income,
 .cf-expense,
 .cf-avg {
-  font-family: var(--liq-font-num);
+  font-family: var(--liq-font-numeric);
   font-weight: 500;
 }
 
 .cf-income {
-  color: var(--liq-positive);
+  color: var(--typography-positive);
 }
 
 .cf-expense {
-  color: var(--liq-meta);
+  color: var(--typography-body);
 }
 
 .cf-track {
@@ -63,7 +63,7 @@
   height: 8px;
   max-width: 100%;
   border-radius: 32px;
-  background: linear-gradient(to left, var(--bar) 0%, transparent 72%);
+  background: var(--gradient-positive);
 }
 
 .cf-note {
@@ -71,7 +71,7 @@
   flex: none;
   align-items: baseline;
   gap: 4px;
-  font-weight: 400;
+  font-weight: 500;
   white-space: nowrap;
 }
 

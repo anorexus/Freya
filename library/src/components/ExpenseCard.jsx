@@ -1,3 +1,4 @@
+import { CopyAmount } from "./CopyAmount.jsx";
 import { expenseBreakdown, formatShare } from "../expense.js";
 import { formatRupiah } from "../money.js";
 import "./LiquidityCard.css";
@@ -17,7 +18,7 @@ export function ExpenseCard({ transactions, categories, today = new Date() }) {
         <div className="liq-amount">
           <div className="liq-balance">
             <p className="liq-amount-label">Expenses so far</p>
-            <p className="liq-amount-value">{formatRupiah(summary.total)}</p>
+            <p className="liq-amount-value"><CopyAmount>{formatRupiah(summary.total)}</CopyAmount></p>
           </div>
           <div className="cf-timeline">
             <div className="ex-spacer" aria-hidden="true" />
@@ -40,7 +41,10 @@ export function ExpenseCard({ transactions, categories, today = new Date() }) {
               </span>
               <p className="cf-note">
                 Top category with total
-                <span className="cf-avg">{`${formatRupiah(top.amount)} (${formatShare(summary.topShare)})`}</span>
+                <span className="cf-avg">
+                  <CopyAmount>{formatRupiah(top.amount)}</CopyAmount>
+                  {` (${formatShare(summary.topShare)})`}
+                </span>
               </p>
             </>
           ) : (

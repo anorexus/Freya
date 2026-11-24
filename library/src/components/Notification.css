@@ -1,4 +1,5 @@
 .note {
+  box-sizing: border-box;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -13,7 +14,7 @@
 }
 
 .note.is-notice {
-  --note: var(--liq-notice);
+  --note: var(--liq-warning);
 }
 
 .note.is-positive {
@@ -24,13 +25,17 @@
   --note: var(--liq-negative);
 }
 
+.note-copy {
+  display: contents;
+}
+
 .note-title,
 .note-body {
   margin: 0;
   font-family: var(--liq-font-ui);
   font-size: 14px;
-  letter-spacing: -0.154px;
-  line-height: normal;
+  letter-spacing: 0;
+  line-height: 20px;
 }
 
 .note-title {
@@ -47,6 +52,7 @@
 }
 
 .note-close {
+  box-sizing: border-box;
   display: flex;
   flex: none;
   align-items: center;
@@ -64,7 +70,7 @@
   box-shadow: inset 0 2.667px 5.333px color-mix(in srgb, var(--note) 24%, transparent);
   color: inherit;
   cursor: pointer;
-  transition: filter 0.4s ease;
+  transition: filter var(--liq-duration) var(--liq-ease);
 }
 
 .note-close:hover {
@@ -77,4 +83,41 @@
 
 .note-close svg {
   display: block;
+}
+
+@media (max-width: 720px) {
+  .note {
+    width: 100%;
+    padding: 8px 16px 8px 24px;
+    border-radius: 16px;
+    background: color-mix(in srgb, var(--note) 24%, transparent);
+  }
+
+  .note-copy {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+  }
+
+  .note-title,
+  .note-body {
+    white-space: normal;
+  }
+
+  .note-title {
+    font-family: var(--type-body-s-medium-family);
+    font-size: var(--type-body-s-medium-size);
+    font-weight: var(--type-body-s-medium-weight);
+    line-height: var(--type-body-s-medium-line);
+  }
+
+  .note-body {
+    flex: none;
+    font-family: var(--type-body-xs-family);
+    font-size: var(--type-body-xs-size);
+    font-weight: var(--type-body-xs-weight);
+    line-height: var(--type-body-xs-line);
+  }
 }

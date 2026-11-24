@@ -1,31 +1,5 @@
-<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g id="chevron-icon/dashboard">
-<g id="chevron-Vector">
-<g filter="url(#chevron-filter0_i_0_7)">
-<path d="M12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2C16.714 2 19.0711 2 20.5355 3.46447C22 4.92893 22 7.28595 22 12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22Z" fill="url(#chevron-paint0_linear_0_7)"/>
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="icon">
+<path id="Vector (Stroke)" d="M2.95371 5.6746C3.13342 5.46494 3.44907 5.44066 3.65873 5.62037L8 9.34146L12.3413 5.62037C12.5509 5.44066 12.8666 5.46494 13.0463 5.6746C13.226 5.88427 13.2017 6.19992 12.9921 6.37963L8.3254 10.3796C8.13815 10.5401 7.86185 10.5401 7.6746 10.3796L3.00794 6.37963C2.79827 6.19992 2.77399 5.88427 2.95371 5.6746Z" fill-rule="evenodd" clip-rule="evenodd" fill="currentColor"/>
 </g>
-<path d="M12 1.75C14.3499 1.75 16.1374 1.74974 17.5195 1.93555C18.9088 2.12233 19.9255 2.50166 20.7119 3.28809C21.4983 4.07451 21.8777 5.09118 22.0645 6.48047C22.2503 7.86255 22.25 9.6501 22.25 12C22.25 14.3499 22.2503 16.1374 22.0645 17.5195C21.8777 18.9088 21.4983 19.9255 20.7119 20.7119C19.9255 21.4983 18.9088 21.8777 17.5195 22.0645C16.1374 22.2503 14.3499 22.25 12 22.25C9.6501 22.25 7.86255 22.2503 6.48047 22.0645C5.09118 21.8777 4.07451 21.4983 3.28809 20.7119C2.50166 19.9255 2.12233 18.9088 1.93555 17.5195C1.74974 16.1374 1.75 14.3499 1.75 12C1.75 9.6501 1.74974 7.86255 1.93555 6.48047C2.12233 5.09118 2.50166 4.07451 3.28809 3.28809C4.07451 2.50166 5.09118 2.12233 6.48047 1.93555C7.86255 1.74974 9.6501 1.75 12 1.75Z" stroke="url(#chevron-paint1_linear_0_7)" stroke-width="0.5"/>
-</g>
-<path id="chevron-Vector_2" d="M16.6666 10L12 14L7.33331 10" stroke-linecap="round" stroke-linejoin="round" stroke="#E8E8E8"/>
-</g>
-<defs>
-<filter id="chevron-filter0_i_0_7" x="1.5" y="1.5" width="21" height="23" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"/>
-<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-<feOffset dy="2"/>
-<feGaussianBlur stdDeviation="2"/>
-<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
-<feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.24 0"/>
-<feBlend mode="normal" in2="shape" result="effect1_innerShadow_0_7"/>
-</filter>
-<linearGradient id="chevron-paint0_linear_0_7" x1="12" y1="22" x2="12" y2="2" gradientUnits="userSpaceOnUse">
-<stop stop-color="currentColor" stop-opacity="0.24"/>
-<stop offset="1" stop-color="currentColor" stop-opacity="0.04"/>
-</linearGradient>
-<linearGradient id="chevron-paint1_linear_0_7" x1="12" y1="2" x2="12" y2="22" gradientUnits="userSpaceOnUse">
-<stop stop-color="currentColor" stop-opacity="0.04"/>
-<stop offset="1" stop-color="currentColor" stop-opacity="0.72"/>
-</linearGradient>
-</defs>
 </svg>

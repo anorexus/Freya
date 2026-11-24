@@ -1,8 +1,20 @@
-import { useState } from "react";
-import syncIcon from "../assets/buttons/sync.svg?raw";
-import addIcon from "../assets/buttons/add.svg?raw";
-import expandNav from "../assets/buttons/expand-nav.svg?raw";
-import expandDrop from "../assets/buttons/expand-drop.svg?raw";
+import { useEffect, useRef, useState } from "react";
+import syncIcon from "../assets/icons/sync.svg?raw";
+import addIcon from "../assets/icons/add.svg?raw";
+import arrowDown from "../assets/icons/arrow-down.svg?raw";
+import arrowLeft from "../assets/icons/arrow-left.svg?raw";
+import arrowRight from "../assets/icons/arrow-right.svg?raw";
+import arrowUp from "../assets/icons/arrow-up.svg?raw";
+import expandIcon from "../assets/icons/expand.svg?raw";
+import collapsedIcon from "../assets/icons/collapsed.svg?raw";
+import trendUp from "../assets/icons/trend-up.svg?raw";
+import trendDown from "../assets/icons/trend-down.svg?raw";
+import allIcon from "../assets/icons/all.svg?raw";
+import menuIcon from "../assets/icons/menu.svg?raw";
+import hamburgerIcon from "../assets/icons/hamburger.svg?raw";
+import bcaMark from "../assets/wallets/bca.svg";
+import gopayMark from "../assets/wallets/gopay.png";
+import cashMark from "../assets/wallets/cash.svg";
 import "./Button.css";
 
 function Glyph({ svg, badge = false }) {
@@ -11,47 +23,110 @@ function Glyph({ svg, badge = false }) {
   return <span className="fy-badge">{mark}</span>;
 }
 
-export function Button({ variant = "secondary", icon, children, ...props }) {
-  const badge = variant === "primary" || variant === "secondary";
+export function Button({ variant = "secondary", icon, iconOnly = false, className, children, ...props }) {
+  const badge = variant === "primary";
   const leading = variant !== "dropdown";
+  const classes = [`fy-btn`, `is-${variant}`, iconOnly ? "is-icon" : "", className].filter(Boolean).join(" ");
 
   return (
-    <button type="button" className={`fy-btn is-${variant}`} {...props}>
+    <button type="button" className={classes} {...props}>
       {leading && icon ? <Glyph svg={icon} badge={badge} /> : null}
       {children}
-      {variant === "dropdown" ? <Glyph svg={expandDrop} /> : null}
+      {variant === "dropdown" ? <Glyph svg={arrowDown} /> : null}
     </button>
   );
 }
 
-export function WalletDropdown({ options }) {
+function WalletMark({ id }) {
+  if (id === "all") {
+    return <span className="fy-wallet-mark is-all" dangerouslySetInnerHTML={{ __html: allIcon }} />;
+  }
+  if (id === "bca") {
+    return (
+      <span className="fy-wallet-mark is-bca">
+        <img src={bcaMark} alt="" />
+      </span>
+    );
+  }
+  if (id === "gopay") {
+    return (
+      <span className="fy-wallet-mark is-gopay">
+        <img src={gopayMark} alt="" />
+      </span>
+    );
+  }
+  return (
+    <span className="fy-wallet-mark is-cash">
+      <img src={cashMark} alt="" />
+    </span>
+  );
+}
+
+export function useDismiss(open, ref, close) {
+  useEffect(() => {
+    if (!open) return undefined;
+    function onPointer(event) {
+      if (!ref.current?.contains(event.target)) close();
+    }
+    function onKey(event) {
+      if (event.key === "Escape") close();
+    }
+    document.addEventListener("pointerdown", onPointer);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("pointerdown", onPointer);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [open, ref, close]);
+}
+
+export function WalletDropdown({ wallets }) {
   const [open, setOpen] = useState(false);
-  const [value, setValue] = useState(options[0]);
+  const [value, setValue] = useState("all");
+  const rootRef = useRef(null);
+  const current = wallets.find((wallet) => wallet.id === value);
+  const label = current ? current.name : "All wallets";
+  useDismiss(open, rootRef, () => setOpen(false));
 
   return (
-    <div className="fy-drop">
+    <div className="fy-drop is-wallets" ref={rootRef}>
       <Button
         variant="dropdown"
         aria-expanded={open}
         aria-haspopup="listbox"
-        onClick={() => setOpen((current) => !current)}
+        onClick={() => setOpen((currentOpen) => !currentOpen)}
       >
-        {value}
+        {label}
       </Button>
       {open ? (
-        <ul className="fy-drop-list" role="listbox">
-          {options.map((option) => (
-            <li key={option}>
+        <ul className="fy-wallet-menu" role="listbox">
+          <li>
+            <button
+              type="button"
+              role="option"
+              aria-selected={value === "all"}
+              onClick={() => {
+                setValue("all");
+                setOpen(false);
+              }}
+            >
+              <WalletMark id="all" />
+              All wallets
+            </button>
+          </li>
+          {wallets.map((wallet) => (
+            <li key={wallet.id}>
               <button
                 type="button"
                 role="option"
-                aria-selected={option === value}
+                aria-selected={wallet.id === value}
                 onClick={() => {
-                  setValue(option);
+                  setValue(wallet.id);
                   setOpen(false);
                 }}
               >
-                {option}
+                <WalletMark id={wallet.id} />
+                {wallet.name}
               </button>
             </li>
           ))}
@@ -61,4 +136,17 @@ export function WalletDropdown({ options }) {
   );
 }
 
-export const buttonIcons = { sync: syncIcon, add: addIcon, expand: expandNav };
+export const buttonIcons = {
+  sync: syncIcon,
+  add: addIcon,
+  expand: expandIcon,
+  collapsed: collapsedIcon,
+  arrowDown,
+  arrowUp,
+  arrowLeft,
+  arrowRight,
+  trendUp,
+  trendDown,
+  menu: menuIcon,
+  hamburger: hamburgerIcon,
+};

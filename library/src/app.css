@@ -3,19 +3,31 @@ body {
   min-height: 100vh;
   background: var(--liq-ground);
   color: var(--liq-text);
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+input,
+textarea,
+[contenteditable="true"] {
+  user-select: text;
+  -webkit-user-select: text;
 }
 
 .lib-shell {
   display: flex;
   align-items: flex-start;
   gap: 24px;
+  width: 100%;
+  max-width: 2560px;
   min-height: 100vh;
+  margin-inline: auto;
   background: var(--liq-ground);
 }
 
 .lib-shell:has(.dash) {
   gap: 8px;
-  background: #0e0e10;
+  background: var(--liq-card);
 }
 
 .lib-page {
@@ -35,7 +47,7 @@ body {
   color: var(--liq-text);
   font-family: var(--liq-font-ui);
   font-size: 32px;
-  font-weight: 300;
+  font-weight: 600;
   line-height: 40px;
 }
 

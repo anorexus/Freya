@@ -1,0 +1,6731 @@
+{
+  "neutral": {
+    "0": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          1,
+          1
+        ],
+        "alpha": 1,
+        "hex": "#FFFFFF"
+      },
+      "$description": "Neutral primitive 0 · #FFFFFF. Raw color value; use semantic aliases for UI roles.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2177",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "10": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9607843160629272,
+          0.9607843160629272,
+          0.9607843160629272
+        ],
+        "alpha": 1,
+        "hex": "#F5F5F5"
+      },
+      "$description": "Neutral primitive 10 · #F5F5F5. Raw color value; use semantic aliases for UI roles.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2178",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "20": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9098039269447327,
+          0.9098039269447327,
+          0.9098039269447327
+        ],
+        "alpha": 1,
+        "hex": "#E8E8E8"
+      },
+      "$description": "Neutral primitive 20 · #E8E8E8. Raw color value; use semantic aliases for UI roles.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2179",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "30": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.729411780834198,
+          0.729411780834198,
+          0.729411780834198
+        ],
+        "alpha": 1,
+        "hex": "#BABABA"
+      },
+      "$description": "Neutral primitive 30 · #BABABA. Raw color value; use semantic aliases for UI roles.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2180",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "40": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.6392157077789307,
+          0.6392157077789307,
+          0.6431372761726379
+        ],
+        "alpha": 1,
+        "hex": "#A3A3A4"
+      },
+      "$description": "Neutral primitive 40 · #A3A3A4. Raw color value; use semantic aliases for UI roles.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2181",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "50": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.5490196347236633,
+          0.5490196347236633,
+          0.5529412031173706
+        ],
+        "alpha": 1,
+        "hex": "#8C8C8D"
+      },
+      "$description": "Neutral primitive 50 · #8C8C8D. Raw color value; use semantic aliases for UI roles.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2182",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "60": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.45490196347236633,
+          0.45490196347236633,
+          0.4627451002597809
+        ],
+        "alpha": 1,
+        "hex": "#747476"
+      },
+      "$description": "Neutral primitive 60 · #747476. Raw color value; use semantic aliases for UI roles.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2183",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "70": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.364705890417099,
+          0.364705890417099,
+          0.37254902720451355
+        ],
+        "alpha": 1,
+        "hex": "#5D5D5F"
+      },
+      "$description": "Neutral primitive 70 · #5D5D5F. Raw color value; use semantic aliases for UI roles.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2184",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "80": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.2705882489681244,
+          0.2705882489681244,
+          0.27843138575553894
+        ],
+        "alpha": 1,
+        "hex": "#454547"
+      },
+      "$description": "Neutral primitive 80 · #454547. Raw color value; use semantic aliases for UI roles.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2185",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "90": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.18431372940540314,
+          0.18431372940540314,
+          0.1921568661928177
+        ],
+        "alpha": 1,
+        "hex": "#2F2F31"
+      },
+      "$description": "Neutral primitive 90 · #2F2F31. Raw color value; use semantic aliases for UI roles.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2186",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "100": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.1411764770746231,
+          0.1411764770746231,
+          0.14901961386203766
+        ],
+        "alpha": 1,
+        "hex": "#242426"
+      },
+      "$description": "Neutral primitive 100 · #242426. Raw color value; use semantic aliases for UI roles.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2187",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "110": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.0941176488995552,
+          0.0941176488995552,
+          0.10196078568696976
+        ],
+        "alpha": 1,
+        "hex": "#18181A"
+      },
+      "$description": "Neutral primitive 110 · #18181A. Raw color value; use semantic aliases for UI roles.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2188",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "120": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.07450980693101883,
+          0.07450980693101883,
+          0.08235294371843338
+        ],
+        "alpha": 1,
+        "hex": "#131315"
+      },
+      "$description": "Neutral primitive 120 · #131315. Raw color value; use semantic aliases for UI roles.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2189",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "130": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.054901961237192154,
+          0.054901961237192154,
+          0.062745101749897
+        ],
+        "alpha": 1,
+        "hex": "#0E0E10"
+      },
+      "$description": "Neutral primitive 130 · #0E0E10. Raw color value; use semantic aliases for UI roles.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2190",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "140": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.007843137718737125,
+          0.007843137718737125,
+          0.0117647061124444
+        ],
+        "alpha": 1,
+        "hex": "#020203"
+      },
+      "$description": "Neutral primitive 140 · #020203. Raw color value; use semantic aliases for UI roles.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2191",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "150": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1,
+        "hex": "#000000"
+      },
+      "$description": "Neutral primitive 150 · #000000. Raw color value; use semantic aliases for UI roles.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2192",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    }
+  },
+  "red": {
+    "0": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.9215686321258545,
+          0.9333333373069763
+        ],
+        "alpha": 1,
+        "hex": "#FFEBEE"
+      },
+      "$description": "Exact source palette shade 50. Primitive step 0.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2299",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "10": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.8039215803146362,
+          0.8235294222831726
+        ],
+        "alpha": 1,
+        "hex": "#FFCDD2"
+      },
+      "$description": "Exact source palette shade 100. Primitive step 10.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2300",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "20": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9372549057006836,
+          0.6039215922355652,
+          0.6039215922355652
+        ],
+        "alpha": 1,
+        "hex": "#EF9A9A"
+      },
+      "$description": "Exact source palette shade 200. Primitive step 20.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2301",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "30": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.8980392217636108,
+          0.45098039507865906,
+          0.45098039507865906
+        ],
+        "alpha": 1,
+        "hex": "#E57373"
+      },
+      "$description": "Exact source palette shade 300. Primitive step 30.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2302",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "40": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9372549057006836,
+          0.32549020648002625,
+          0.3137255012989044
+        ],
+        "alpha": 1,
+        "hex": "#EF5350"
+      },
+      "$description": "Exact source palette shade 400. Primitive step 40.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2303",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "50": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.95686274766922,
+          0.26274511218070984,
+          0.21176470816135406
+        ],
+        "alpha": 1,
+        "hex": "#F44336"
+      },
+      "$description": "Exact source palette shade 500. Primitive step 50.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2304",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "60": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.8980392217636108,
+          0.2235294133424759,
+          0.2078431397676468
+        ],
+        "alpha": 1,
+        "hex": "#E53935"
+      },
+      "$description": "Exact source palette shade 600. Primitive step 60.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2305",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "70": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.8274509906768799,
+          0.18431372940540314,
+          0.18431372940540314
+        ],
+        "alpha": 1,
+        "hex": "#D32F2F"
+      },
+      "$description": "Exact source palette shade 700. Primitive step 70.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2306",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "80": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.7764706015586853,
+          0.1568627506494522,
+          0.1568627506494522
+        ],
+        "alpha": 1,
+        "hex": "#C62828"
+      },
+      "$description": "Exact source palette shade 800. Primitive step 80.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2307",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "90": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.7176470756530762,
+          0.10980392247438431,
+          0.10980392247438431
+        ],
+        "alpha": 1,
+        "hex": "#B71C1C"
+      },
+      "$description": "Exact source palette shade 900. Primitive step 90.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2308",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "100": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.6235294342041016,
+          0.09019608050584793,
+          0.09019608050584793
+        ],
+        "alpha": 1,
+        "hex": "#9F1717"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.9. Primitive step 100.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2309",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "110": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.529411792755127,
+          0.07058823853731155,
+          0.07058823853731155
+        ],
+        "alpha": 1,
+        "hex": "#871212"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.8. Primitive step 110.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2310",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "120": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.43921568989753723,
+          0.05098039284348488,
+          0.05098039284348488
+        ],
+        "alpha": 1,
+        "hex": "#700D0D"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.7. Primitive step 120.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2311",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "130": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.3529411852359772,
+          0.0313725508749485,
+          0.0313725508749485
+        ],
+        "alpha": 1,
+        "hex": "#5A0808"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.6. Primitive step 130.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2312",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "140": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.2705882489681244,
+          0.019607843831181526,
+          0.019607843831181526
+        ],
+        "alpha": 1,
+        "hex": "#450505"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.5. Primitive step 140.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2313",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "150": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.1921568661928177,
+          0.007843137718737125,
+          0.007843137718737125
+        ],
+        "alpha": 1,
+        "hex": "#310202"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.4. Primitive step 150.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2314",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    }
+  },
+  "pink": {
+    "0": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9882352948188782,
+          0.8941176533699036,
+          0.9254902005195618
+        ],
+        "alpha": 1,
+        "hex": "#FCE4EC"
+      },
+      "$description": "Exact source palette shade 50. Primitive step 0.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2315",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "10": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9725490212440491,
+          0.7333333492279053,
+          0.8156862854957581
+        ],
+        "alpha": 1,
+        "hex": "#F8BBD0"
+      },
+      "$description": "Exact source palette shade 100. Primitive step 10.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2316",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "20": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.95686274766922,
+          0.5607843399047852,
+          0.6941176652908325
+        ],
+        "alpha": 1,
+        "hex": "#F48FB1"
+      },
+      "$description": "Exact source palette shade 200. Primitive step 20.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2317",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "30": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9411764740943909,
+          0.3843137323856354,
+          0.572549045085907
+        ],
+        "alpha": 1,
+        "hex": "#F06292"
+      },
+      "$description": "Exact source palette shade 300. Primitive step 30.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2318",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "40": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9254902005195618,
+          0.250980406999588,
+          0.47843137383461
+        ],
+        "alpha": 1,
+        "hex": "#EC407A"
+      },
+      "$description": "Exact source palette shade 400. Primitive step 40.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2319",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "50": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9137254953384399,
+          0.11764705926179886,
+          0.38823530077934265
+        ],
+        "alpha": 1,
+        "hex": "#E91E63"
+      },
+      "$description": "Exact source palette shade 500. Primitive step 50.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2320",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "60": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.8470588326454163,
+          0.10588235408067703,
+          0.3764705955982208
+        ],
+        "alpha": 1,
+        "hex": "#D81B60"
+      },
+      "$description": "Exact source palette shade 600. Primitive step 60.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2321",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "70": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.7607843279838562,
+          0.0941176488995552,
+          0.35686275362968445
+        ],
+        "alpha": 1,
+        "hex": "#C2185B"
+      },
+      "$description": "Exact source palette shade 700. Primitive step 70.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2322",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "80": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.6784313917160034,
+          0.0784313753247261,
+          0.34117648005485535
+        ],
+        "alpha": 1,
+        "hex": "#AD1457"
+      },
+      "$description": "Exact source palette shade 800. Primitive step 80.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2323",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "90": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.5333333611488342,
+          0.054901961237192154,
+          0.30980393290519714
+        ],
+        "alpha": 1,
+        "hex": "#880E4F"
+      },
+      "$description": "Exact source palette shade 900. Primitive step 90.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2324",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "100": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.4588235318660736,
+          0.04313725605607033,
+          0.2666666805744171
+        ],
+        "alpha": 1,
+        "hex": "#750B44"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.9. Primitive step 100.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2325",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "110": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.38823530077934265,
+          0.027450980618596077,
+          0.21960784494876862
+        ],
+        "alpha": 1,
+        "hex": "#630738"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.8. Primitive step 110.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2326",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "120": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.32156863808631897,
+          0.019607843831181526,
+          0.18039216101169586
+        ],
+        "alpha": 1,
+        "hex": "#52052E"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.7. Primitive step 120.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2327",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "130": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.2549019753932953,
+          0.0117647061124444,
+          0.13725490868091583
+        ],
+        "alpha": 1,
+        "hex": "#410323"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.6. Primitive step 130.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2328",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "140": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.1921568661928177,
+          0.007843137718737125,
+          0.09803921729326248
+        ],
+        "alpha": 1,
+        "hex": "#310219"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.5. Primitive step 140.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2329",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "150": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.13333334028720856,
+          0.003921568859368563,
+          0.062745101749897
+        ],
+        "alpha": 1,
+        "hex": "#220110"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.4. Primitive step 150.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2330",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    }
+  },
+  "purple": {
+    "0": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9529411792755127,
+          0.8980392217636108,
+          0.9607843160629272
+        ],
+        "alpha": 1,
+        "hex": "#F3E5F5"
+      },
+      "$description": "Exact source palette shade 50. Primitive step 0.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2331",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "10": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.8823529481887817,
+          0.7450980544090271,
+          0.9058823585510254
+        ],
+        "alpha": 1,
+        "hex": "#E1BEE7"
+      },
+      "$description": "Exact source palette shade 100. Primitive step 10.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2332",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "20": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.8078431487083435,
+          0.5764706134796143,
+          0.8470588326454163
+        ],
+        "alpha": 1,
+        "hex": "#CE93D8"
+      },
+      "$description": "Exact source palette shade 200. Primitive step 20.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2333",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "30": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.729411780834198,
+          0.40784314274787903,
+          0.7843137383460999
+        ],
+        "alpha": 1,
+        "hex": "#BA68C8"
+      },
+      "$description": "Exact source palette shade 300. Primitive step 30.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2334",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "40": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.6705882549285889,
+          0.27843138575553894,
+          0.7372549176216125
+        ],
+        "alpha": 1,
+        "hex": "#AB47BC"
+      },
+      "$description": "Exact source palette shade 400. Primitive step 40.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2335",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "50": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.6117647290229797,
+          0.15294118225574493,
+          0.6901960968971252
+        ],
+        "alpha": 1,
+        "hex": "#9C27B0"
+      },
+      "$description": "Exact source palette shade 500. Primitive step 50.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2336",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "60": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.5568627715110779,
+          0.1411764770746231,
+          0.6666666865348816
+        ],
+        "alpha": 1,
+        "hex": "#8E24AA"
+      },
+      "$description": "Exact source palette shade 600. Primitive step 60.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2337",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "70": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.48235294222831726,
+          0.12156862765550613,
+          0.6352941393852234
+        ],
+        "alpha": 1,
+        "hex": "#7B1FA2"
+      },
+      "$description": "Exact source palette shade 700. Primitive step 70.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2338",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "80": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.4156862795352936,
+          0.10588235408067703,
+          0.6039215922355652
+        ],
+        "alpha": 1,
+        "hex": "#6A1B9A"
+      },
+      "$description": "Exact source palette shade 800. Primitive step 80.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2339",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "90": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.29019609093666077,
+          0.0784313753247261,
+          0.5490196347236633
+        ],
+        "alpha": 1,
+        "hex": "#4A148C"
+      },
+      "$description": "Exact source palette shade 900. Primitive step 90.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2340",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "100": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.24705882370471954,
+          0.062745101749897,
+          0.4745098054409027
+        ],
+        "alpha": 1,
+        "hex": "#3F1079"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.9. Primitive step 100.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2341",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "110": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.2078431397676468,
+          0.0470588244497776,
+          0.40392157435417175
+        ],
+        "alpha": 1,
+        "hex": "#350C67"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.8. Primitive step 110.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2342",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "120": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.16470588743686676,
+          0.0313725508749485,
+          0.3333333432674408
+        ],
+        "alpha": 1,
+        "hex": "#2A0855"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.7. Primitive step 120.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2343",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "130": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.125490203499794,
+          0.019607843831181526,
+          0.26274511218070984
+        ],
+        "alpha": 1,
+        "hex": "#200543"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.6. Primitive step 130.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2344",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "140": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.09019608050584793,
+          0.0117647061124444,
+          0.20000000298023224
+        ],
+        "alpha": 1,
+        "hex": "#170333"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.5. Primitive step 140.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2345",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "150": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.054901961237192154,
+          0.003921568859368563,
+          0.13725490868091583
+        ],
+        "alpha": 1,
+        "hex": "#0E0123"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.4. Primitive step 150.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2346",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    }
+  },
+  "deep-purple": {
+    "0": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.929411768913269,
+          0.9058823585510254,
+          0.9647058844566345
+        ],
+        "alpha": 1,
+        "hex": "#EDE7F6"
+      },
+      "$description": "Exact source palette shade 50. Primitive step 0.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2347",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "10": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.8196078538894653,
+          0.7686274647712708,
+          0.9137254953384399
+        ],
+        "alpha": 1,
+        "hex": "#D1C4E9"
+      },
+      "$description": "Exact source palette shade 100. Primitive step 10.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2348",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "20": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.7019608020782471,
+          0.615686297416687,
+          0.8588235378265381
+        ],
+        "alpha": 1,
+        "hex": "#B39DDB"
+      },
+      "$description": "Exact source palette shade 200. Primitive step 20.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2349",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "30": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.5843137502670288,
+          0.4588235318660736,
+          0.8039215803146362
+        ],
+        "alpha": 1,
+        "hex": "#9575CD"
+      },
+      "$description": "Exact source palette shade 300. Primitive step 30.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2350",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "40": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.4941176474094391,
+          0.34117648005485535,
+          0.7607843279838562
+        ],
+        "alpha": 1,
+        "hex": "#7E57C2"
+      },
+      "$description": "Exact source palette shade 400. Primitive step 40.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2351",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "50": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.40392157435417175,
+          0.22745098173618317,
+          0.7176470756530762
+        ],
+        "alpha": 1,
+        "hex": "#673AB7"
+      },
+      "$description": "Exact source palette shade 500. Primitive step 50.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2352",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "60": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.3686274588108063,
+          0.2078431397676468,
+          0.6941176652908325
+        ],
+        "alpha": 1,
+        "hex": "#5E35B1"
+      },
+      "$description": "Exact source palette shade 600. Primitive step 60.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2353",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "70": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.3176470696926117,
+          0.1764705926179886,
+          0.658823549747467
+        ],
+        "alpha": 1,
+        "hex": "#512DA8"
+      },
+      "$description": "Exact source palette shade 700. Primitive step 70.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2354",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "80": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.2705882489681244,
+          0.15294118225574493,
+          0.6274510025978088
+        ],
+        "alpha": 1,
+        "hex": "#4527A0"
+      },
+      "$description": "Exact source palette shade 800. Primitive step 80.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2355",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "90": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.1921568661928177,
+          0.10588235408067703,
+          0.572549045085907
+        ],
+        "alpha": 1,
+        "hex": "#311B92"
+      },
+      "$description": "Exact source palette shade 900. Primitive step 90.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2356",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "100": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.16078431904315948,
+          0.08627451211214066,
+          0.4941176474094391
+        ],
+        "alpha": 1,
+        "hex": "#29167E"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.9. Primitive step 100.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2357",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "110": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.13333334028720856,
+          0.06666667014360428,
+          0.41960784792900085
+        ],
+        "alpha": 1,
+        "hex": "#22116B"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.8. Primitive step 110.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2358",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "120": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.10196078568696976,
+          0.0470588244497776,
+          0.3450980484485626
+        ],
+        "alpha": 1,
+        "hex": "#1A0C58"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.7. Primitive step 120.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2359",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "130": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.07450980693101883,
+          0.0313725508749485,
+          0.27450981736183167
+        ],
+        "alpha": 1,
+        "hex": "#130846"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.6. Primitive step 130.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2360",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "140": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.0470588244497776,
+          0.019607843831181526,
+          0.2078431397676468
+        ],
+        "alpha": 1,
+        "hex": "#0C0535"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.5. Primitive step 140.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2361",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "150": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.0235294122248888,
+          0.007843137718737125,
+          0.14509804546833038
+        ],
+        "alpha": 1,
+        "hex": "#060225"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.4. Primitive step 150.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2362",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    }
+  },
+  "indigo": {
+    "0": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9098039269447327,
+          0.9176470637321472,
+          0.9647058844566345
+        ],
+        "alpha": 1,
+        "hex": "#E8EAF6"
+      },
+      "$description": "Exact source palette shade 50. Primitive step 0.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2363",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "10": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.772549033164978,
+          0.7921568751335144,
+          0.9137254953384399
+        ],
+        "alpha": 1,
+        "hex": "#C5CAE9"
+      },
+      "$description": "Exact source palette shade 100. Primitive step 10.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2364",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "20": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.6235294342041016,
+          0.658823549747467,
+          0.8549019694328308
+        ],
+        "alpha": 1,
+        "hex": "#9FA8DA"
+      },
+      "$description": "Exact source palette shade 200. Primitive step 20.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2365",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "30": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.4745098054409027,
+          0.5254902243614197,
+          0.7960784435272217
+        ],
+        "alpha": 1,
+        "hex": "#7986CB"
+      },
+      "$description": "Exact source palette shade 300. Primitive step 30.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2366",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "40": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.3607843220233917,
+          0.41960784792900085,
+          0.7529411911964417
+        ],
+        "alpha": 1,
+        "hex": "#5C6BC0"
+      },
+      "$description": "Exact source palette shade 400. Primitive step 40.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2367",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "50": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.24705882370471954,
+          0.3176470696926117,
+          0.7098039388656616
+        ],
+        "alpha": 1,
+        "hex": "#3F51B5"
+      },
+      "$description": "Exact source palette shade 500. Primitive step 50.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2368",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "60": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.2235294133424759,
+          0.2862745225429535,
+          0.6705882549285889
+        ],
+        "alpha": 1,
+        "hex": "#3949AB"
+      },
+      "$description": "Exact source palette shade 600. Primitive step 60.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2369",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "70": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.1882352977991104,
+          0.24705882370471954,
+          0.6235294342041016
+        ],
+        "alpha": 1,
+        "hex": "#303F9F"
+      },
+      "$description": "Exact source palette shade 700. Primitive step 70.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2370",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "80": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.1568627506494522,
+          0.2078431397676468,
+          0.5764706134796143
+        ],
+        "alpha": 1,
+        "hex": "#283593"
+      },
+      "$description": "Exact source palette shade 800. Primitive step 80.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2371",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "90": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.10196078568696976,
+          0.13725490868091583,
+          0.4941176474094391
+        ],
+        "alpha": 1,
+        "hex": "#1A237E"
+      },
+      "$description": "Exact source palette shade 900. Primitive step 90.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2372",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "100": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.08235294371843338,
+          0.11372549086809158,
+          0.4274509847164154
+        ],
+        "alpha": 1,
+        "hex": "#151D6D"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.9. Primitive step 100.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2373",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "110": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.062745101749897,
+          0.09019608050584793,
+          0.3607843220233917
+        ],
+        "alpha": 1,
+        "hex": "#10175C"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.8. Primitive step 110.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2374",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "120": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.0470588244497776,
+          0.06666667014360428,
+          0.2980392277240753
+        ],
+        "alpha": 1,
+        "hex": "#0C114C"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.7. Primitive step 120.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2375",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "130": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.027450980618596077,
+          0.0470588244497776,
+          0.23529411852359772
+        ],
+        "alpha": 1,
+        "hex": "#070C3C"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.6. Primitive step 130.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2376",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "140": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.01568627543747425,
+          0.027450980618596077,
+          0.1764705926179886
+        ],
+        "alpha": 1,
+        "hex": "#04072D"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.5. Primitive step 140.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2377",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "150": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.007843137718737125,
+          0.01568627543747425,
+          0.12156862765550613
+        ],
+        "alpha": 1,
+        "hex": "#02041F"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.4. Primitive step 150.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2378",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    }
+  },
+  "blue": {
+    "0": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.8901960849761963,
+          0.9490196108818054,
+          0.9921568632125854
+        ],
+        "alpha": 1,
+        "hex": "#E3F2FD"
+      },
+      "$description": "Exact source palette shade 50. Primitive step 0.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2379",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "10": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.7333333492279053,
+          0.8705882430076599,
+          0.9843137264251709
+        ],
+        "alpha": 1,
+        "hex": "#BBDEFB"
+      },
+      "$description": "Exact source palette shade 100. Primitive step 10.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2380",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "20": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.5647059082984924,
+          0.7921568751335144,
+          0.9764705896377563
+        ],
+        "alpha": 1,
+        "hex": "#90CAF9"
+      },
+      "$description": "Exact source palette shade 200. Primitive step 20.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2381",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "30": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.3921568691730499,
+          0.7098039388656616,
+          0.9647058844566345
+        ],
+        "alpha": 1,
+        "hex": "#64B5F6"
+      },
+      "$description": "Exact source palette shade 300. Primitive step 30.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2382",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "40": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.25882354378700256,
+          0.6470588445663452,
+          0.9607843160629272
+        ],
+        "alpha": 1,
+        "hex": "#42A5F5"
+      },
+      "$description": "Exact source palette shade 400. Primitive step 40.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2383",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "50": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.12941177189350128,
+          0.5882353186607361,
+          0.9529411792755127
+        ],
+        "alpha": 1,
+        "hex": "#2196F3"
+      },
+      "$description": "Exact source palette shade 500. Primitive step 50.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2384",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "60": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.11764705926179886,
+          0.5333333611488342,
+          0.8980392217636108
+        ],
+        "alpha": 1,
+        "hex": "#1E88E5"
+      },
+      "$description": "Exact source palette shade 600. Primitive step 60.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2385",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "70": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.09803921729326248,
+          0.4627451002597809,
+          0.8235294222831726
+        ],
+        "alpha": 1,
+        "hex": "#1976D2"
+      },
+      "$description": "Exact source palette shade 700. Primitive step 70.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2386",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "80": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.08235294371843338,
+          0.3960784375667572,
+          0.7529411911964417
+        ],
+        "alpha": 1,
+        "hex": "#1565C0"
+      },
+      "$description": "Exact source palette shade 800. Primitive step 80.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2387",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "90": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.05098039284348488,
+          0.27843138575553894,
+          0.6313725709915161
+        ],
+        "alpha": 1,
+        "hex": "#0D47A1"
+      },
+      "$description": "Exact source palette shade 900. Primitive step 90.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2388",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "100": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.03921568766236305,
+          0.239215686917305,
+          0.545098066329956
+        ],
+        "alpha": 1,
+        "hex": "#0A3D8B"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.9. Primitive step 100.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2389",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "110": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.027450980618596077,
+          0.19607843458652496,
+          0.4627451002597809
+        ],
+        "alpha": 1,
+        "hex": "#073276"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.8. Primitive step 110.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2390",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "120": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.019607843831181526,
+          0.1568627506494522,
+          0.3843137323856354
+        ],
+        "alpha": 1,
+        "hex": "#052862"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.7. Primitive step 120.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2391",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "130": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.0117647061124444,
+          0.12156862765550613,
+          0.30588236451148987
+        ],
+        "alpha": 1,
+        "hex": "#031F4E"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.6. Primitive step 130.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2392",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "140": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.007843137718737125,
+          0.08627451211214066,
+          0.23529411852359772
+        ],
+        "alpha": 1,
+        "hex": "#02163C"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.5. Primitive step 140.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2393",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "150": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.003921568859368563,
+          0.05098039284348488,
+          0.16470588743686676
+        ],
+        "alpha": 1,
+        "hex": "#010D2A"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.4. Primitive step 150.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2394",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    }
+  },
+  "light-blue": {
+    "0": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.8823529481887817,
+          0.9607843160629272,
+          0.9960784316062927
+        ],
+        "alpha": 1,
+        "hex": "#E1F5FE"
+      },
+      "$description": "Exact source palette shade 50. Primitive step 0.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2395",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "10": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.7019608020782471,
+          0.8980392217636108,
+          0.9882352948188782
+        ],
+        "alpha": 1,
+        "hex": "#B3E5FC"
+      },
+      "$description": "Exact source palette shade 100. Primitive step 10.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2396",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "20": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.5058823823928833,
+          0.8313725590705872,
+          0.9803921580314636
+        ],
+        "alpha": 1,
+        "hex": "#81D4FA"
+      },
+      "$description": "Exact source palette shade 200. Primitive step 20.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2397",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "30": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.30980393290519714,
+          0.7647058963775635,
+          0.9686274528503418
+        ],
+        "alpha": 1,
+        "hex": "#4FC3F7"
+      },
+      "$description": "Exact source palette shade 300. Primitive step 30.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2398",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "40": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.16078431904315948,
+          0.7137255072593689,
+          0.9647058844566345
+        ],
+        "alpha": 1,
+        "hex": "#29B6F6"
+      },
+      "$description": "Exact source palette shade 400. Primitive step 40.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2399",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "50": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.0117647061124444,
+          0.6627451181411743,
+          0.95686274766922
+        ],
+        "alpha": 1,
+        "hex": "#03A9F4"
+      },
+      "$description": "Exact source palette shade 500. Primitive step 50.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2400",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "60": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.0117647061124444,
+          0.6078431606292725,
+          0.8980392217636108
+        ],
+        "alpha": 1,
+        "hex": "#039BE5"
+      },
+      "$description": "Exact source palette shade 600. Primitive step 60.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2401",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "70": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.007843137718737125,
+          0.5333333611488342,
+          0.8196078538894653
+        ],
+        "alpha": 1,
+        "hex": "#0288D1"
+      },
+      "$description": "Exact source palette shade 700. Primitive step 70.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2402",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "80": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.007843137718737125,
+          0.46666666865348816,
+          0.7411764860153198
+        ],
+        "alpha": 1,
+        "hex": "#0277BD"
+      },
+      "$description": "Exact source palette shade 800. Primitive step 80.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2403",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "90": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.003921568859368563,
+          0.34117648005485535,
+          0.6078431606292725
+        ],
+        "alpha": 1,
+        "hex": "#01579B"
+      },
+      "$description": "Exact source palette shade 900. Primitive step 90.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2404",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "100": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.003921568859368563,
+          0.29411765933036804,
+          0.5254902243614197
+        ],
+        "alpha": 1,
+        "hex": "#014B86"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.9. Primitive step 100.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2405",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "110": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.003921568859368563,
+          0.24313725531101227,
+          0.4470588266849518
+        ],
+        "alpha": 1,
+        "hex": "#013E72"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.8. Primitive step 110.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2406",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "120": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0,
+          0.20000000298023224,
+          0.3686274588108063
+        ],
+        "alpha": 1,
+        "hex": "#00335E"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.7. Primitive step 120.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2407",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "130": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0,
+          0.15294118225574493,
+          0.29411765933036804
+        ],
+        "alpha": 1,
+        "hex": "#00274B"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.6. Primitive step 130.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2408",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "140": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0,
+          0.10980392247438431,
+          0.2235294133424759
+        ],
+        "alpha": 1,
+        "hex": "#001C39"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.5. Primitive step 140.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2409",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "150": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0,
+          0.07058823853731155,
+          0.1568627506494522
+        ],
+        "alpha": 1,
+        "hex": "#001228"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.4. Primitive step 150.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2410",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    }
+  },
+  "cyan": {
+    "0": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.8784313797950745,
+          0.9686274528503418,
+          0.9803921580314636
+        ],
+        "alpha": 1,
+        "hex": "#E0F7FA"
+      },
+      "$description": "Exact source palette shade 50. Primitive step 0.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2411",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "10": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.6980392336845398,
+          0.9215686321258545,
+          0.9490196108818054
+        ],
+        "alpha": 1,
+        "hex": "#B2EBF2"
+      },
+      "$description": "Exact source palette shade 100. Primitive step 10.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2412",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "20": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.501960813999176,
+          0.8705882430076599,
+          0.9176470637321472
+        ],
+        "alpha": 1,
+        "hex": "#80DEEA"
+      },
+      "$description": "Exact source palette shade 200. Primitive step 20.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2413",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "30": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.3019607961177826,
+          0.8156862854957581,
+          0.8823529481887817
+        ],
+        "alpha": 1,
+        "hex": "#4DD0E1"
+      },
+      "$description": "Exact source palette shade 300. Primitive step 30.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2414",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "40": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.14901961386203766,
+          0.7764706015586853,
+          0.8549019694328308
+        ],
+        "alpha": 1,
+        "hex": "#26C6DA"
+      },
+      "$description": "Exact source palette shade 400. Primitive step 40.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2415",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "50": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0,
+          0.7372549176216125,
+          0.8313725590705872
+        ],
+        "alpha": 1,
+        "hex": "#00BCD4"
+      },
+      "$description": "Exact source palette shade 500. Primitive step 50.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2416",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "60": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0,
+          0.6745098233222961,
+          0.7568627595901489
+        ],
+        "alpha": 1,
+        "hex": "#00ACC1"
+      },
+      "$description": "Exact source palette shade 600. Primitive step 60.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2417",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "70": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0,
+          0.5921568870544434,
+          0.6549019813537598
+        ],
+        "alpha": 1,
+        "hex": "#0097A7"
+      },
+      "$description": "Exact source palette shade 700. Primitive step 70.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2418",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "80": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0,
+          0.5137255191802979,
+          0.5607843399047852
+        ],
+        "alpha": 1,
+        "hex": "#00838F"
+      },
+      "$description": "Exact source palette shade 800. Primitive step 80.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2419",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "90": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0,
+          0.3764705955982208,
+          0.3921568691730499
+        ],
+        "alpha": 1,
+        "hex": "#006064"
+      },
+      "$description": "Exact source palette shade 900. Primitive step 90.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2420",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "100": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0,
+          0.32156863808631897,
+          0.33725491166114807
+        ],
+        "alpha": 1,
+        "hex": "#005256"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.9. Primitive step 100.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2421",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "110": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0,
+          0.2705882489681244,
+          0.2823529541492462
+        ],
+        "alpha": 1,
+        "hex": "#004548"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.8. Primitive step 110.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2422",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "120": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0,
+          0.21960784494876862,
+          0.23137255012989044
+        ],
+        "alpha": 1,
+        "hex": "#00383B"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.7. Primitive step 120.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2423",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "130": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0,
+          0.1725490242242813,
+          0.18039216101169586
+        ],
+        "alpha": 1,
+        "hex": "#002C2E"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.6. Primitive step 130.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2424",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "140": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0,
+          0.125490203499794,
+          0.13333334028720856
+        ],
+        "alpha": 1,
+        "hex": "#002022"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.5. Primitive step 140.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2425",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "150": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0,
+          0.08235294371843338,
+          0.08627451211214066
+        ],
+        "alpha": 1,
+        "hex": "#001516"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.4. Primitive step 150.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2426",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    }
+  },
+  "teal": {
+    "0": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.8784313797950745,
+          0.9490196108818054,
+          0.9450980424880981
+        ],
+        "alpha": 1,
+        "hex": "#E0F2F1"
+      },
+      "$description": "Exact source palette shade 50. Primitive step 0.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2427",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "10": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.6980392336845398,
+          0.8745098114013672,
+          0.8588235378265381
+        ],
+        "alpha": 1,
+        "hex": "#B2DFDB"
+      },
+      "$description": "Exact source palette shade 100. Primitive step 10.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2428",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "20": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.501960813999176,
+          0.7960784435272217,
+          0.7686274647712708
+        ],
+        "alpha": 1,
+        "hex": "#80CBC4"
+      },
+      "$description": "Exact source palette shade 200. Primitive step 20.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2429",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "30": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.3019607961177826,
+          0.7137255072593689,
+          0.6745098233222961
+        ],
+        "alpha": 1,
+        "hex": "#4DB6AC"
+      },
+      "$description": "Exact source palette shade 300. Primitive step 30.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2430",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "40": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.14901961386203766,
+          0.6509804129600525,
+          0.6039215922355652
+        ],
+        "alpha": 1,
+        "hex": "#26A69A"
+      },
+      "$description": "Exact source palette shade 400. Primitive step 40.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2431",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "50": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0,
+          0.5882353186607361,
+          0.5333333611488342
+        ],
+        "alpha": 1,
+        "hex": "#009688"
+      },
+      "$description": "Exact source palette shade 500. Primitive step 50.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2432",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "60": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0,
+          0.5372549295425415,
+          0.48235294222831726
+        ],
+        "alpha": 1,
+        "hex": "#00897B"
+      },
+      "$description": "Exact source palette shade 600. Primitive step 60.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2433",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "70": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0,
+          0.4745098054409027,
+          0.41960784792900085
+        ],
+        "alpha": 1,
+        "hex": "#00796B"
+      },
+      "$description": "Exact source palette shade 700. Primitive step 70.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2434",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "80": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0,
+          0.4117647111415863,
+          0.3607843220233917
+        ],
+        "alpha": 1,
+        "hex": "#00695C"
+      },
+      "$description": "Exact source palette shade 800. Primitive step 80.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2435",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "90": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0,
+          0.3019607961177826,
+          0.250980406999588
+        ],
+        "alpha": 1,
+        "hex": "#004D40"
+      },
+      "$description": "Exact source palette shade 900. Primitive step 90.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2436",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "100": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0,
+          0.25882354378700256,
+          0.21176470816135406
+        ],
+        "alpha": 1,
+        "hex": "#004236"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.9. Primitive step 100.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2437",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "110": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0,
+          0.21568627655506134,
+          0.1764705926179886
+        ],
+        "alpha": 1,
+        "hex": "#00372D"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.8. Primitive step 110.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2438",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "120": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0,
+          0.1725490242242813,
+          0.1411764770746231
+        ],
+        "alpha": 1,
+        "hex": "#002C24"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.7. Primitive step 120.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2439",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "130": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0,
+          0.13333334028720856,
+          0.10588235408067703
+        ],
+        "alpha": 1,
+        "hex": "#00221B"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.6. Primitive step 130.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2440",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "140": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0,
+          0.0941176488995552,
+          0.07450980693101883
+        ],
+        "alpha": 1,
+        "hex": "#001813"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.5. Primitive step 140.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2441",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "150": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0,
+          0.05882352963089943,
+          0.04313725605607033
+        ],
+        "alpha": 1,
+        "hex": "#000F0B"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.4. Primitive step 150.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2442",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    }
+  },
+  "green": {
+    "0": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9098039269447327,
+          0.9607843160629272,
+          0.9137254953384399
+        ],
+        "alpha": 1,
+        "hex": "#E8F5E9"
+      },
+      "$description": "Exact source palette shade 50. Primitive step 0.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2443",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "10": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.7843137383460999,
+          0.9019607901573181,
+          0.7882353067398071
+        ],
+        "alpha": 1,
+        "hex": "#C8E6C9"
+      },
+      "$description": "Exact source palette shade 100. Primitive step 10.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2444",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "20": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.6470588445663452,
+          0.8392156958580017,
+          0.6549019813537598
+        ],
+        "alpha": 1,
+        "hex": "#A5D6A7"
+      },
+      "$description": "Exact source palette shade 200. Primitive step 20.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2445",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "30": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.5058823823928833,
+          0.7803921699523926,
+          0.5176470875740051
+        ],
+        "alpha": 1,
+        "hex": "#81C784"
+      },
+      "$description": "Exact source palette shade 300. Primitive step 30.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2446",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "40": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.4000000059604645,
+          0.7333333492279053,
+          0.4156862795352936
+        ],
+        "alpha": 1,
+        "hex": "#66BB6A"
+      },
+      "$description": "Exact source palette shade 400. Primitive step 40.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2447",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "50": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.2980392277240753,
+          0.686274528503418,
+          0.3137255012989044
+        ],
+        "alpha": 1,
+        "hex": "#4CAF50"
+      },
+      "$description": "Exact source palette shade 500. Primitive step 50.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2448",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "60": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.26274511218070984,
+          0.6274510025978088,
+          0.27843138575553894
+        ],
+        "alpha": 1,
+        "hex": "#43A047"
+      },
+      "$description": "Exact source palette shade 600. Primitive step 60.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2449",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "70": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.21960784494876862,
+          0.5568627715110779,
+          0.23529411852359772
+        ],
+        "alpha": 1,
+        "hex": "#388E3C"
+      },
+      "$description": "Exact source palette shade 700. Primitive step 70.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2450",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "80": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.18039216101169586,
+          0.4901960790157318,
+          0.19607843458652496
+        ],
+        "alpha": 1,
+        "hex": "#2E7D32"
+      },
+      "$description": "Exact source palette shade 800. Primitive step 80.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2451",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "90": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.10588235408067703,
+          0.3686274588108063,
+          0.125490203499794
+        ],
+        "alpha": 1,
+        "hex": "#1B5E20"
+      },
+      "$description": "Exact source palette shade 900. Primitive step 90.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2452",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "100": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.08627451211214066,
+          0.3176470696926117,
+          0.10196078568696976
+        ],
+        "alpha": 1,
+        "hex": "#16511A"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.9. Primitive step 100.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2453",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "110": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.06666667014360428,
+          0.2666666805744171,
+          0.08235294371843338
+        ],
+        "alpha": 1,
+        "hex": "#114415"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.8. Primitive step 110.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2454",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "120": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.0470588244497776,
+          0.21568627655506134,
+          0.05882352963089943
+        ],
+        "alpha": 1,
+        "hex": "#0C370F"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.7. Primitive step 120.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2455",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "130": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.0313725508749485,
+          0.16862745583057404,
+          0.03921568766236305
+        ],
+        "alpha": 1,
+        "hex": "#082B0A"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.6. Primitive step 130.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2456",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "140": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.019607843831181526,
+          0.12156862765550613,
+          0.0235294122248888
+        ],
+        "alpha": 1,
+        "hex": "#051F06"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.5. Primitive step 140.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2457",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "150": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.007843137718737125,
+          0.0784313753247261,
+          0.0117647061124444
+        ],
+        "alpha": 1,
+        "hex": "#021403"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.4. Primitive step 150.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2458",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    }
+  },
+  "light-green": {
+    "0": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9450980424880981,
+          0.9725490212440491,
+          0.9137254953384399
+        ],
+        "alpha": 1,
+        "hex": "#F1F8E9"
+      },
+      "$description": "Exact source palette shade 50. Primitive step 0.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2459",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "10": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.8627451062202454,
+          0.929411768913269,
+          0.7843137383460999
+        ],
+        "alpha": 1,
+        "hex": "#DCEDC8"
+      },
+      "$description": "Exact source palette shade 100. Primitive step 10.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2460",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "20": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.772549033164978,
+          0.8823529481887817,
+          0.6470588445663452
+        ],
+        "alpha": 1,
+        "hex": "#C5E1A5"
+      },
+      "$description": "Exact source palette shade 200. Primitive step 20.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2461",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "30": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.6823529601097107,
+          0.8352941274642944,
+          0.5058823823928833
+        ],
+        "alpha": 1,
+        "hex": "#AED581"
+      },
+      "$description": "Exact source palette shade 300. Primitive step 30.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2462",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "40": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.6117647290229797,
+          0.800000011920929,
+          0.3960784375667572
+        ],
+        "alpha": 1,
+        "hex": "#9CCC65"
+      },
+      "$description": "Exact source palette shade 400. Primitive step 40.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2463",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "50": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.545098066329956,
+          0.7647058963775635,
+          0.29019609093666077
+        ],
+        "alpha": 1,
+        "hex": "#8BC34A"
+      },
+      "$description": "Exact source palette shade 500. Primitive step 50.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2464",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "60": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.48627451062202454,
+          0.7019608020782471,
+          0.25882354378700256
+        ],
+        "alpha": 1,
+        "hex": "#7CB342"
+      },
+      "$description": "Exact source palette shade 600. Primitive step 60.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2465",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "70": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.40784314274787903,
+          0.6235294342041016,
+          0.21960784494876862
+        ],
+        "alpha": 1,
+        "hex": "#689F38"
+      },
+      "$description": "Exact source palette shade 700. Primitive step 70.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2466",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "80": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.3333333432674408,
+          0.545098066329956,
+          0.18431372940540314
+        ],
+        "alpha": 1,
+        "hex": "#558B2F"
+      },
+      "$description": "Exact source palette shade 800. Primitive step 80.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2467",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "90": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.20000000298023224,
+          0.4117647111415863,
+          0.11764705926179886
+        ],
+        "alpha": 1,
+        "hex": "#33691E"
+      },
+      "$description": "Exact source palette shade 900. Primitive step 90.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2468",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "100": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.16862745583057404,
+          0.3529411852359772,
+          0.09803921729326248
+        ],
+        "alpha": 1,
+        "hex": "#2B5A19"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.9. Primitive step 100.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2469",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "110": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.13725490868091583,
+          0.2980392277240753,
+          0.07450980693101883
+        ],
+        "alpha": 1,
+        "hex": "#234C13"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.8. Primitive step 110.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2470",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "120": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.10980392247438431,
+          0.24313725531101227,
+          0.054901961237192154
+        ],
+        "alpha": 1,
+        "hex": "#1C3E0E"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.7. Primitive step 120.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2471",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "130": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.0784313753247261,
+          0.1921568661928177,
+          0.03529411926865578
+        ],
+        "alpha": 1,
+        "hex": "#143109"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.6. Primitive step 130.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2472",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "140": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.05098039284348488,
+          0.1411764770746231,
+          0.019607843831181526
+        ],
+        "alpha": 1,
+        "hex": "#0D2405"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.5. Primitive step 140.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2473",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "150": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.027450980618596077,
+          0.0941176488995552,
+          0.0117647061124444
+        ],
+        "alpha": 1,
+        "hex": "#071803"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.4. Primitive step 150.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2474",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    }
+  },
+  "lime": {
+    "0": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9764705896377563,
+          0.9843137264251709,
+          0.9058823585510254
+        ],
+        "alpha": 1,
+        "hex": "#F9FBE7"
+      },
+      "$description": "Exact source palette shade 50. Primitive step 0.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2475",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "10": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9411764740943909,
+          0.95686274766922,
+          0.7647058963775635
+        ],
+        "alpha": 1,
+        "hex": "#F0F4C3"
+      },
+      "$description": "Exact source palette shade 100. Primitive step 10.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2476",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "20": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9019607901573181,
+          0.9333333373069763,
+          0.6117647290229797
+        ],
+        "alpha": 1,
+        "hex": "#E6EE9C"
+      },
+      "$description": "Exact source palette shade 200. Primitive step 20.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2477",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "30": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.8627451062202454,
+          0.9058823585510254,
+          0.4588235318660736
+        ],
+        "alpha": 1,
+        "hex": "#DCE775"
+      },
+      "$description": "Exact source palette shade 300. Primitive step 30.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2478",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "40": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.8313725590705872,
+          0.8823529481887817,
+          0.34117648005485535
+        ],
+        "alpha": 1,
+        "hex": "#D4E157"
+      },
+      "$description": "Exact source palette shade 400. Primitive step 40.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2479",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "50": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.8039215803146362,
+          0.8627451062202454,
+          0.2235294133424759
+        ],
+        "alpha": 1,
+        "hex": "#CDDC39"
+      },
+      "$description": "Exact source palette shade 500. Primitive step 50.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2480",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "60": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.7529411911964417,
+          0.7921568751335144,
+          0.20000000298023224
+        ],
+        "alpha": 1,
+        "hex": "#C0CA33"
+      },
+      "$description": "Exact source palette shade 600. Primitive step 60.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2481",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "70": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.686274528503418,
+          0.7058823704719543,
+          0.16862745583057404
+        ],
+        "alpha": 1,
+        "hex": "#AFB42B"
+      },
+      "$description": "Exact source palette shade 700. Primitive step 70.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2482",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "80": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.6196078658103943,
+          0.615686297416687,
+          0.1411764770746231
+        ],
+        "alpha": 1,
+        "hex": "#9E9D24"
+      },
+      "$description": "Exact source palette shade 800. Primitive step 80.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2483",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "90": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.5098039507865906,
+          0.46666666865348816,
+          0.09019608050584793
+        ],
+        "alpha": 1,
+        "hex": "#827717"
+      },
+      "$description": "Exact source palette shade 900. Primitive step 90.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2484",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "100": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.43921568989753723,
+          0.40392157435417175,
+          0.07058823853731155
+        ],
+        "alpha": 1,
+        "hex": "#706712"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.9. Primitive step 100.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2485",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "110": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.37254902720451355,
+          0.34117648005485535,
+          0.054901961237192154
+        ],
+        "alpha": 1,
+        "hex": "#5F570E"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.8. Primitive step 110.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2486",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "120": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.30588236451148987,
+          0.27843138575553894,
+          0.03921568766236305
+        ],
+        "alpha": 1,
+        "hex": "#4E470A"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.7. Primitive step 120.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2487",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "130": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.24313725531101227,
+          0.21960784494876862,
+          0.0235294122248888
+        ],
+        "alpha": 1,
+        "hex": "#3E3806"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.6. Primitive step 130.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2488",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "140": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.18431372940540314,
+          0.16470588743686676,
+          0.01568627543747425
+        ],
+        "alpha": 1,
+        "hex": "#2F2A04"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.5. Primitive step 140.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2489",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "150": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.125490203499794,
+          0.10980392247438431,
+          0.007843137718737125
+        ],
+        "alpha": 1,
+        "hex": "#201C02"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.4. Primitive step 150.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2490",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    }
+  },
+  "yellow": {
+    "0": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.9921568632125854,
+          0.9058823585510254
+        ],
+        "alpha": 1,
+        "hex": "#FFFDE7"
+      },
+      "$description": "Exact source palette shade 50. Primitive step 0.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2491",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "10": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.9764705896377563,
+          0.7686274647712708
+        ],
+        "alpha": 1,
+        "hex": "#FFF9C4"
+      },
+      "$description": "Exact source palette shade 100. Primitive step 10.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2492",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "20": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.9607843160629272,
+          0.615686297416687
+        ],
+        "alpha": 1,
+        "hex": "#FFF59D"
+      },
+      "$description": "Exact source palette shade 200. Primitive step 20.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2493",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "30": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.9450980424880981,
+          0.4627451002597809
+        ],
+        "alpha": 1,
+        "hex": "#FFF176"
+      },
+      "$description": "Exact source palette shade 300. Primitive step 30.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2494",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "40": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.9333333373069763,
+          0.3450980484485626
+        ],
+        "alpha": 1,
+        "hex": "#FFEE58"
+      },
+      "$description": "Exact source palette shade 400. Primitive step 40.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2495",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "50": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.9215686321258545,
+          0.23137255012989044
+        ],
+        "alpha": 1,
+        "hex": "#FFEB3B"
+      },
+      "$description": "Exact source palette shade 500. Primitive step 50.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2496",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "60": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9921568632125854,
+          0.8470588326454163,
+          0.2078431397676468
+        ],
+        "alpha": 1,
+        "hex": "#FDD835"
+      },
+      "$description": "Exact source palette shade 600. Primitive step 60.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2497",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "70": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9843137264251709,
+          0.7529411911964417,
+          0.1764705926179886
+        ],
+        "alpha": 1,
+        "hex": "#FBC02D"
+      },
+      "$description": "Exact source palette shade 700. Primitive step 70.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2498",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "80": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9764705896377563,
+          0.658823549747467,
+          0.14509804546833038
+        ],
+        "alpha": 1,
+        "hex": "#F9A825"
+      },
+      "$description": "Exact source palette shade 800. Primitive step 80.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2499",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "90": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9607843160629272,
+          0.49803921580314636,
+          0.09019608050584793
+        ],
+        "alpha": 1,
+        "hex": "#F57F17"
+      },
+      "$description": "Exact source palette shade 900. Primitive step 90.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2500",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "100": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.8352941274642944,
+          0.4313725531101227,
+          0.07058823853731155
+        ],
+        "alpha": 1,
+        "hex": "#D56E12"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.9. Primitive step 100.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2501",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "110": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.7137255072593689,
+          0.364705890417099,
+          0.054901961237192154
+        ],
+        "alpha": 1,
+        "hex": "#B65D0E"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.8. Primitive step 110.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2502",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "120": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.5960784554481506,
+          0.2980392277240753,
+          0.03921568766236305
+        ],
+        "alpha": 1,
+        "hex": "#984C0A"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.7. Primitive step 120.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2503",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "130": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.48235294222831726,
+          0.23529411852359772,
+          0.0235294122248888
+        ],
+        "alpha": 1,
+        "hex": "#7B3C06"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.6. Primitive step 130.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2504",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "140": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.37254902720451355,
+          0.1764705926179886,
+          0.01568627543747425
+        ],
+        "alpha": 1,
+        "hex": "#5F2D04"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.5. Primitive step 140.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2505",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "150": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.2666666805744171,
+          0.12156862765550613,
+          0.007843137718737125
+        ],
+        "alpha": 1,
+        "hex": "#441F02"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.4. Primitive step 150.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2506",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    }
+  },
+  "amber": {
+    "0": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.9725490212440491,
+          0.8823529481887817
+        ],
+        "alpha": 1,
+        "hex": "#FFF8E1"
+      },
+      "$description": "Exact source palette shade 50. Primitive step 0.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2507",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "10": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.9254902005195618,
+          0.7019608020782471
+        ],
+        "alpha": 1,
+        "hex": "#FFECB3"
+      },
+      "$description": "Exact source palette shade 100. Primitive step 10.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2508",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "20": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.8784313797950745,
+          0.5098039507865906
+        ],
+        "alpha": 1,
+        "hex": "#FFE082"
+      },
+      "$description": "Exact source palette shade 200. Primitive step 20.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2509",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "30": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.8352941274642944,
+          0.30980393290519714
+        ],
+        "alpha": 1,
+        "hex": "#FFD54F"
+      },
+      "$description": "Exact source palette shade 300. Primitive step 30.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2510",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "40": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.7921568751335144,
+          0.1568627506494522
+        ],
+        "alpha": 1,
+        "hex": "#FFCA28"
+      },
+      "$description": "Exact source palette shade 400. Primitive step 40.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2511",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "50": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.7568627595901489,
+          0.027450980618596077
+        ],
+        "alpha": 1,
+        "hex": "#FFC107"
+      },
+      "$description": "Exact source palette shade 500. Primitive step 50.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2512",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "60": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.7019608020782471,
+          0
+        ],
+        "alpha": 1,
+        "hex": "#FFB300"
+      },
+      "$description": "Exact source palette shade 600. Primitive step 60.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2513",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "70": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.6274510025978088,
+          0
+        ],
+        "alpha": 1,
+        "hex": "#FFA000"
+      },
+      "$description": "Exact source palette shade 700. Primitive step 70.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2514",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "80": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.5607843399047852,
+          0
+        ],
+        "alpha": 1,
+        "hex": "#FF8F00"
+      },
+      "$description": "Exact source palette shade 800. Primitive step 80.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2515",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "90": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.43529412150382996,
+          0
+        ],
+        "alpha": 1,
+        "hex": "#FF6F00"
+      },
+      "$description": "Exact source palette shade 900. Primitive step 90.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2516",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "100": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.8705882430076599,
+          0.3764705955982208,
+          0
+        ],
+        "alpha": 1,
+        "hex": "#DE6000"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.9. Primitive step 100.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2517",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "110": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.7450980544090271,
+          0.3176470696926117,
+          0
+        ],
+        "alpha": 1,
+        "hex": "#BE5100"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.8. Primitive step 110.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2518",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "120": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.6196078658103943,
+          0.25882354378700256,
+          0
+        ],
+        "alpha": 1,
+        "hex": "#9E4200"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.7. Primitive step 120.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2519",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "130": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.501960813999176,
+          0.20392157137393951,
+          0
+        ],
+        "alpha": 1,
+        "hex": "#803400"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.6. Primitive step 130.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2520",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "140": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.38823530077934265,
+          0.15294118225574493,
+          0
+        ],
+        "alpha": 1,
+        "hex": "#632700"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.5. Primitive step 140.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2521",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "150": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.2823529541492462,
+          0.10196078568696976,
+          0
+        ],
+        "alpha": 1,
+        "hex": "#481A00"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.4. Primitive step 150.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2522",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    }
+  },
+  "orange": {
+    "0": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.9529411792755127,
+          0.8784313797950745
+        ],
+        "alpha": 1,
+        "hex": "#FFF3E0"
+      },
+      "$description": "Exact source palette shade 50. Primitive step 0.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2523",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "10": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.8784313797950745,
+          0.6980392336845398
+        ],
+        "alpha": 1,
+        "hex": "#FFE0B2"
+      },
+      "$description": "Exact source palette shade 100. Primitive step 10.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2524",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "20": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.800000011920929,
+          0.501960813999176
+        ],
+        "alpha": 1,
+        "hex": "#FFCC80"
+      },
+      "$description": "Exact source palette shade 200. Primitive step 20.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2525",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "30": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.7176470756530762,
+          0.3019607961177826
+        ],
+        "alpha": 1,
+        "hex": "#FFB74D"
+      },
+      "$description": "Exact source palette shade 300. Primitive step 30.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2526",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "40": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.6549019813537598,
+          0.14901961386203766
+        ],
+        "alpha": 1,
+        "hex": "#FFA726"
+      },
+      "$description": "Exact source palette shade 400. Primitive step 40.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2527",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "50": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.5960784554481506,
+          0
+        ],
+        "alpha": 1,
+        "hex": "#FF9800"
+      },
+      "$description": "Exact source palette shade 500. Primitive step 50.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2528",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "60": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9843137264251709,
+          0.5490196347236633,
+          0
+        ],
+        "alpha": 1,
+        "hex": "#FB8C00"
+      },
+      "$description": "Exact source palette shade 600. Primitive step 60.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2529",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "70": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9607843160629272,
+          0.48627451062202454,
+          0
+        ],
+        "alpha": 1,
+        "hex": "#F57C00"
+      },
+      "$description": "Exact source palette shade 700. Primitive step 70.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2530",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "80": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9372549057006836,
+          0.42352941632270813,
+          0
+        ],
+        "alpha": 1,
+        "hex": "#EF6C00"
+      },
+      "$description": "Exact source palette shade 800. Primitive step 80.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2531",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "90": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9019607901573181,
+          0.3176470696926117,
+          0
+        ],
+        "alpha": 1,
+        "hex": "#E65100"
+      },
+      "$description": "Exact source palette shade 900. Primitive step 90.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2532",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "100": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.7843137383460999,
+          0.2705882489681244,
+          0
+        ],
+        "alpha": 1,
+        "hex": "#C84500"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.9. Primitive step 100.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2533",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "110": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.6705882549285889,
+          0.22745098173618317,
+          0
+        ],
+        "alpha": 1,
+        "hex": "#AB3A00"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.8. Primitive step 110.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2534",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "120": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.5568627715110779,
+          0.18431372940540314,
+          0
+        ],
+        "alpha": 1,
+        "hex": "#8E2F00"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.7. Primitive step 120.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2535",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "130": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.45098039507865906,
+          0.1411764770746231,
+          0
+        ],
+        "alpha": 1,
+        "hex": "#732400"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.6. Primitive step 130.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2536",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "140": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.3490196168422699,
+          0.10196078568696976,
+          0
+        ],
+        "alpha": 1,
+        "hex": "#591A00"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.5. Primitive step 140.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2537",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "150": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.250980406999588,
+          0.062745101749897,
+          0
+        ],
+        "alpha": 1,
+        "hex": "#401000"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.4. Primitive step 150.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2538",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    }
+  },
+  "deep-orange": {
+    "0": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9843137264251709,
+          0.9137254953384399,
+          0.9058823585510254
+        ],
+        "alpha": 1,
+        "hex": "#FBE9E7"
+      },
+      "$description": "Exact source palette shade 50. Primitive step 0.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2539",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "10": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.800000011920929,
+          0.7372549176216125
+        ],
+        "alpha": 1,
+        "hex": "#FFCCBC"
+      },
+      "$description": "Exact source palette shade 100. Primitive step 10.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2540",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "20": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.6705882549285889,
+          0.5686274766921997
+        ],
+        "alpha": 1,
+        "hex": "#FFAB91"
+      },
+      "$description": "Exact source palette shade 200. Primitive step 20.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2541",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "30": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.5411764979362488,
+          0.3960784375667572
+        ],
+        "alpha": 1,
+        "hex": "#FF8A65"
+      },
+      "$description": "Exact source palette shade 300. Primitive step 30.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2542",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "40": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.43921568989753723,
+          0.26274511218070984
+        ],
+        "alpha": 1,
+        "hex": "#FF7043"
+      },
+      "$description": "Exact source palette shade 400. Primitive step 40.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2543",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "50": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.34117648005485535,
+          0.13333334028720856
+        ],
+        "alpha": 1,
+        "hex": "#FF5722"
+      },
+      "$description": "Exact source palette shade 500. Primitive step 50.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2544",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "60": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.95686274766922,
+          0.3176470696926117,
+          0.11764705926179886
+        ],
+        "alpha": 1,
+        "hex": "#F4511E"
+      },
+      "$description": "Exact source palette shade 600. Primitive step 60.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2545",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "70": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9019607901573181,
+          0.29019609093666077,
+          0.09803921729326248
+        ],
+        "alpha": 1,
+        "hex": "#E64A19"
+      },
+      "$description": "Exact source palette shade 700. Primitive step 70.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2546",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "80": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.8470588326454163,
+          0.26274511218070984,
+          0.08235294371843338
+        ],
+        "alpha": 1,
+        "hex": "#D84315"
+      },
+      "$description": "Exact source palette shade 800. Primitive step 80.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2547",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "90": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.7490196228027344,
+          0.21176470816135406,
+          0.0470588244497776
+        ],
+        "alpha": 1,
+        "hex": "#BF360C"
+      },
+      "$description": "Exact source palette shade 900. Primitive step 90.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2548",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "100": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.6509804129600525,
+          0.18039216101169586,
+          0.03529411926865578
+        ],
+        "alpha": 1,
+        "hex": "#A62E09"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.9. Primitive step 100.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2549",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "110": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.5529412031173706,
+          0.14509804546833038,
+          0.0235294122248888
+        ],
+        "alpha": 1,
+        "hex": "#8D2506"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.8. Primitive step 110.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2550",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "120": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.4588235318660736,
+          0.11764705926179886,
+          0.01568627543747425
+        ],
+        "alpha": 1,
+        "hex": "#751E04"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.7. Primitive step 120.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2551",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "130": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.3686274588108063,
+          0.08627451211214066,
+          0.0117647061124444
+        ],
+        "alpha": 1,
+        "hex": "#5E1603"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.6. Primitive step 130.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2552",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "140": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.2823529541492462,
+          0.05882352963089943,
+          0.007843137718737125
+        ],
+        "alpha": 1,
+        "hex": "#480F02"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.5. Primitive step 140.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2553",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "150": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.20000000298023224,
+          0.0313725508749485,
+          0.003921568859368563
+        ],
+        "alpha": 1,
+        "hex": "#330801"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.4. Primitive step 150.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2554",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    }
+  },
+  "brown": {
+    "0": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9372549057006836,
+          0.9215686321258545,
+          0.9137254953384399
+        ],
+        "alpha": 1,
+        "hex": "#EFEBE9"
+      },
+      "$description": "Exact source palette shade 50. Primitive step 0.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2555",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "10": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.843137264251709,
+          0.800000011920929,
+          0.7843137383460999
+        ],
+        "alpha": 1,
+        "hex": "#D7CCC8"
+      },
+      "$description": "Exact source palette shade 100. Primitive step 10.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2556",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "20": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.7372549176216125,
+          0.6666666865348816,
+          0.6431372761726379
+        ],
+        "alpha": 1,
+        "hex": "#BCAAA4"
+      },
+      "$description": "Exact source palette shade 200. Primitive step 20.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2557",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "30": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.6313725709915161,
+          0.5333333611488342,
+          0.49803921580314636
+        ],
+        "alpha": 1,
+        "hex": "#A1887F"
+      },
+      "$description": "Exact source palette shade 300. Primitive step 30.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2558",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "40": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.5529412031173706,
+          0.4313725531101227,
+          0.38823530077934265
+        ],
+        "alpha": 1,
+        "hex": "#8D6E63"
+      },
+      "$description": "Exact source palette shade 400. Primitive step 40.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2559",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "50": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.4745098054409027,
+          0.3333333432674408,
+          0.2823529541492462
+        ],
+        "alpha": 1,
+        "hex": "#795548"
+      },
+      "$description": "Exact source palette shade 500. Primitive step 50.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2560",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "60": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.4274509847164154,
+          0.2980392277240753,
+          0.2549019753932953
+        ],
+        "alpha": 1,
+        "hex": "#6D4C41"
+      },
+      "$description": "Exact source palette shade 600. Primitive step 60.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2561",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "70": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.364705890417099,
+          0.250980406999588,
+          0.21568627655506134
+        ],
+        "alpha": 1,
+        "hex": "#5D4037"
+      },
+      "$description": "Exact source palette shade 700. Primitive step 70.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2562",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "80": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.30588236451148987,
+          0.20392157137393951,
+          0.18039216101169586
+        ],
+        "alpha": 1,
+        "hex": "#4E342E"
+      },
+      "$description": "Exact source palette shade 800. Primitive step 80.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2563",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "90": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.24313725531101227,
+          0.15294118225574493,
+          0.13725490868091583
+        ],
+        "alpha": 1,
+        "hex": "#3E2723"
+      },
+      "$description": "Exact source palette shade 900. Primitive step 90.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2564",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "100": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.2078431397676468,
+          0.125490203499794,
+          0.11372549086809158
+        ],
+        "alpha": 1,
+        "hex": "#35201D"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.9. Primitive step 100.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2565",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "110": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.16862745583057404,
+          0.10196078568696976,
+          0.09019608050584793
+        ],
+        "alpha": 1,
+        "hex": "#2B1A17"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.8. Primitive step 110.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2566",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "120": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.13725490868091583,
+          0.0784313753247261,
+          0.06666667014360428
+        ],
+        "alpha": 1,
+        "hex": "#231411"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.7. Primitive step 120.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2567",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "130": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.10196078568696976,
+          0.054901961237192154,
+          0.0470588244497776
+        ],
+        "alpha": 1,
+        "hex": "#1A0E0C"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.6. Primitive step 130.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2568",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "140": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.07058823853731155,
+          0.0313725508749485,
+          0.027450980618596077
+        ],
+        "alpha": 1,
+        "hex": "#120807"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.5. Primitive step 140.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2569",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "150": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.03921568766236305,
+          0.01568627543747425,
+          0.01568627543747425
+        ],
+        "alpha": 1,
+        "hex": "#0A0404"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.4. Primitive step 150.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2570",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    }
+  },
+  "blue-grey": {
+    "0": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9254902005195618,
+          0.9372549057006836,
+          0.9450980424880981
+        ],
+        "alpha": 1,
+        "hex": "#ECEFF1"
+      },
+      "$description": "Exact source palette shade 50. Primitive step 0.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2587",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "10": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.8117647171020508,
+          0.8470588326454163,
+          0.8627451062202454
+        ],
+        "alpha": 1,
+        "hex": "#CFD8DC"
+      },
+      "$description": "Exact source palette shade 100. Primitive step 10.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2588",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "20": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.6901960968971252,
+          0.7450980544090271,
+          0.772549033164978
+        ],
+        "alpha": 1,
+        "hex": "#B0BEC5"
+      },
+      "$description": "Exact source palette shade 200. Primitive step 20.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2589",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "30": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.5647059082984924,
+          0.6431372761726379,
+          0.6823529601097107
+        ],
+        "alpha": 1,
+        "hex": "#90A4AE"
+      },
+      "$description": "Exact source palette shade 300. Primitive step 30.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2590",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "40": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.47058823704719543,
+          0.5647059082984924,
+          0.6117647290229797
+        ],
+        "alpha": 1,
+        "hex": "#78909C"
+      },
+      "$description": "Exact source palette shade 400. Primitive step 40.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2591",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "50": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.3764705955982208,
+          0.4901960790157318,
+          0.545098066329956
+        ],
+        "alpha": 1,
+        "hex": "#607D8B"
+      },
+      "$description": "Exact source palette shade 500. Primitive step 50.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2592",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "60": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.3294117748737335,
+          0.4313725531101227,
+          0.47843137383461
+        ],
+        "alpha": 1,
+        "hex": "#546E7A"
+      },
+      "$description": "Exact source palette shade 600. Primitive step 60.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2593",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "70": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.2705882489681244,
+          0.3529411852359772,
+          0.3921568691730499
+        ],
+        "alpha": 1,
+        "hex": "#455A64"
+      },
+      "$description": "Exact source palette shade 700. Primitive step 70.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2594",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "80": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.21568627655506134,
+          0.27843138575553894,
+          0.30980393290519714
+        ],
+        "alpha": 1,
+        "hex": "#37474F"
+      },
+      "$description": "Exact source palette shade 800. Primitive step 80.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2595",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "90": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.14901961386203766,
+          0.19607843458652496,
+          0.21960784494876862
+        ],
+        "alpha": 1,
+        "hex": "#263238"
+      },
+      "$description": "Exact source palette shade 900. Primitive step 90.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2596",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "100": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.125490203499794,
+          0.16470588743686676,
+          0.18431372940540314
+        ],
+        "alpha": 1,
+        "hex": "#202A2F"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.9. Primitive step 100.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2597",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "110": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.09803921729326248,
+          0.13333334028720856,
+          0.15294118225574493
+        ],
+        "alpha": 1,
+        "hex": "#192227"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.8. Primitive step 110.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2598",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "120": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.07450980693101883,
+          0.10588235408067703,
+          0.12156862765550613
+        ],
+        "alpha": 1,
+        "hex": "#131B1F"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.7. Primitive step 120.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2599",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "130": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.05098039284348488,
+          0.0784313753247261,
+          0.09019608050584793
+        ],
+        "alpha": 1,
+        "hex": "#0D1417"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.6. Primitive step 130.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2600",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "140": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.0313725508749485,
+          0.05098039284348488,
+          0.05882352963089943
+        ],
+        "alpha": 1,
+        "hex": "#080D0F"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.5. Primitive step 140.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2601",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    },
+    "150": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.01568627543747425,
+          0.027450980618596077,
+          0.0313725508749485
+        ],
+        "alpha": 1,
+        "hex": "#040708"
+      },
+      "$description": "Generated darker extension of source 900; proportional OKLab lightness/chroma factor 0.4. Primitive step 150.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:107:2602",
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "STROKE",
+          "EFFECT_COLOR"
+        ]
+      }
+    }
+  },
+  "$extensions": {
+    "com.figma.modeName": "Value"
+  }
+}

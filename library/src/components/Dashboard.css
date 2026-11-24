@@ -5,7 +5,7 @@
   margin: 8px 8px 8px 0;
   overflow: auto;
   border-radius: 16px;
-  background: #18181a;
+  background: var(--liq-panel);
   box-shadow:
     0 2px 2px rgba(0, 0, 0, 0.24),
     inset 0 2px 2px rgba(0, 0, 0, 0.08);
@@ -20,6 +20,10 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
+.dash-menu {
+  display: none;
+}
+
 .dash-title {
   display: flex;
   align-items: center;
@@ -28,8 +32,8 @@
   color: var(--liq-text);
   font-family: var(--liq-font-ui);
   font-size: 20px;
-  font-weight: 500;
-  line-height: 32px;
+  font-weight: 600;
+  line-height: 28px;
 }
 
 .dash-title-icon {
@@ -98,16 +102,12 @@
   gap: 24px;
 }
 
-.dash-prev .fy-glyph {
-  transform: rotate(180deg);
-}
-
 .dash-month {
   color: var(--liq-text);
   font-family: var(--liq-font-ui);
   font-size: 32px;
-  font-weight: 500;
-  line-height: normal;
+  font-weight: 600;
+  line-height: 40px;
 }
 
 .dash-range {
@@ -136,5 +136,142 @@
   .dash-grid,
   .dash-grid.is-trends {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .dash {
+    height: 100vh;
+    margin: 0;
+    border-radius: 0;
+  }
+
+  .dash-bar {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    display: grid;
+    grid-template-columns: 32px minmax(0, 1fr) 32px;
+    align-items: center;
+    height: 56px;
+    padding: 0 8px;
+    gap: 8px;
+    background: var(--liq-panel);
+  }
+
+  .dash-menu {
+    display: inline-flex;
+  }
+
+  .dash-title {
+    justify-content: center;
+    font-family: var(--type-title-m-family);
+    font-size: var(--type-title-m-size);
+    font-weight: var(--type-title-m-weight);
+    line-height: var(--type-title-m-line);
+  }
+
+  .dash-title-icon {
+    display: none;
+  }
+
+  .dash-actions {
+    justify-content: flex-end;
+    gap: 0;
+  }
+
+  .dash-sync p {
+    display: none;
+  }
+
+  .dash-add {
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    left: 16px;
+    z-index: 6;
+    width: auto;
+    justify-content: center;
+    backdrop-filter: blur(6px);
+  }
+
+  .dash-sync {
+    gap: 0;
+    padding: 0;
+    background: transparent;
+  }
+
+  .dash-sync .fy-btn {
+    width: 32px;
+    height: 32px;
+    padding: 8px;
+    gap: 0;
+    font-size: 0;
+  }
+
+  .dash-sync .fy-btn.is-secondary .fy-glyph {
+    flex: none;
+    width: 16px;
+    height: 16px;
+  }
+
+  .dash-sync .fy-btn.is-secondary .fy-glyph svg {
+    width: 11px;
+    height: 11px;
+  }
+
+  .dash-content {
+    gap: 20px;
+    padding: 24px 8px 72px;
+  }
+
+  .dash-period {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .dash-period-main {
+    width: 100%;
+    gap: 24px;
+  }
+
+  .dash-period-copy {
+    flex: 1;
+    min-width: 0;
+    text-align: center;
+  }
+
+  .dash-month {
+    font-family: var(--type-heading-h4-family);
+    font-size: var(--type-heading-h4-size);
+    font-weight: var(--type-heading-h4-weight);
+    line-height: var(--type-heading-h4-line);
+  }
+
+  .dash-range {
+    font-family: var(--type-body-xs-family);
+    font-size: var(--type-body-xs-size);
+    font-weight: var(--type-body-xs-weight);
+    line-height: var(--type-body-xs-line);
+  }
+
+  .dash-period .fy-drop,
+  .dash-period .fy-btn.is-dropdown,
+  .dash-period .fy-wallet-menu {
+    width: 100%;
+  }
+
+  .dash-period .fy-btn.is-dropdown {
+    height: 28px;
+    padding: 0 8px 0 16px;
+    font-size: var(--type-label-s-size);
+    font-weight: var(--type-label-s-weight);
+    line-height: var(--type-label-s-line);
+  }
+
+  .dash-period .fy-wallet-menu {
+    left: 0;
+    right: 0;
   }
 }

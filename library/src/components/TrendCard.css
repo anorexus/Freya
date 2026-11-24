@@ -40,10 +40,10 @@
 
 .trend-value {
   color: var(--liq-text);
-  font-family: var(--liq-font-num);
-  font-size: 20px;
-  font-weight: 300;
-  line-height: normal;
+  font-family: var(--liq-font-numeric);
+  font-size: var(--type-numeric-l-size);
+  font-weight: var(--type-numeric-l-weight);
+  line-height: var(--type-numeric-l-line);
 }
 
 .trend-row {
@@ -103,7 +103,7 @@
   background: linear-gradient(to top, rgba(255, 255, 255, 0.24), rgba(255, 255, 255, 0) 92%);
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.4s ease;
+  transition: opacity var(--liq-duration) var(--liq-ease);
 }
 
 .trend-lower.is-on {
@@ -118,7 +118,6 @@
 .trend-stem,
 .trend-day {
   background: var(--liq-chart);
-  box-shadow: inset 0 2px 2px rgba(255, 255, 255, 0.12);
 }
 
 .trend-cap {
@@ -133,7 +132,7 @@
   flex: 1 1 auto;
   min-height: 8px;
   border-radius: 32px;
-  transition: background-color 0.4s ease;
+  transition: background-color var(--liq-duration) var(--liq-ease);
 }
 
 .trend-col.is-selected .trend-stem {
@@ -147,8 +146,8 @@
   justify-content: center;
   font-family: var(--liq-font-ui);
   font-size: 12px;
-  font-weight: 400;
-  line-height: normal;
+  font-weight: 500;
+  line-height: 16px;
 }
 
 .trend-tip {
@@ -160,8 +159,8 @@
   border-radius: 32px;
   background: var(--liq-chart-selected);
   box-shadow: inset 0 2px 2px rgba(255, 255, 255, 0.12);
-  color: #020203;
-  font-family: var(--liq-font-num);
+  color: var(--liq-tertiary);
+  font-family: var(--liq-font-ui);
   font-weight: 500;
   white-space: nowrap;
 }
@@ -176,7 +175,7 @@
 .trend-mark > .trend-tip,
 .trend-mark > .trend-cap {
   grid-area: 1 / 1;
-  transition: opacity 0.4s ease;
+  transition: opacity var(--liq-duration) var(--liq-ease);
 }
 
 .trend-tip.is-off,
@@ -188,20 +187,21 @@
   width: 40px;
   height: 40px;
   border-radius: 32px;
-  transition: background-color 0.4s ease, color 0.4s ease;
+  box-shadow: inset 0 2px 2px rgba(255, 255, 255, 0.12);
+  transition: background-color var(--liq-duration) var(--liq-ease), color var(--liq-duration) var(--liq-ease);
 }
 
 .trend-col.is-selected .trend-day {
   background: var(--liq-chart-selected);
-  color: #020203;
+  color: var(--liq-tertiary);
 }
 
 .trend-date {
   color: var(--liq-text);
   font-family: var(--liq-font-ui);
   font-size: 12px;
-  font-weight: 400;
-  line-height: normal;
+  font-weight: 500;
+  line-height: 16px;
 }
 
 .trend-page {
@@ -209,10 +209,6 @@
   align-items: center;
   gap: 8px;
   padding-top: 24px;
-}
-
-.trend-page-prev .fy-glyph {
-  transform: rotate(180deg);
 }
 
 .trend-page-label {
