@@ -7,7 +7,7 @@ import { CashflowCard } from "./CashflowCard.jsx";
 import { ExpenseCard } from "./ExpenseCard.jsx";
 import { LiquidityCard } from "./LiquidityCard.jsx";
 import { Notification } from "./Notification.jsx";
-import { TrendCard } from "./TrendCard.jsx";
+import { TrendCardV3 } from "./TrendCardV3.jsx";
 import "./Dashboard.css";
 
 const WALLETS = [
@@ -82,9 +82,8 @@ export function Dashboard({ onMenu = () => {} }) {
           <CashflowCard transactions={transactions} today={today} />
           <ExpenseCard transactions={transactions} categories={CATEGORIES} today={today} />
         </section>
-        <section className="dash-grid is-trends" aria-label="Trends">
-          <TrendCard transactions={transactions} today={today} />
-          <TrendCard transactions={transactions} today={today} />
+        <section className="dash-grid" aria-label="Trends">
+          <TrendCardV3 transactions={transactions} today={today} />
         </section>
       </div>
     </main>

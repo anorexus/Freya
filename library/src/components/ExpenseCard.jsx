@@ -1,6 +1,7 @@
 import { CopyAmount } from "./CopyAmount.jsx";
 import { expenseBreakdown, formatShare } from "../expense.js";
 import { formatRupiah } from "../money.js";
+import { Pill } from "./Pill.jsx";
 import "./LiquidityCard.css";
 import "./CashflowCard.css";
 import "./ExpenseCard.css";
@@ -36,9 +37,9 @@ export function ExpenseCard({ transactions, categories, today = new Date() }) {
         <footer className="liq-foot">
           {top ? (
             <>
-              <span className="liq-pill ex-pill" style={{ "--pill": top.color }}>
+              <Pill className="ex-pill" style={{ "--pill": top.color }}>
                 {top.name}
-              </span>
+              </Pill>
               <p className="cf-note">
                 Top category with total
                 <span className="cf-avg">

@@ -82,7 +82,3 @@
   line-height: 16px;
 }
 
-.liq-pill.is-down {
-  background: color-mix(in srgb, var(--liq-muted) 24%, transparent);
-  color: var(--liq-muted);
-}

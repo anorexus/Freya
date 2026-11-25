@@ -17,26 +17,67 @@ function weekStart(date) {
   return addDays(day, -delta);
 }
 
-function expenseByDay(transactions, start, end) {
+function signedAmount(transaction, kind) {
+  if (kind === "cashflow") {
+    if (transaction.type === "TRANSFER") return 0;
+    return transaction.type === "EXPENSE" ? -transaction.amount : transaction.amount;
+  }
+  return transaction.type === "EXPENSE" ? transaction.amount : 0;
+}
+
+function totalsByDay(transactions, start, end, kind) {
   const totals = new Map();
+  const income = new Map();
+  const expense = new Map();
   const first = startOfDay(start).getTime();
   const last = startOfDay(end).getTime();
   for (const transaction of transactions) {
-    if (transaction.type !== "EXPENSE") continue;
+    if (transaction.type === "TRANSFER") continue;
     const day = startOfDay(transaction.date).getTime();
     if (day < first || day > last) continue;
-    totals.set(day, (totals.get(day) || 0) + transaction.amount);
+    if (kind === "cashflow") {
+      if (transaction.type === "INCOME") income.set(day, (income.get(day) || 0) + transaction.amount);
+      if (transaction.type === "EXPENSE") expense.set(day, (expense.get(day) || 0) + transaction.amount);
+      continue;
+    }
+    const amount = signedAmount(transaction, kind);
+    if (amount === 0) continue;
+    totals.set(day, (totals.get(day) || 0) + amount);
   }
-  return totals;
+  return { totals, income, expense };
 }
 
-function monthPoint(transactions, monthDate, today) {
+function pointFromMaps(date, weekday, day, maps, kind) {
+  const key = startOfDay(date).getTime();
+  if (kind === "cashflow") {
+    const income = maps.income.get(key) || 0;
+    const expense = maps.expense.get(key) || 0;
+    return { date, weekday, day, income, expense, amount: income - expense };
+  }
+  return { date, weekday, day, amount: maps.totals.get(key) || 0 };
+}
+
+function monthPoint(transactions, monthDate, today, kind) {
   const end = startOfDay(today);
   const monthEnd = new Date(monthDate.getFullYear(), monthDate.getMonth() + 1, 0);
   const capped = monthDate.getFullYear() === end.getFullYear() && monthDate.getMonth() === end.getMonth() ? end : monthEnd;
-  const totals = expenseByDay(transactions, monthDate, capped);
+  const maps = totalsByDay(transactions, monthDate, capped, kind);
+  if (kind === "cashflow") {
+    let income = 0;
+    let expense = 0;
+    for (const value of maps.income.values()) income += value;
+    for (const value of maps.expense.values()) expense += value;
+    return {
+      date: monthDate,
+      weekday: MONTHS[monthDate.getMonth()],
+      day: monthDate.getFullYear(),
+      income,
+      expense,
+      amount: income - expense,
+    };
+  }
   let amount = 0;
-  for (const value of totals.values()) amount += value;
+  for (const value of maps.totals.values()) amount += value;
   return {
     date: monthDate,
     weekday: MONTHS[monthDate.getMonth()],
@@ -45,7 +86,7 @@ function monthPoint(transactions, monthDate, today) {
   };
 }
 
-export function expenseTrend(transactions, range, today = new Date(), page = 0, count) {
+export function expenseTrend(transactions, range, today = new Date(), page = 0, count, kind = "expense") {
   const anchor = startOfDay(today);
   const monthly = range === "month";
   const size = Math.max(1, count || (monthly ? MONTH_WINDOW : WEEK_WINDOW));
@@ -54,19 +95,14 @@ export function expenseTrend(transactions, range, today = new Date(), page = 0, 
     const endMonth = new Date(anchor.getFullYear(), anchor.getMonth() - page, 1);
     const start = new Date(endMonth.getFullYear(), endMonth.getMonth() - (size - 1), 1);
     for (let index = 0; index < size; index += 1) {
-      points.push(monthPoint(transactions, new Date(start.getFullYear(), start.getMonth() + index, 1), anchor));
+      points.push(monthPoint(transactions, new Date(start.getFullYear(), start.getMonth() + index, 1), anchor, kind));
     }
   } else {
     const end = addDays(anchor, -page);
     const start = addDays(end, -(size - 1));
-    const totals = expenseByDay(transactions, start, end);
+    const maps = totalsByDay(transactions, start, end, kind);
     for (let cursor = start; cursor <= end; cursor = addDays(cursor, 1)) {
-      points.push({
-        date: cursor,
-        weekday: WEEKDAYS[cursor.getDay()],
-        day: cursor.getDate(),
-        amount: totals.get(cursor.getTime()) || 0,
-      });
+      points.push(pointFromMaps(cursor, WEEKDAYS[cursor.getDay()], cursor.getDate(), maps, kind));
     }
   }
   const total = points.reduce((sum, point) => sum + point.amount, 0);
@@ -88,10 +124,12 @@ export function trendChange(points, selected) {
 }
 
 export function formatCompactRupiah(amount) {
-  if (amount >= 1000000) {
-    const millions = amount / 1000000;
+  const sign = amount < 0 ? "-" : "";
+  const value = Math.abs(amount);
+  if (value >= 1000000) {
+    const millions = value / 1000000;
     const body = millions >= 10 ? String(Math.round(millions)) : millions.toFixed(1).replace(/\.0$/, "");
-    return `Rp${body}M`;
+    return `${sign}Rp${body}M`;
   }
-  return `Rp${Math.round(amount / 1000)}K`;
+  return `${sign}Rp${Math.round(value / 1000)}K`;
 }

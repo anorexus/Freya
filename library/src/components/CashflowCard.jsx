@@ -1,6 +1,7 @@
 import { CopyAmount } from "./CopyAmount.jsx";
 import { cashflowSummary, formatTrend } from "../cashflow.js";
 import { formatRupiah, formatSignedRupiah } from "../money.js";
+import { Pill } from "./Pill.jsx";
 import "./LiquidityCard.css";
 import "./CashflowCard.css";
 
@@ -45,7 +46,7 @@ export function CashflowCard({ transactions, today = new Date() }) {
           </div>
         </div>
         <footer className="liq-foot">
-          <span className={trendLevel ? `liq-pill is-${trendLevel}` : "liq-pill is-down"}>{formatTrend(summary.trend)}</span>
+          <Pill tone={trendLevel || "down"}>{formatTrend(summary.trend)}</Pill>
           <p className="cf-note">
             Average daily spending
             <span className="cf-avg"><CopyAmount>{formatRupiah(summary.averageSpend)}</CopyAmount></span>
