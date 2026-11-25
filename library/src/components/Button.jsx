@@ -86,7 +86,7 @@ export function WalletDropdown({ wallets }) {
   const [value, setValue] = useState("all");
   const rootRef = useRef(null);
   const current = wallets.find((wallet) => wallet.id === value);
-  const label = current ? current.name : "All wallets";
+  const label = current ? current.name : "All accounts";
   useDismiss(open, rootRef, () => setOpen(false));
 
   return (
@@ -112,7 +112,7 @@ export function WalletDropdown({ wallets }) {
               }}
             >
               <WalletMark id="all" />
-              All wallets
+              All accounts
             </button>
           </li>
           {wallets.map((wallet) => (

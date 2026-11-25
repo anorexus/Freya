@@ -21,11 +21,16 @@
   box-shadow: var(--liq-shadow-low);
   overflow-x: hidden;
   overflow-y: auto;
+  scrollbar-width: none;
   transition: width var(--liq-duration) var(--liq-ease), padding var(--liq-duration) var(--liq-ease);
 }
 
 .side.is-collapsed {
   width: 88px;
+}
+
+.side::-webkit-scrollbar {
+  display: none;
 }
 
 .side-backdrop {

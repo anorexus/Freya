@@ -26,8 +26,8 @@ export function LiquidityCard({ wallets, periodStartDay = 1, today = new Date() 
   return (
     <article className="liq-card">
       <header className="liq-card-head">
-        <h2>All wallets</h2>
-        <p>From {walletCount} {walletCount === 1 ? "wallet" : "wallets"}</p>
+        <h2>All accounts</h2>
+        <p>From {walletCount} {walletCount === 1 ? "account" : "accounts"}</p>
       </header>
       <div className="liq-card-body">
         <div className="liq-amount">

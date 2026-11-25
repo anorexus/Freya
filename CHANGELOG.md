@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-25 — Accounts page
+
+- Add an Accounts page and rename Wallets to Accounts in the nav, liquidity card, and add-transaction form.
+- Cap the dashboard width, keep the top bar sticky with a scroll shadow, and hide the dashboard and sidebar scrollbars.
+- Lock page zoom on the library viewport.
+
 ## 2026-11-25 — Transactions page
 
 - Add a Transactions page so “See more” on the dashboard opens the full month, grouped by day, with search.

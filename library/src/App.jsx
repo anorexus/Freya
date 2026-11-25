@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
+import { Accounts } from "./components/Accounts.jsx";
 import { Dashboard } from "./components/Dashboard.jsx";
 import { DesignSystem } from "./components/DesignSystem.jsx";
 import { Sidebar } from "./components/Sidebar.jsx";
@@ -6,11 +7,12 @@ import { Transactions } from "./components/Transactions.jsx";
 import "./tokens.css";
 import "./app.css";
 
-const PAGES = new Set(["dashboard", "transactions", "wallets", "categories", "settings", "system"]);
+const PAGES = new Set(["dashboard", "transactions", "accounts", "categories", "settings", "system"]);
 
 function readPage() {
   const id = window.location.hash.replace(/^#/, "");
   if (id === "library") return "system";
+  if (id === "wallets") return "accounts";
   return PAGES.has(id) ? id : "dashboard";
 }
 
@@ -29,6 +31,18 @@ export default function App() {
       window.removeEventListener("popstate", sync);
     };
   }, []);
+
+  useEffect(() => {
+    const main = document.querySelector("main.dash");
+    const bar = main?.querySelector(".dash-bar");
+    if (!main || !bar) return undefined;
+    function onScroll() {
+      bar.classList.toggle("is-scrolled", main.scrollTop > 0);
+    }
+    onScroll();
+    main.addEventListener("scroll", onScroll, { passive: true });
+    return () => main.removeEventListener("scroll", onScroll);
+  }, [page]);
 
   useEffect(() => {
     function onKey(event) {
@@ -59,6 +73,8 @@ export default function App() {
         <DesignSystem onMenu={() => setMenuOpen(true)} />
       ) : page === "transactions" ? (
         <Transactions onMenu={() => setMenuOpen(true)} />
+      ) : page === "accounts" ? (
+        <Accounts onMenu={() => setMenuOpen(true)} />
       ) : (
         <Dashboard onMenu={() => setMenuOpen(true)} />
       )}
