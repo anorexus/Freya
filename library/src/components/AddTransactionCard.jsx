@@ -94,11 +94,11 @@ export function AddTransactionCard({ open, wallets, onClose }) {
       return;
     }
     if (!draft.fromWallet) {
-      setError("Choose a wallet.");
+      setError("Choose an account.");
       return;
     }
     if (isTransfer && (!draft.toWallet || draft.toWallet === draft.fromWallet)) {
-      setError("Choose a different wallet to transfer into.");
+      setError("Choose a different account to transfer into.");
       return;
     }
     if (!isTransfer && !draft.category) {
@@ -160,7 +160,7 @@ export function AddTransactionCard({ open, wallets, onClose }) {
             </div>
           </fieldset>
           <label className="log-field">
-            <span>{isTransfer ? "From wallet" : "Wallet"}</span>
+            <span>{isTransfer ? "From account" : "Account"}</span>
             <select value={draft.fromWallet} onChange={(event) => patch({ fromWallet: event.target.value })}>
               {wallets.map((wallet) => (
                 <option key={wallet.id} value={wallet.id}>
@@ -171,7 +171,7 @@ export function AddTransactionCard({ open, wallets, onClose }) {
           </label>
           {isTransfer ? (
             <label className="log-field">
-              <span>To wallet</span>
+              <span>To account</span>
               <select value={draft.toWallet} onChange={(event) => patch({ toWallet: event.target.value })}>
                 {destinations.map((wallet) => (
                   <option key={wallet.id} value={wallet.id}>

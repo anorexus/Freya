@@ -1,0 +1,189 @@
+.acct-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.8fr);
+  gap: 12px;
+}
+
+.acct-card,
+.acct-list {
+  border-radius: 16px;
+  background: var(--liq-card);
+  box-shadow: var(--liq-shadow-low);
+}
+
+.acct-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+  padding: 20px;
+}
+
+.acct-total,
+.acct-caption,
+.acct-card h2,
+.acct-list h2,
+.acct-list header p {
+  margin: 0;
+}
+
+.acct-total {
+  color: var(--liq-text);
+  font-family: var(--liq-font-numeric);
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 40px;
+}
+
+.acct-caption,
+.acct-list td:nth-child(2) {
+  color: var(--liq-muted);
+}
+
+.acct-caption {
+  font-family: var(--liq-font-ui);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.acct-chart {
+  width: 100%;
+  height: 160px;
+}
+
+.acct-ranges {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+}
+
+.acct-ranges button {
+  height: 28px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: 14px;
+  background: transparent;
+  color: var(--liq-muted);
+  font-family: var(--liq-font-ui);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.acct-ranges button.is-active {
+  background: var(--background-secondary);
+  color: var(--liq-text);
+}
+
+.acct-card h2,
+.acct-list h2 {
+  color: var(--liq-text);
+  font-family: var(--liq-font-ui);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.acct-bar {
+  display: flex;
+  height: 8px;
+  overflow: hidden;
+  border-radius: 4px;
+  background: var(--neutral-90);
+}
+
+.acct-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.acct-legend li {
+  display: grid;
+  grid-template-columns: 10px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 8px;
+  color: var(--liq-text);
+  font-family: var(--liq-font-ui);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.acct-swatch {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.acct-list header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+}
+
+.acct-list header p,
+.acct-list td:nth-child(3),
+.acct-list td:nth-child(4) {
+  font-family: var(--liq-font-numeric);
+  font-variant-numeric: tabular-nums;
+}
+
+.acct-list header p {
+  color: var(--liq-text);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.acct-list table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.acct-list th,
+.acct-list td {
+  padding: 14px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  text-align: left;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.acct-list th {
+  color: var(--liq-muted);
+  font-family: var(--liq-font-ui);
+  font-weight: 600;
+}
+
+.acct-list td {
+  color: var(--liq-text);
+  font-family: var(--liq-font-ui);
+}
+
+.acct-list td.is-negative {
+  color: var(--red-40);
+}
+
+.acct-list td.is-positive {
+  color: var(--green-40);
+}
+
+@media (max-width: 960px) {
+  .acct-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .acct-list {
+    overflow-x: auto;
+  }
+
+  .acct-list table {
+    min-width: 560px;
+  }
+}

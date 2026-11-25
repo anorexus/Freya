@@ -16,7 +16,7 @@ import "./Sidebar.css";
 const NAV = [
   { id: "dashboard", label: "Dashboard", icon: dashboardIcon, key: "D" },
   { id: "transactions", label: "Transactions", icon: transactionsIcon, key: "T" },
-  { id: "wallets", label: "Wallets", icon: walletIcon, key: "W" },
+  { id: "accounts", label: "Accounts", icon: walletIcon, key: "A" },
   { id: "categories", label: "Categories", icon: categoryIcon, key: "C" },
   { id: "settings", label: "Settings", icon: settingsIcon, key: "S" },
   { id: "system", label: "Design system", icon: systemIcon, key: "Y" },
