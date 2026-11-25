@@ -4,9 +4,11 @@ import dashboardIcon from "../assets/icons/dashboard.svg?raw";
 import { sampleTransactions } from "../cashflow.js";
 import { Button, WalletDropdown, buttonIcons } from "./Button.jsx";
 import { CashflowCard } from "./CashflowCard.jsx";
+import { CashflowCardV2 } from "./CashflowCardV2.jsx";
 import { ExpenseCard } from "./ExpenseCard.jsx";
 import { LiquidityCard } from "./LiquidityCard.jsx";
 import { Notification } from "./Notification.jsx";
+import { TransactionListCard } from "./TransactionListCard.jsx";
 import { TrendCardV3 } from "./TrendCardV3.jsx";
 import "./Dashboard.css";
 
@@ -82,8 +84,12 @@ export function Dashboard({ onMenu = () => {} }) {
           <CashflowCard transactions={transactions} today={today} />
           <ExpenseCard transactions={transactions} categories={CATEGORIES} today={today} />
         </section>
-        <section className="dash-grid" aria-label="Trends">
+        <section className="dash-grid is-trends" aria-label="Trends">
+          <CashflowCardV2 transactions={transactions} today={today} />
           <TrendCardV3 transactions={transactions} today={today} />
+        </section>
+        <section className="dash-grid" aria-label="Transactions">
+          <TransactionListCard transactions={transactions} today={today} />
         </section>
       </div>
     </main>

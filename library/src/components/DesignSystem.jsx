@@ -4,11 +4,13 @@ import systemIcon from "../assets/icons/system.svg?raw";
 import { sampleTransactions } from "../cashflow.js";
 import { Button, WalletDropdown, buttonIcons } from "./Button.jsx";
 import { CashflowCard } from "./CashflowCard.jsx";
+import { CashflowCardV2 } from "./CashflowCardV2.jsx";
 import { ExpenseCard } from "./ExpenseCard.jsx";
 import { LiquidityCard } from "./LiquidityCard.jsx";
 import { Notification } from "./Notification.jsx";
 import { TrendCard } from "./TrendCard.jsx";
 import { TrendCardV2 } from "./TrendCardV2.jsx";
+import { TransactionListCard } from "./TransactionListCard.jsx";
 import { TrendCardV3 } from "./TrendCardV3.jsx";
 import "./Dashboard.css";
 import "./DesignSystem.css";
@@ -363,6 +365,25 @@ export function DesignSystem({ onMenu = () => {} }) {
             <div className="st3-preview">
               <TrendCardV3 transactions={sampleTransactions()} />
               <TrendCardV3 transactions={sampleTransactions()} />
+            </div>
+          </div>
+          <div className="docs-group">
+            <div className="docs-head">
+              <h3>Transaction list</h3>
+              <p>The shell is secondary, with a 24px top radius and a 16px bottom radius. Each row sits on the primary well. The mark uses that category’s primitive color. A credit amount is prefixed with + and uses the positive type color. A note, when present, follows the date after a dot and truncates.</p>
+            </div>
+            <div className="docs-cards">
+              <TransactionListCard transactions={sampleTransactions()} />
+            </div>
+          </div>
+          <div className="docs-group">
+            <div className="docs-head">
+              <h3>Cashflow trend v2</h3>
+              <p>At least six months of the current year. A wider card adds another month for every 76px of chart width, up to twelve. The black bar is income and the gradient bar is expense. Expense can rise above income, and the amount chip follows the taller bar. Paging stays inside this year. The track only shows position. The latest month starts selected. A rise in cashflow uses the positive pill.</p>
+            </div>
+            <div className="cf2-preview">
+              <CashflowCardV2 transactions={sampleTransactions()} />
+              <CashflowCardV2 transactions={sampleTransactions()} />
             </div>
           </div>
           <div className="docs-group">

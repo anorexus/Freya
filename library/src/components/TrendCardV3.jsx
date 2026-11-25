@@ -1,7 +1,9 @@
 import { useRef, useState } from "react";
 import { Button, buttonIcons, useDismiss } from "./Button.jsx";
+import { ChartTip } from "./ChartTip.jsx";
 import { CopyAmount } from "./CopyAmount.jsx";
 import { Pill } from "./Pill.jsx";
+import { StepTrack } from "./StepTrack.jsx";
 import { formatRupiah } from "../money.js";
 import { expenseTrend, formatCompactRupiah, trendChange } from "../trend.js";
 import "./TrendCardV3.css";
@@ -15,6 +17,13 @@ const YEAR = 12;
 const PLOT = 250;
 const MIN_BAR = 56;
 const STEM_FLOOR = 24;
+
+function previousLabel(date, monthly) {
+  const prior = monthly
+    ? new Date(date.getFullYear(), date.getMonth() - 1, 1)
+    : new Date(date.getFullYear(), date.getMonth(), date.getDate() - 1);
+  return prior.toLocaleDateString("en-GB", monthly ? { month: "short" } : { weekday: "short" });
+}
 
 function pageLabel(points, monthly) {
   const first = points[0];
@@ -72,9 +81,7 @@ function Column({ point, active, ratio, minimum, onSelect }) {
     >
       <span className={minimum ? "st3-bar is-min" : "st3-bar"} style={minimum ? undefined : { height: `${ratio * 100}%` }}>
         {active ? (
-          <span className="st3-tip">
-            <CopyAmount>{compactLabel(point.amount)}</CopyAmount>
-          </span>
+          <ChartTip>{compactLabel(point.amount)}</ChartTip>
         ) : null}
         <span className="st3-capsule">
           {minimum ? null : <span className="st3-stem" />}
@@ -124,7 +131,7 @@ export function TrendCardV3({ transactions, today = new Date() }) {
   const selected = summary.points.find((point) => point.date.getTime() === selectedTime) ?? summary.points.at(-1);
   const change = selected ? trendChange(summary.points, selected.date) : null;
   const max = Math.max(...summary.points.map((point) => Math.abs(point.amount)), 1);
-  const thumb = maxPage === 0 ? 1 : (maxPage - safePage) / maxPage;
+  const steps = maxPage + 1;
 
   return (
     <article className="st3">
@@ -193,23 +200,15 @@ export function TrendCardV3({ transactions, today = new Date() }) {
               disabled={safePage >= maxPage}
               onClick={() => setPage((current) => Math.min(maxPage, current + 1))}
             />
-            <div
-              className="st3-track"
-              role="slider"
-              aria-label={monthly ? "Year" : "Days"}
-              aria-valuemin={0}
-              aria-valuemax={maxPage}
-              aria-valuenow={maxPage - safePage}
-              onPointerDown={(event) => {
-                const rect = event.currentTarget.getBoundingClientRect();
-                const ratio = rect.width === 0 ? 1 : (event.clientX - rect.left) / rect.width;
-                const next = Math.round((1 - Math.min(1, Math.max(0, ratio))) * maxPage);
-                setPage(next);
+            <StepTrack
+              steps={steps}
+              index={maxPage - safePage}
+              label={monthly ? "Year" : "Days"}
+              onChange={(next) => {
+                setPage(maxPage - next);
                 setSelectedTime(null);
               }}
-            >
-              <span className="st3-thumb" style={{ left: `calc(2px + (100% - 68px) * ${thumb})` }} />
-            </div>
+            />
             <Button
               variant="navigation"
               icon={buttonIcons.arrowRight}
@@ -222,7 +221,7 @@ export function TrendCardV3({ transactions, today = new Date() }) {
         <footer className="st3-foot">
           <TrendPill change={change} />
           <p className="st3-note">
-            {selected ? `Spending in ${selected.weekday.toLowerCase()}` : "Spending"}
+            {selected ? `Compare to ${previousLabel(selected.date, monthly)}, spending in ${selected.weekday}` : "Spending"}
             <span>
               <CopyAmount>{selected ? formatRupiah(selected.amount) : formatRupiah(0)}</CopyAmount>
             </span>
