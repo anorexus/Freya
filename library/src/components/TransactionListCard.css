@@ -52,10 +52,29 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  width: 100%;
   padding: 16px 12px 16px 20px;
+  border: 0;
   border-radius: 12px;
+  outline: 1px solid transparent;
   background: var(--background-primary);
   box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.04);
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    background var(--liq-duration) var(--liq-ease),
+    outline-color var(--liq-duration) var(--liq-ease);
+}
+
+.tx-row:hover {
+  outline-color: var(--outline-medium);
+}
+
+.tx-row:active {
+  outline-color: transparent;
+  background: var(--background-secondary);
 }
 
 .tx-main {
@@ -179,6 +198,7 @@
 }
 
 .dash .tx-card {
+  grid-column: 1 / -1;
   width: 100%;
 }
 

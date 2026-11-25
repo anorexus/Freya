@@ -62,7 +62,7 @@ function TransactionRow({ row, iconId, showDate }) {
   const color = categoryColor(row.category_l1);
   const credit = row.type === "INCOME";
   return (
-    <div className="tx-row">
+    <button type="button" className="tx-row">
       <div className="tx-main">
         <span className="tx-mark" style={{ "--tx": color }} dangerouslySetInnerHTML={{ __html: tintIcon(barsIcon, color, iconId) }} />
         <span className="tx-copy">
@@ -86,7 +86,7 @@ function TransactionRow({ row, iconId, showDate }) {
         </span>
         <span className="tx-chevron" dangerouslySetInnerHTML={{ __html: rowArrow }} />
       </span>
-    </div>
+    </button>
   );
 }
 
