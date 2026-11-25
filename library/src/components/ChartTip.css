@@ -1,0 +1,34 @@
+.chart-tip {
+  position: absolute;
+  z-index: 2;
+  bottom: 100%;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
+  min-width: 64px;
+  height: 24px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  background: var(--fill-primary);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.32);
+  color: var(--typography-inverted);
+  font-family: var(--type-numeric-xs-family);
+  font-size: var(--type-numeric-xs-size);
+  font-weight: var(--type-numeric-xs-weight);
+  line-height: var(--type-numeric-xs-line);
+  letter-spacing: var(--type-numeric-xs-tracking);
+  white-space: nowrap;
+  transform: translateX(-50%);
+}
+
+.chart-tip.is-positive {
+  background: var(--typography-fill-pill-positive);
+  color: var(--typography-positive);
+}
+
+.chart-tip.is-negative {
+  background: var(--typography-fill-pill-negative);
+  color: var(--typography-negative);
+}
