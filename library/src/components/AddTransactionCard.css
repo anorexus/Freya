@@ -1,0 +1,223 @@
+.log-card,
+.log-card *,
+.log-card *::before,
+.log-card *::after {
+  box-sizing: border-box;
+}
+
+.log-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 48px 16px;
+  overflow: auto;
+  background: rgba(2, 2, 3, 0.72);
+}
+
+.log-card {
+  display: flex;
+  flex: 0 1 auto;
+  align-self: center;
+  flex-direction: column;
+  width: min(480px, 100%);
+  min-width: 0;
+  max-width: 480px;
+  margin: 0;
+  padding: 4px;
+  border: 0;
+  border-radius: 24px;
+  background: var(--background-secondary);
+  box-shadow: var(--liq-shadow-high), var(--liq-glow-bottom-low);
+  color: var(--typography-title);
+  font-family: var(--font-family-sans);
+}
+
+.log-head,
+.log-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  min-height: 48px;
+  padding: 4px 12px 4px 16px;
+}
+
+.log-head h2,
+.log-field span,
+.log-field legend,
+.log-error {
+  margin: 0;
+}
+
+.log-close {
+  --note: var(--neutral-0);
+  color: var(--neutral-0);
+}
+
+.log-close .fy-glyph,
+.log-close .fy-glyph svg {
+  width: 8px;
+  height: 8px;
+}
+
+.log-head h2 {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  color: var(--typography-body);
+}
+
+.log-body {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 16px;
+  border-radius: 16px;
+  background: var(--background-primary);
+  box-shadow: var(--liq-glow-top-low);
+}
+
+.log-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.log-field span,
+.log-field legend {
+  color: var(--typography-body);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+}
+
+.log-field em {
+  color: var(--typography-tertiary);
+  font-style: normal;
+  font-weight: 500;
+}
+
+.log-field input,
+.log-field select,
+.log-field textarea {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  margin: 0;
+  border: 0.5px solid var(--outline-medium);
+  border-radius: 12px;
+  background: var(--background-tertiary);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.32);
+  color: var(--typography-title);
+  font-family: var(--font-family-sans);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  outline: none;
+}
+
+.log-field input,
+.log-field select {
+  height: 40px;
+  padding: 0 12px;
+}
+
+.log-field textarea {
+  min-height: 72px;
+  padding: 10px 12px;
+  resize: vertical;
+}
+
+.log-field input:focus,
+.log-field select:focus,
+.log-field textarea:focus {
+  border-color: var(--outline-high);
+}
+
+.log-amount {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  padding-left: 12px;
+  border: 0.5px solid var(--outline-medium);
+  border-radius: 12px;
+  background: var(--background-tertiary);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.32);
+}
+
+.log-amount:focus-within {
+  border-color: var(--outline-high);
+}
+
+.log-amount b {
+  color: var(--typography-tertiary);
+  font-family: var(--font-family-numeric);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.log-amount input {
+  height: 38px;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  font-family: var(--font-family-numeric);
+  font-weight: 300;
+}
+
+.log-types {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+  padding: 4px;
+  border-radius: 14px;
+  background: var(--background-tertiary);
+}
+
+.log-types button {
+  width: 100%;
+  height: 32px;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--typography-body);
+  text-align: center;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 18px;
+  cursor: pointer;
+}
+
+.log-types button.is-selected {
+  background: var(--fill-quinary);
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.12);
+  color: var(--typography-title);
+}
+
+.log-error {
+  color: var(--typography-negative);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 18px;
+}
+
+.log-foot {
+  justify-content: flex-end;
+}
+
+.log-card input[type="datetime-local"] {
+  color-scheme: dark;
+}
+
+.log-card input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+  opacity: 0.72;
+  cursor: pointer;
+}

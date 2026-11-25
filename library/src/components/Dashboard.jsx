@@ -2,6 +2,7 @@ import { useState } from "react";
 import { CATEGORIES } from "../../../src/data/categories.ts";
 import dashboardIcon from "../assets/icons/dashboard.svg?raw";
 import { sampleTransactions } from "../cashflow.js";
+import { AddTransactionCard } from "./AddTransactionCard.jsx";
 import { Button, WalletDropdown, buttonIcons } from "./Button.jsx";
 import { CashflowCard } from "./CashflowCard.jsx";
 import { CashflowCardV2 } from "./CashflowCardV2.jsx";
@@ -35,6 +36,7 @@ function formatRange(start, end) {
 
 export function Dashboard({ onMenu = () => {} }) {
   const [monthOffset, setMonthOffset] = useState(0);
+  const [logOpen, setLogOpen] = useState(false);
   const now = new Date();
   const transactions = sampleTransactions(now);
   const view = new Date(now.getFullYear(), now.getMonth() + monthOffset, 1);
@@ -59,7 +61,7 @@ export function Dashboard({ onMenu = () => {} }) {
             </p>
             <Button variant="secondary" icon={buttonIcons.sync}>Sync</Button>
           </div>
-          <Button className="dash-add" variant="primary" icon={buttonIcons.add}>Add transaction</Button>
+          <Button className="dash-add" variant="primary" icon={buttonIcons.add} onClick={() => setLogOpen(true)}>Add transaction</Button>
         </div>
       </header>
       <div className="dash-content">
@@ -92,6 +94,7 @@ export function Dashboard({ onMenu = () => {} }) {
           <TransactionListCard transactions={transactions} today={today} />
         </section>
       </div>
+      <AddTransactionCard open={logOpen} wallets={WALLETS} onClose={() => setLogOpen(false)} />
     </main>
   );
 }

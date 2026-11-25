@@ -57,25 +57,36 @@ export function Sidebar({ page = "dashboard", onNavigate = () => {}, mobileOpen 
     <>
     {mobileOpen ? <button type="button" className="side-backdrop" aria-label="Close menu" onClick={onClose} /> : null}
     <aside className={`${collapsed ? "side is-collapsed" : "side"}${mobileOpen ? " is-drawer" : ""}`}>
-      <button
-        type="button"
-        className="side-logo"
-        aria-expanded={!collapsed}
-        aria-label={collapsed ? "Expand sidebar" : "Collapse sidebar"}
-        onClick={() => setCollapsed((current) => !current)}
-      >
-        <span className="side-mark">
-          <span className="side-mark-spin">
-            <img src={logomark} alt="" />
+      <div className="side-logo">
+        <button
+          type="button"
+          className="side-brand"
+          aria-label={collapsed ? "Expand sidebar" : "Dashboard"}
+          onClick={() => {
+            const mobile = window.matchMedia("(width < 1024px)").matches;
+            if (collapsed && !mobile) setCollapsed(false);
+            else onNavigate("dashboard");
+          }}
+        >
+          <span className="side-mark">
+            <span className="side-mark-spin">
+              <img src={logomark} alt="" />
+            </span>
           </span>
-        </span>
-        <span className="side-word">
-          <img src={wordmark} alt="" />
-        </span>
-        <span className="side-key" aria-hidden="true">
+          <span className="side-word">
+            <img src={wordmark} alt="" />
+          </span>
+        </button>
+        <button
+          type="button"
+          className="side-key side-collapse"
+          aria-label="Collapse sidebar"
+          aria-expanded={!collapsed}
+          onClick={() => setCollapsed(true)}
+        >
           <Icon svg={collapseIcon} />
-        </span>
-      </button>
+        </button>
+      </div>
       <label className="side-search">
         <Icon svg={searchIcon} />
         <input
