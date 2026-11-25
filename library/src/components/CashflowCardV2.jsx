@@ -3,9 +3,8 @@ import { Button, buttonIcons } from "./Button.jsx";
 import { ChartTip } from "./ChartTip.jsx";
 import { CopyAmount } from "./CopyAmount.jsx";
 import { Pill } from "./Pill.jsx";
-import { StepTrack } from "./StepTrack.jsx";
 import { formatRupiah } from "../money.js";
-import { expenseTrend, trendChange } from "../trend.js";
+import { earliestTrendDate, expenseTrend, monthsBefore, trendChange } from "../trend.js";
 import "./CashflowCardV2.css";
 
 const WINDOW = 6;
@@ -13,10 +12,9 @@ const SLOT = 76;
 const PLOT = 220;
 const MIN_BAR = 48;
 
-function windowSpan(today, width) {
-  const cap = Math.min(12, today.getMonth() + 1);
-  if (!width) return Math.min(WINDOW, cap);
-  return Math.min(cap, Math.max(WINDOW, Math.floor(width / SLOT)));
+function windowSpan(width) {
+  if (!width) return WINDOW;
+  return Math.min(12, Math.max(WINDOW, Math.floor(width / SLOT)));
 }
 
 function previousMonth(date) {
@@ -100,20 +98,21 @@ export function CashflowCardV2({ transactions, today = new Date() }) {
     return () => observer.disconnect();
   }, []);
 
-  const span = windowSpan(today, chartWidth);
-  const maxPage = Math.max(0, today.getMonth() + 1 - span);
+  const span = windowSpan(chartWidth);
+  const earliest = earliestTrendDate(transactions, "cashflow");
+  const history = earliest ? monthsBefore(earliest, today) : 0;
+  const maxPage = Math.max(0, history - (span - 1));
   const safePage = Math.min(page, maxPage);
   const summary = expenseTrend(transactions, "month", today, safePage, span, "cashflow");
   const previous = expenseTrend(transactions, "month", today, safePage + span, span, "cashflow");
   const overall = changeRatio(summary.total, previous.total);
   const selected = summary.points.find((point) => point.date.getTime() === selectedTime) ?? summary.points.at(-1);
   const priorMonth = expenseTrend(transactions, "month", today, safePage + 1, 1, "cashflow").points[0];
-  const priorAmount = priorMonth && priorMonth.date.getFullYear() === today.getFullYear() ? priorMonth.amount : null;
+  const priorAmount = priorMonth ? priorMonth.amount : null;
   const change = selected
     ? trendChange(summary.points, selected.date) ?? changeRatio(selected.amount, selected.date.getTime() === summary.points[0]?.date.getTime() ? priorAmount : null)
     : null;
   const max = Math.max(...summary.points.map((point) => Math.max(point.income || 0, point.expense || 0)), 1);
-  const steps = maxPage + 1;
 
   return (
     <article className="cf2">
@@ -158,7 +157,6 @@ export function CashflowCardV2({ transactions, today = new Date() }) {
                 setSelectedTime(null);
               }}
             />
-            <StepTrack steps={steps} index={maxPage - safePage} />
             <Button
               variant="navigation"
               icon={buttonIcons.arrowRight}

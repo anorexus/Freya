@@ -86,6 +86,22 @@ function monthPoint(transactions, monthDate, today, kind) {
   };
 }
 
+export function earliestTrendDate(transactions, kind = "expense") {
+  let earliest = null;
+  for (const transaction of transactions) {
+    if (transaction.type === "TRANSFER") continue;
+    if (kind === "expense" && transaction.type !== "EXPENSE") continue;
+    if (kind === "cashflow" && transaction.type !== "INCOME" && transaction.type !== "EXPENSE") continue;
+    const day = startOfDay(transaction.date);
+    if (!earliest || day < earliest) earliest = day;
+  }
+  return earliest;
+}
+
+export function monthsBefore(earlier, later) {
+  return (later.getFullYear() - earlier.getFullYear()) * 12 + (later.getMonth() - earlier.getMonth());
+}
+
 export function expenseTrend(transactions, range, today = new Date(), page = 0, count, kind = "expense") {
   const anchor = startOfDay(today);
   const monthly = range === "month";

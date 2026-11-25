@@ -3,9 +3,8 @@ import { Button, buttonIcons, useDismiss } from "./Button.jsx";
 import { ChartTip } from "./ChartTip.jsx";
 import { CopyAmount } from "./CopyAmount.jsx";
 import { Pill } from "./Pill.jsx";
-import { StepTrack } from "./StepTrack.jsx";
 import { formatRupiah } from "../money.js";
-import { expenseTrend, formatCompactRupiah, trendChange } from "../trend.js";
+import { earliestTrendDate, expenseTrend, formatCompactRupiah, monthsBefore, trendChange } from "../trend.js";
 import "./TrendCardV3.css";
 
 const RANGES = [
@@ -13,7 +12,6 @@ const RANGES = [
   ["month", "Monthly"],
 ];
 const WINDOW = 7;
-const YEAR = 12;
 const PLOT = 250;
 const MIN_BAR = 56;
 const STEM_FLOOR = 24;
@@ -48,15 +46,6 @@ function formatChange(ratio) {
 function dayOffset(today, end) {
   const anchor = new Date(today.getFullYear(), today.getMonth(), today.getDate());
   return Math.round((anchor - end) / 86400000);
-}
-
-function dailyEnds(today) {
-  const end = new Date(today.getFullYear(), today.getMonth(), today.getDate());
-  const lastDate = end.getDate();
-  if (lastDate < WINDOW) return [end];
-  const ends = [];
-  for (let day = lastDate; day >= WINDOW; day -= 1) ends.push(new Date(end.getFullYear(), end.getMonth(), day));
-  return ends;
 }
 
 function TrendPill({ change }) {
@@ -102,36 +91,16 @@ export function TrendCardV3({ transactions, today = new Date() }) {
   useDismiss(open, dropRef, () => setOpen(false));
 
   const monthly = range === "month";
-  const ends = monthly ? null : dailyEnds(today);
-  const maxPage = monthly ? Math.max(0, YEAR - WINDOW) : ends.length - 1;
+  const earliest = earliestTrendDate(transactions, "expense");
+  const history = earliest ? (monthly ? monthsBefore(earliest, today) : dayOffset(today, earliest)) : 0;
+  const maxPage = Math.max(0, history - (WINDOW - 1));
   const safePage = Math.min(page, maxPage);
-  const dailyEnd = monthly ? null : ends[safePage];
-  const dailyCount = dailyEnd && dailyEnd.getDate() < WINDOW ? dailyEnd.getDate() : WINDOW;
-  const summary = expenseTrend(
-    transactions,
-    range,
-    today,
-    monthly ? safePage : dayOffset(today, dailyEnd),
-    monthly ? WINDOW : dailyCount,
-    "expense",
-  );
-  const previousEnd = monthly ? null : ends[safePage + WINDOW];
-  const previous =
-    monthly || (previousEnd && previousEnd.getMonth() === dailyEnd.getMonth() && previousEnd.getFullYear() === dailyEnd.getFullYear())
-      ? expenseTrend(
-          transactions,
-          range,
-          today,
-          monthly ? safePage + WINDOW : dayOffset(today, previousEnd),
-          WINDOW,
-          "expense",
-        )
-      : { total: 0, points: [] };
+  const summary = expenseTrend(transactions, range, today, safePage, WINDOW, "expense");
+  const previous = expenseTrend(transactions, range, today, safePage + WINDOW, WINDOW, "expense");
   const overall = previous.total === 0 ? null : (summary.total - previous.total) / previous.total;
   const selected = summary.points.find((point) => point.date.getTime() === selectedTime) ?? summary.points.at(-1);
   const change = selected ? trendChange(summary.points, selected.date) : null;
   const max = Math.max(...summary.points.map((point) => Math.abs(point.amount)), 1);
-  const steps = maxPage + 1;
 
   return (
     <article className="st3">
@@ -199,15 +168,6 @@ export function TrendCardV3({ transactions, today = new Date() }) {
               aria-label={monthly ? "Previous month" : "Previous day"}
               disabled={safePage >= maxPage}
               onClick={() => setPage((current) => Math.min(maxPage, current + 1))}
-            />
-            <StepTrack
-              steps={steps}
-              index={maxPage - safePage}
-              label={monthly ? "Year" : "Days"}
-              onChange={(next) => {
-                setPage(maxPage - next);
-                setSelectedTime(null);
-              }}
             />
             <Button
               variant="navigation"

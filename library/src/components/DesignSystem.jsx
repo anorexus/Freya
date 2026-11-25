@@ -360,7 +360,7 @@ export function DesignSystem({ onMenu = () => {} }) {
           <div className="docs-group">
             <div className="docs-head">
               <h3>Spending trend v3</h3>
-              <p>Capsule columns with the weekday inside the bar and the date under it. The shortest bar stays 44px and drops its stem. Selecting a column fades that column, turns the stem white, and sticks a compact amount pill to the top of the bar. Average spending and its trend follow the days or months on the graph. Daily shows seven days, and each step moves that window by one day. Monthly paging stays inside one year. The latest point starts selected. A rise in spending uses the negative pill.</p>
+              <p>Capsule columns with the weekday inside the bar and the date under it. The shortest bar stays 44px and drops its stem. Selecting a column fades that column, turns the stem white, and sticks a compact amount pill to the top of the bar. Average spending and its trend follow the days or months on the graph. Daily shows seven days, and each step moves that window by one day. Monthly and daily paging continue back while expense data exists. The latest point starts selected. A rise in spending uses the negative pill.</p>
             </div>
             <div className="st3-preview">
               <TrendCardV3 transactions={sampleTransactions()} />
@@ -379,7 +379,7 @@ export function DesignSystem({ onMenu = () => {} }) {
           <div className="docs-group">
             <div className="docs-head">
               <h3>Cashflow trend v2</h3>
-              <p>At least six months of the current year. A wider card adds another month for every 76px of chart width, up to twelve. The black bar is income and the gradient bar is expense. Expense can rise above income, and the amount chip follows the taller bar. Paging stays inside this year. The track only shows position. The latest month starts selected. A rise in cashflow uses the positive pill.</p>
+              <p>At least six months. A wider card adds another month for every 76px of chart width, up to twelve. The black bar is income and the gradient bar is expense. Expense can rise above income, and the amount chip follows the taller bar. Paging continues back while cashflow data exists. The latest month starts selected. A rise in cashflow uses the positive pill.</p>
             </div>
             <div className="cf2-preview">
               <CashflowCardV2 transactions={sampleTransactions()} />
