@@ -1,17 +1,19 @@
 ---
-description: When the user says Go, digest changes, write a changelog, then fetch, branch, commit, and merge.
+description: When the user says Go, digest changes, write a changelog, then always branch, commit, and merge.
 alwaysApply: true
 ---
 
 # Git Go
 
-When the user's message is **Go** (or clearly starts with it as the git trigger), run this sequence. Do not wait for a second confirmation.
+When the user's message is **Go** (or clearly starts with it as the git trigger), run this sequence to the end. Do not wait for a second confirmation. Do not push unless they also say push.
 
-1. **Digest.** In parallel: `git status`, `git diff` (staged and unstaged), `git log -8 --oneline`, current branch, and whether it tracks origin. Summarize what changed and why in a few sentences before any write.
-2. **Fetch.** `git fetch origin`. If the working tree is dirty, do not rebase or reset. Note if the current branch is behind origin.
-3. **Branch.** If already on a feature branch, stay there. If on `main` or `master`, create and switch to a short branch named from the change (`git checkout -b <name>`).
-4. **Changelog.** Add a dated entry at the top of `CHANGELOG.md` (create the file if missing). One heading for the change, then short bullets of what and why. Skip secrets and noise (lockfiles, generated files) unless they are the point of the change.
-5. **Commit.** Stage the intended files plus `CHANGELOG.md`. Do not stage `.env` or credential files; warn if those are part of the change. Commit with a 1–2 sentence message focused on why, matching recent log style. On Windows PowerShell, pass the message with `git commit -m "..."`.
-6. **Merge.** Merge that branch into the branch the user was on at the start of Go (the integration branch). If they were already on the feature branch, merge it into `main` or `master` only when that branch exists and the merge is a fast-forward or a clean merge. Stop and report if the merge conflicts. Do not push unless the user asks.
+On this machine `git` is not on PATH. Call `C:\Program Files\Git\cmd\git.exe`. PowerShell does not accept `&&`; use separate commands.
 
-Afterward, report the branch name, commit subject, merge result, and that nothing was pushed.
+1. **Digest.** Run status, both diffs, `git log -8 --oneline`, and the current branch. Say what changed and why before any write. If the tree is clean, stop and say there is nothing to branch or commit.
+2. **Fetch.** `git fetch origin`. Do not rebase or reset a dirty tree.
+3. **Branch.** Always create and switch to a new short branch named from the change (`git checkout -b <name>`), including when already on `main` or `master`.
+4. **Changelog.** Add a dated entry at the top of `CHANGELOG.md` (create it if missing). Short bullets of what and why. Skip secrets.
+5. **Commit.** Stage the intended files plus `CHANGELOG.md`. Leave `.env` and credential files unstaged and warn. Commit with `git commit -m "..."` (1–2 sentences on why).
+6. **Merge.** Check out the branch they were on at the start of Go and merge the new branch into it (`git merge --no-ff <name> -m "..."`). Stop and report if it conflicts.
+
+Afterward, report the branch name, commit subject, and merge result.

@@ -91,7 +91,7 @@ export function Dashboard({ onMenu = () => {} }) {
           <TrendCardV3 transactions={transactions} today={today} />
         </section>
         <section className="dash-grid" aria-label="Transactions">
-          <TransactionListCard transactions={transactions} today={today} />
+          <TransactionListCard transactions={transactions} today={today} onSeeMore={() => { window.location.hash = "transactions"; }} />
         </section>
       </div>
       <AddTransactionCard open={logOpen} wallets={WALLETS} onClose={() => setLogOpen(false)} />

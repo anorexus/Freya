@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-11-25 — Transactions page
+
+- Add a Transactions page so “See more” on the dashboard opens the full month, grouped by day, with search.
+- Always branch, commit, and merge when Go is said. Push stays out of that sequence.
+
 ## 2026-11-25
 
 - Add an Add transaction dialog on the dashboard so a new expense, income, or transfer can be drafted without leaving the page.

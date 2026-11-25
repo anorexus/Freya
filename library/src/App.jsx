@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import { Dashboard } from "./components/Dashboard.jsx";
 import { DesignSystem } from "./components/DesignSystem.jsx";
 import { Sidebar } from "./components/Sidebar.jsx";
+import { Transactions } from "./components/Transactions.jsx";
 import "./tokens.css";
 import "./app.css";
 
@@ -54,7 +55,13 @@ export default function App() {
   return (
     <div className="lib-shell">
       <Sidebar page={page} onNavigate={navigate} mobileOpen={menuOpen} onClose={() => setMenuOpen(false)} />
-      {page === "system" ? <DesignSystem onMenu={() => setMenuOpen(true)} /> : <Dashboard onMenu={() => setMenuOpen(true)} />}
+      {page === "system" ? (
+        <DesignSystem onMenu={() => setMenuOpen(true)} />
+      ) : page === "transactions" ? (
+        <Transactions onMenu={() => setMenuOpen(true)} />
+      ) : (
+        <Dashboard onMenu={() => setMenuOpen(true)} />
+      )}
     </div>
   );
 }
