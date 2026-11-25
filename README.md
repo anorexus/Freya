@@ -4,6 +4,8 @@ Personal financial dashboard for logging income and expenses, then reading the m
 
 Live site: [anorexus.github.io/Freya](https://anorexus.github.io/Freya/)
 
+Mock dashboard: [anorexus.github.io/Freya/library](https://anorexus.github.io/Freya/library/)
+
 ## What you can do
 
 - See the current month’s income, expense, and net, plus a 6-month cashflow chart and a 7-day expense chart.
@@ -28,6 +30,7 @@ The component library is a separate preview in `library/`. From that folder, run
 
 ## Change log
 
+- **Publish the mock dashboard on GitHub Pages.** The component library builds into `/Freya/library/` on the same Pages site as the app.
 - **Add the Freya dashboard scaffold, design system, and product specs.** First baseline: Vite and React dashboard, transaction log, categories, design tokens, and the product spec.
 - **Publish Freya on GitHub Pages.** Host the site from this repo, and add Google sign-in plus creating and reading a Freya sheet.
 - **Group transactions by month and create the ledger through Drive.** Month pager on the transactions page. Sheet creation uses Drive’s `drive.file` scope, asks again if that permission is missing, and removes the file if setup fails.
