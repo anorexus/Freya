@@ -1,0 +1,17 @@
+---
+description: When the user says Go, digest changes, write a changelog, then fetch, branch, commit, and merge.
+alwaysApply: true
+---
+
+# Git Go
+
+When the user's message is **Go** (or clearly starts with it as the git trigger), run this sequence. Do not wait for a second confirmation.
+
+1. **Digest.** In parallel: `git status`, `git diff` (staged and unstaged), `git log -8 --oneline`, current branch, and whether it tracks origin. Summarize what changed and why in a few sentences before any write.
+2. **Fetch.** `git fetch origin`. If the working tree is dirty, do not rebase or reset. Note if the current branch is behind origin.
+3. **Branch.** If already on a feature branch, stay there. If on `main` or `master`, create and switch to a short branch named from the change (`git checkout -b <name>`).
+4. **Changelog.** Add a dated entry at the top of `CHANGELOG.md` (create the file if missing). One heading for the change, then short bullets of what and why. Skip secrets and noise (lockfiles, generated files) unless they are the point of the change.
+5. **Commit.** Stage the intended files plus `CHANGELOG.md`. Do not stage `.env` or credential files; warn if those are part of the change. Commit with a 1–2 sentence message focused on why, matching recent log style. On Windows PowerShell, pass the message with `git commit -m "..."`.
+6. **Merge.** Merge that branch into the branch the user was on at the start of Go (the integration branch). If they were already on the feature branch, merge it into `main` or `master` only when that branch exists and the merge is a fast-forward or a clean merge. Stop and report if the merge conflicts. Do not push unless the user asks.
+
+Afterward, report the branch name, commit subject, merge result, and that nothing was pushed.

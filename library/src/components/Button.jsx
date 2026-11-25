@@ -10,6 +10,7 @@ import collapsedIcon from "../assets/icons/collapsed.svg?raw";
 import trendUp from "../assets/icons/trend-up.svg?raw";
 import trendDown from "../assets/icons/trend-down.svg?raw";
 import allIcon from "../assets/icons/all.svg?raw";
+import closeIcon from "../assets/icons/close.svg?raw";
 import menuIcon from "../assets/icons/menu.svg?raw";
 import hamburgerIcon from "../assets/icons/hamburger.svg?raw";
 import bcaMark from "../assets/wallets/bca.svg";
@@ -148,5 +149,6 @@ export const buttonIcons = {
   trendUp,
   trendDown,
   menu: menuIcon,
+  close: closeIcon,
   hamburger: hamburgerIcon,
 };

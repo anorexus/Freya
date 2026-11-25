@@ -61,6 +61,24 @@
   border-width: 0;
 }
 
+.side-brand,
+.side-collapse {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+.side-brand {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  height: 100%;
+}
+
 .side-label,
 .side-person,
 .side-word,
@@ -443,7 +461,6 @@
   .side.is-drawer.is-collapsed .side-word,
   .side.is-drawer.is-collapsed .side-search input,
   .side.is-drawer.is-collapsed .side-label,
-  .side.is-drawer.is-collapsed .side-key,
   .side.is-drawer.is-collapsed .side-person {
     flex: initial;
     width: auto;
@@ -451,6 +468,10 @@
     opacity: 1;
     overflow: visible;
     pointer-events: auto;
+  }
+
+  .side-key {
+    display: none;
   }
 
   .side-backdrop {
