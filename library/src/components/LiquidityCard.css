@@ -170,39 +170,3 @@
   line-height: 16px;
 }
 
-.liq-pill {
-  display: inline-flex;
-  align-items: center;
-  padding: 4px 8px;
-  border-radius: 32px;
-  background: var(--liq-accent-soft);
-  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.12);
-  color: var(--liq-accent);
-  font-family: var(--liq-font-ui);
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 16px;
-  font-variant-numeric: tabular-nums;
-}
-
-.liq-pill.is-positive,
-.liq-pill.is-warning,
-.liq-pill.is-negative {
-  background: var(--pill-fill);
-  color: var(--pill);
-}
-
-.liq-pill.is-positive {
-  --pill: var(--typography-positive);
-  --pill-fill: var(--typography-fill-pill-positive);
-}
-
-.liq-pill.is-warning {
-  --pill: var(--typography-warning);
-  --pill-fill: var(--typography-fill-pill-warning);
-}
-
-.liq-pill.is-negative {
-  --pill: var(--typography-negative);
-  --pill-fill: var(--typography-fill-pill-negative);
-}

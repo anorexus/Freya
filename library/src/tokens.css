@@ -308,10 +308,10 @@
   --bluegrey-150: #040708;
 
   /* semantic color */
-  --background-primary: #18181A;
-  --background-secondary: #131315;
-  --background-tertiary: #0E0E10;
-  --background-quaternary: #020203;
+  --background-primary: var(--neutral-110);
+  --background-secondary: var(--neutral-130);
+  --background-tertiary: var(--neutral-140);
+  --background-quaternary: var(--neutral-150);
   --outline-low: #FFFFFF14;
   --outline-medium: #FFFFFF3D;
   --outline-high: #FFFFFF7A;

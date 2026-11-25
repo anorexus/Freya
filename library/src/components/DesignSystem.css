@@ -250,6 +250,18 @@
   max-width: 760px;
 }
 
+.docs-cards.is-pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 1040px;
+}
+
+@media (width < 1024px) {
+  .docs-cards.is-pair {
+    grid-template-columns: 1fr;
+  }
+}
+
 .docs-stack {
   flex-direction: column;
   align-items: flex-start;

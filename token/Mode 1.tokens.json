@@ -30,32 +30,6 @@
       "$value": {
         "colorSpace": "srgb",
         "components": [
-          0.07450980693101883,
-          0.07450980693101883,
-          0.08235294371843338
-        ],
-        "alpha": 1,
-        "hex": "#131315"
-      },
-      "$description": "Card surface. Intermediate background between background/primary and recessed background/tertiary.",
-      "$extensions": {
-        "com.figma.variableId": "VariableID:96:740",
-        "com.figma.scopes": [
-          "ALL_SCOPES"
-        ],
-        "com.figma.aliasData": {
-          "targetVariableId": "VariableID:4e15863f3785db748b831e3325ed21811efaabac/-1:-1",
-          "targetVariableName": "neutral/120",
-          "targetVariableSetId": "VariableCollectionId:97d34f0ac0d0aec6352a39ad0f339f53db1a27f3/-1:-1",
-          "targetVariableSetName": "primitive_color"
-        }
-      }
-    },
-    "tertiary": {
-      "$type": "color",
-      "$value": {
-        "colorSpace": "srgb",
-        "components": [
           0.054901961237192154,
           0.054901961237192154,
           0.062745101749897
@@ -63,8 +37,9 @@
         "alpha": 1,
         "hex": "#0E0E10"
       },
+      "$description": "Card surface. Intermediate background between background/primary and recessed background/tertiary.",
       "$extensions": {
-        "com.figma.variableId": "VariableID:78:10255",
+        "com.figma.variableId": "VariableID:96:740",
         "com.figma.scopes": [
           "ALL_SCOPES"
         ],
@@ -76,7 +51,7 @@
         }
       }
     },
-    "quaternary": {
+    "tertiary": {
       "$type": "color",
       "$value": {
         "colorSpace": "srgb",
@@ -89,13 +64,38 @@
         "hex": "#020203"
       },
       "$extensions": {
-        "com.figma.variableId": "VariableID:78:10278",
+        "com.figma.variableId": "VariableID:78:10255",
         "com.figma.scopes": [
           "ALL_SCOPES"
         ],
         "com.figma.aliasData": {
           "targetVariableId": "VariableID:e281f9779cb1447cc0c0fd319031e9a7eac16286/-1:-1",
           "targetVariableName": "neutral/140",
+          "targetVariableSetId": "VariableCollectionId:97d34f0ac0d0aec6352a39ad0f339f53db1a27f3/-1:-1",
+          "targetVariableSetName": "primitive_color"
+        }
+      }
+    },
+    "quaternary": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1,
+        "hex": "#000000"
+      },
+      "$extensions": {
+        "com.figma.variableId": "VariableID:78:10278",
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.aliasData": {
+          "targetVariableId": "VariableID:107:2192",
+          "targetVariableName": "neutral/150",
           "targetVariableSetId": "VariableCollectionId:97d34f0ac0d0aec6352a39ad0f339f53db1a27f3/-1:-1",
           "targetVariableSetName": "primitive_color"
         }

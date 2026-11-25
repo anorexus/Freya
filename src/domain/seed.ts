@@ -16,8 +16,8 @@ const CATALOG: Record<string, CatalogGroup[]> = {
     { l2: "Transit", items: ["KRL commute"] },
   ],
   Food: [
-    { l2: "Cafe", items: ["Filter coffee", "Butter croissant"] },
-    { l2: "Restaurant", items: ["Nasi goreng", "Soto"] },
+    { l2: "Cafe", items: ["Filter coffee", "Butter croissant", "Iced latte"] },
+    { l2: "Restaurant", items: ["Nasi goreng", "Soto", "Bakso", "Padang rice"] },
   ],
   Housing: [{ l2: "Rent", items: ["Monthly rent"] }],
   Utilities: [
@@ -26,213 +26,183 @@ const CATALOG: Record<string, CatalogGroup[]> = {
     { l2: "Phone", items: ["Mobile data"] },
   ],
   Health: [
-    { l2: "Pharmacy", items: ["Vitamin C"] },
+    { l2: "Pharmacy", items: ["Vitamin C", "Paracetamol"] },
     { l2: "Clinic", items: ["Clinic visit"] },
   ],
   Shopping: [
-    { l2: "Clothes", items: ["Cotton shirt"] },
-    { l2: "Home", items: ["Dish soap"] },
+    { l2: "Clothes", items: ["Cotton shirt", "Socks"] },
+    { l2: "Home", items: ["Dish soap", "Tissue pack"] },
   ],
 };
 
-const FILLER_CATEGORIES = ["Groceries", "Transport", "Food", "Utilities", "Health", "Shopping"] as const;
+const EXTRA_CATEGORIES = ["Groceries", "Transport", "Food", "Utilities", "Health", "Shopping"] as const;
 
-const MONTH_TARGETS: Record<number, { income: number; expense: number }> = {
-  [-5]: { income: 15_800_000, expense: 9_200_000 },
-  [-4]: { income: 15_200_000, expense: 10_400_000 },
-  [-3]: { income: 16_800_000, expense: 8_600_000 },
-  [-2]: { income: 14_900_000, expense: 12_100_000 },
-  [-1]: { income: 16_500_000, expense: 6_960_000 },
-};
+const COFFEE_NAMES = ["Filter coffee", "Iced latte", "Espresso", "Cold brew", "Cappuccino"] as const;
+
+const MIN_AMOUNT = 20_000;
 
 /**
- * Deterministic sample ledger.
- * November (the anchor month) matches the design specimen:
- * income 18.500.000, expense 7.240.000, 42 receipts, 118 SKU lines, plus one dirty amount.
+ * Deterministic sample ledger covering a full year ending on the anchor day.
+ * Every day has at least one expense (coffee), amounts stay ≥ 20k, and salary lands on the 25th.
  */
 export function buildSeed(anchor: string): StoredRow[] {
-  const rand = mulberry32(20261122);
+  const rand = mulberry32(hashSeed(anchor));
+  const start = addDays(anchor, -364);
   const rows: StoredRow[] = [];
+  let dayIndex = 0;
 
-  for (let offset = -5; offset <= -1; offset += 1) {
-    const monthStart = shiftMonthStart(anchor, offset);
-    const target = MONTH_TARGETS[offset];
-    rows.push(...buildPastMonth(monthStart, target.income, target.expense, rand));
-  }
+  for (let date = start; date <= anchor; date = addDays(date, 1)) {
+    const day = Number(date.slice(8, 10));
+    const month = date.slice(0, 7);
 
-  rows.push(...buildAnchorMonth(anchor, rand));
-
-  const dirty: StoredRow = blank({
-    transaction_id: "seed-dirty",
-    date: addDays(anchor, -8),
-    type: "EXPENSE",
-    amount: "twelve",
-    category_l1: "Groceries",
-    notes: "Typed by hand",
-  });
-  rows.splice(12, 0, dirty);
-  return rows;
-}
-
-function buildAnchorMonth(anchor: string, rand: () => number): StoredRow[] {
-  const rows: StoredRow[] = [];
-  const monthLabel = formatMonth(anchor);
-
-  rows.push(
-    blank({
-      transaction_id: "seed-salary",
-      date: addDays(anchor, -1),
-      type: "INCOME",
-      amount: "18500000",
-      category_l1: "Salary",
-      notes: monthLabel,
-    }),
-  );
-
-  rows.push(
-    ...lines("seed-groceries", anchor, "EXPENSE", "Superindo", [
-      ["24500", "Groceries", "Dairy", "Fresh Milk 1L"],
-      ["32000", "Groceries", "Dairy", "Eggs 10pcs"],
-      ["8900", "Groceries", "Produce", "Spinach"],
-      ["121000", "Groceries", "Staples", "Rice 5kg"],
-    ]),
-  );
-
-  rows.push(
-    blank({
-      transaction_id: "seed-transport",
-      date: addDays(anchor, -2),
-      type: "EXPENSE",
-      amount: "42000",
-      category_l1: "Transport",
-      notes: "Gojek",
-    }),
-  );
-
-  rows.push(
-    ...lines("seed-food", addDays(anchor, -4), "EXPENSE", "Coffee", [
-      ["38000", "Food", "Cafe", "Filter coffee"],
-      ["30000", "Food", "Cafe", "Butter croissant"],
-    ]),
-  );
-
-  const namedExpense = 186_400 + 42_000 + 68_000;
-  const remaining = 7_240_000 - namedExpense;
-  const lineCounts = [...Array(4).fill(2), ...Array(34).fill(3)];
-  const receiptTotals = splitTotal(remaining, lineCounts.length, rand);
-  const anchorDay = Number(anchor.slice(8, 10));
-  const reserved = new Set([anchor, addDays(anchor, -1), addDays(anchor, -2), addDays(anchor, -4)]);
-
-  lineCounts.forEach((count: number, index) => {
-    const date = fillerDate(anchor, anchorDay, index, reserved);
-    const amounts = splitTotal(receiptTotals[index], count, rand);
-    const id = `seed-fill-${String(index + 1).padStart(2, "0")}`;
-    const category = FILLER_CATEGORIES[Math.floor(rand() * FILLER_CATEGORIES.length)];
-    amounts.forEach((amount) => {
-      const group = CATALOG[category][Math.floor(rand() * CATALOG[category].length)];
-      const item = group.items[Math.floor(rand() * group.items.length)];
+    if (day === 25) {
+      const salary = pickSalary(month, rand);
       rows.push(
         blank({
-          transaction_id: id,
+          transaction_id: `seed-salary-${month}`,
+          date,
+          type: "INCOME",
+          amount: String(salary),
+          category_l1: "Salary",
+          notes: formatMonth(date),
+        }),
+      );
+    }
+
+    if (day === 1) {
+      rows.push(
+        blank({
+          transaction_id: `seed-rent-${month}`,
           date,
           type: "EXPENSE",
-          amount: String(amount),
-          category_l1: category,
-          category_l2: group.l2,
-          item_name: item,
+          amount: String(jitter(4_500_000, 0.04, rand)),
+          category_l1: "Housing",
+          category_l2: "Rent",
+          item_name: "Monthly rent",
+          notes: formatMonth(date),
         }),
       );
-    });
-  });
+    }
 
-  assertAnchorMonth(rows, anchor);
-  return rows;
-}
-
-function assertAnchorMonth(rows: StoredRow[], anchor: string) {
-  const month = anchor.slice(0, 7);
-  const inMonth = rows.filter((row) => row.date.startsWith(month));
-  const income = inMonth.filter((row) => row.type === "INCOME").reduce((sum, row) => sum + Number(row.amount), 0);
-  const expense = inMonth.filter((row) => row.type === "EXPENSE").reduce((sum, row) => sum + Number(row.amount), 0);
-  const receipts = new Set(inMonth.map((row) => row.transaction_id)).size;
-  if (income !== 18_500_000 || expense !== 7_240_000 || receipts !== 42 || inMonth.length !== 118) {
-    throw new Error(
-      `Sample ledger drifted: income ${income}, expense ${expense}, receipts ${receipts}, rows ${inMonth.length}`,
+    // Coffee every day — guarantees ≥ 1 expense transaction.
+    const coffeeAmount = roundToThousand(MIN_AMOUNT + Math.floor(rand() * 35_000));
+    const coffeeName = COFFEE_NAMES[Math.floor(rand() * COFFEE_NAMES.length)];
+    rows.push(
+      blank({
+        transaction_id: `seed-coffee-${date}`,
+        date,
+        type: "EXPENSE",
+        amount: String(coffeeAmount),
+        category_l1: "Food",
+        category_l2: "Cafe",
+        item_name: coffeeName,
+        notes: "Coffee",
+      }),
     );
-  }
-}
 
-function buildPastMonth(monthStart: string, income: number, expense: number, rand: () => number): StoredRow[] {
-  const rows: StoredRow[] = [];
-  const month = monthStart.slice(0, 7);
-  rows.push(
-    blank({
-      transaction_id: `seed-salary-${month}`,
-      date: `${month}-21`,
-      type: "INCOME",
-      amount: String(income),
-      category_l1: "Salary",
-      notes: formatMonth(monthStart),
-    }),
-  );
-
-  const receiptCount = 14;
-  const totals = splitTotal(expense, receiptCount, rand);
-  totals.forEach((total, index) => {
-    const count = index % 3 === 0 ? 2 : 1;
-    const amounts = splitTotal(total, count, rand);
-    const day = String((index % 26) + 1).padStart(2, "0");
-    const id = `seed-${month}-${index + 1}`;
-    const category = FILLER_CATEGORIES[Math.floor(rand() * FILLER_CATEGORIES.length)];
-    amounts.forEach((amount) => {
+    // Extra receipts: 0–3 more so the day has 1–4 expense transactions total.
+    const extraCount = weightedCount(rand);
+    for (let i = 0; i < extraCount; i += 1) {
+      const category = EXTRA_CATEGORIES[Math.floor(rand() * EXTRA_CATEGORIES.length)];
       const group = CATALOG[category][Math.floor(rand() * CATALOG[category].length)];
       const item = group.items[Math.floor(rand() * group.items.length)];
+      const amount = randomExpense(category, rand);
+      const lineCount = rand() < 0.25 ? 2 + Math.floor(rand() * 2) : 1;
+      const id = `seed-${date}-${i + 1}`;
+
+      if (lineCount === 1) {
+        rows.push(
+          blank({
+            transaction_id: id,
+            date,
+            type: "EXPENSE",
+            amount: String(amount),
+            category_l1: category,
+            category_l2: group.l2,
+            item_name: item,
+          }),
+        );
+      } else {
+        const parts = splitTotal(amount, lineCount, rand).map((part) => Math.max(MIN_AMOUNT, part));
+        parts.forEach((part, lineIndex) => {
+          const lineGroup = CATALOG[category][Math.floor(rand() * CATALOG[category].length)];
+          const lineItem = lineGroup.items[Math.floor(rand() * lineGroup.items.length)];
+          rows.push(
+            blank({
+              transaction_id: id,
+              date,
+              type: "EXPENSE",
+              amount: String(part),
+              category_l1: category,
+              category_l2: lineGroup.l2,
+              item_name: lineItem,
+              notes: lineIndex === 0 ? "" : "",
+            }),
+          );
+        });
+      }
+    }
+
+    // Occasional utilities mid-month.
+    if (day === 6 || day === 12) {
+      const utilGroup = CATALOG.Utilities[day === 6 ? 1 : 0];
       rows.push(
         blank({
-          transaction_id: id,
-          date: `${month}-${day}`,
+          transaction_id: `seed-util-${date}`,
+          date,
           type: "EXPENSE",
-          amount: String(amount),
-          category_l1: category,
-          category_l2: group.l2,
-          item_name: item,
+          amount: String(jitter(day === 6 ? 389_000 : 450_000 + dayIndex * 137, 0.12, rand)),
+          category_l1: "Utilities",
+          category_l2: utilGroup.l2,
+          item_name: utilGroup.items[0],
         }),
       );
-    });
-  });
+    }
+
+    dayIndex += 1;
+  }
+
+  // Keep newest activity near the top when browsing; stable sort by date then id.
+  rows.sort((a, b) => (a.date === b.date ? a.transaction_id.localeCompare(b.transaction_id) : a.date.localeCompare(b.date)));
   return rows;
 }
 
-function fillerDate(anchor: string, anchorDay: number, index: number, reserved: Set<string>): string {
-  const month = anchor.slice(0, 7);
-  const open: string[] = [];
-  for (let day = 1; day <= anchorDay; day += 1) {
-    const date = `${month}-${String(day).padStart(2, "0")}`;
-    if (!reserved.has(date)) open.push(date);
-  }
-  if (open.length === 0) return anchor;
-  return open[index % open.length];
+function pickSalary(month: string, rand: () => number): number {
+  const monthNumber = Number(month.slice(5, 7));
+  const base = monthNumber >= 7 ? 19_200_000 : 18_500_000;
+  return jitter(base, 0.03, rand);
 }
 
-function lines(
-  id: string,
-  date: string,
-  type: StoredRow["type"],
-  notes: string,
-  items: [string, string, string, string][],
-): StoredRow[] {
-  return items.map(([amount, category, l2, item]) =>
-    blank({
-      transaction_id: id,
-      date,
-      type,
-      amount,
-      category_l1: category,
-      category_l2: l2,
-      item_name: item,
-      notes,
-    }),
-  );
+function randomExpense(category: string, rand: () => number): number {
+  const ranges: Record<string, [number, number]> = {
+    Groceries: [45_000, 420_000],
+    Transport: [22_000, 185_000],
+    Food: [35_000, 280_000],
+    Utilities: [80_000, 640_000],
+    Health: [25_000, 450_000],
+    Shopping: [50_000, 1_600_000],
+  };
+  const [min, max] = ranges[category] ?? [MIN_AMOUNT, 200_000];
+  const value = min + Math.floor(rand() * (max - min + 1));
+  return Math.max(MIN_AMOUNT, roundToThousand(value));
+}
+
+/** 0 extras ~45%, 1 ~30%, 2 ~18%, 3 ~7% → daily expense receipts mostly 1–2, sometimes up to 4. */
+function weightedCount(rand: () => number): number {
+  const roll = rand();
+  if (roll < 0.45) return 0;
+  if (roll < 0.75) return 1;
+  if (roll < 0.93) return 2;
+  return 3;
+}
+
+function jitter(base: number, spread: number, rand: () => number): number {
+  const factor = 1 + (rand() * 2 - 1) * spread;
+  return Math.max(MIN_AMOUNT, roundToThousand(Math.round(base * factor)));
+}
+
+function roundToThousand(value: number): number {
+  return Math.max(MIN_AMOUNT, Math.round(value / 1000) * 1000);
 }
 
 function blank(partial: Pick<StoredRow, "transaction_id" | "date" | "type" | "amount" | "category_l1"> & Partial<StoredRow>): StoredRow {
@@ -256,19 +226,22 @@ function splitTotal(total: number, parts: number, rand: () => number): number[] 
   const weightSum = weights.reduce((sum, weight) => sum + weight, 0);
   const amounts = weights.map((weight) => Math.round((weight / weightSum) * total));
   amounts[parts - 1] = total - amounts.slice(0, -1).reduce((sum, amount) => sum + amount, 0);
-  if (amounts.some((amount) => amount <= 0)) {
+  if (amounts.some((amount) => amount < MIN_AMOUNT)) {
     const base = Math.floor(total / parts);
-    const even = Array<number>(parts).fill(base);
-    even[parts - 1] += total - base * parts;
+    const even = Array<number>(parts).fill(Math.max(MIN_AMOUNT, base));
+    const used = even.slice(0, -1).reduce((sum, amount) => sum + amount, 0);
+    even[parts - 1] = Math.max(MIN_AMOUNT, total - used);
     return even;
   }
   return amounts;
 }
 
-function shiftMonthStart(anchor: string, delta: number): string {
-  const [year, month] = anchor.split("-").map(Number);
-  const date = new Date(Date.UTC(year, month - 1 + delta, 1));
-  return date.toISOString().slice(0, 10);
+function hashSeed(anchor: string): number {
+  let hash = 20261122;
+  for (let i = 0; i < anchor.length; i += 1) {
+    hash = (Math.imul(hash, 31) + anchor.charCodeAt(i)) | 0;
+  }
+  return hash >>> 0;
 }
 
 function mulberry32(seed: number): () => number {

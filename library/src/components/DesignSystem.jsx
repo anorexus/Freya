@@ -8,6 +8,8 @@ import { ExpenseCard } from "./ExpenseCard.jsx";
 import { LiquidityCard } from "./LiquidityCard.jsx";
 import { Notification } from "./Notification.jsx";
 import { TrendCard } from "./TrendCard.jsx";
+import { TrendCardV2 } from "./TrendCardV2.jsx";
+import { TrendCardV3 } from "./TrendCardV3.jsx";
 import "./Dashboard.css";
 import "./DesignSystem.css";
 
@@ -341,6 +343,26 @@ export function DesignSystem({ onMenu = () => {} }) {
             </div>
             <div className="docs-cards is-wide">
               <TrendCard transactions={sampleTransactions()} />
+            </div>
+          </div>
+          <div className="docs-group">
+            <div className="docs-head">
+              <h3>Trend v2</h3>
+              <p>Capsule columns. The weekday sits inside the bar and the date sits under it. Selecting a column replaces the capsule with a light fade, a white stem, and an inverted day circle, and puts the compact amount in a chip above. Daily pages by one day and Monthly by one month. The latest point in the window starts selected. A rise in spending uses the negative pill. The cashflow card stays on months. It draws two bars on the same column. The black bar is income and the transparent bar is expense. When expense is higher, it rises above the income bar. The amount pill is income minus expense, and transfers stay out. A rise in that cashflow uses the positive pill.</p>
+            </div>
+            <div className="docs-cards is-pair">
+              <TrendCardV2 transactions={sampleTransactions()} />
+              <TrendCardV2 transactions={sampleTransactions()} kind="cashflow" />
+            </div>
+          </div>
+          <div className="docs-group">
+            <div className="docs-head">
+              <h3>Spending trend v3</h3>
+              <p>Capsule columns with the weekday inside the bar and the date under it. The shortest bar stays 44px and drops its stem. Selecting a column fades that column, turns the stem white, and sticks a compact amount pill to the top of the bar. Average spending and its trend follow the days or months on the graph. Daily shows seven days, and each step moves that window by one day. Monthly paging stays inside one year. The latest point starts selected. A rise in spending uses the negative pill.</p>
+            </div>
+            <div className="st3-preview">
+              <TrendCardV3 transactions={sampleTransactions()} />
+              <TrendCardV3 transactions={sampleTransactions()} />
             </div>
           </div>
           <div className="docs-group">

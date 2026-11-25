@@ -1,6 +1,7 @@
 import { CopyAmount } from "./CopyAmount.jsx";
 import { availableLiquidity, formatRupiah } from "../money.js";
 import { formatDay, liquidityPeriod } from "../period.js";
+import { Pill } from "./Pill.jsx";
 import "./LiquidityCard.css";
 
 function daysLabel(daysLeft) {
@@ -56,7 +57,7 @@ export function LiquidityCard({ wallets, periodStartDay = 1, today = new Date() 
         </div>
         <footer className="liq-foot">
           <p>{footer}</p>
-          <span className={`liq-pill is-${level}`}>{daysLabel(period.daysLeft)}</span>
+          <Pill tone={level}>{daysLabel(period.daysLeft)}</Pill>
         </footer>
       </div>
     </article>

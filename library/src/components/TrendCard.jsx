@@ -4,6 +4,7 @@ import { CopyAmount } from "./CopyAmount.jsx";
 import { formatTrend } from "../cashflow.js";
 import { formatRupiah } from "../money.js";
 import { expenseTrend, formatCompactRupiah, trendChange } from "../trend.js";
+import { Pill } from "./Pill.jsx";
 import "./LiquidityCard.css";
 import "./CashflowCard.css";
 import "./TrendCard.css";
@@ -144,14 +145,14 @@ export function TrendCard({ transactions, today = new Date() }) {
         </div>
         <footer className="liq-foot">
           {change == null ? (
-            <span className="liq-pill">—</span>
+            <Pill>—</Pill>
           ) : (
-            <span className={`liq-pill is-${spendingRose ? "negative" : "positive"}`}>
+            <Pill tone={spendingRose ? "negative" : "positive"}>
               <svg className={spendingRose ? "trend-arrow" : "trend-arrow is-down"} width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
                 <path d="M3 12.5L6.2 8L8.5 10.4L13 4.5" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
               {formatTrend(Math.abs(change)).replace("+", "")}
-            </span>
+            </Pill>
           )}
           <p className="cf-note">
             {selected ? `Spending ${monthly ? "in" : "on"} ${selected.weekday}` : "Spending"}
