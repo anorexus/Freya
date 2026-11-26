@@ -8,6 +8,7 @@ import { CalendarCard } from "./CalendarCard.jsx";
 import { CashflowCard } from "./CashflowCard.jsx";
 import { CashflowCardV2 } from "./CashflowCardV2.jsx";
 import { ExpenseCard } from "./ExpenseCard.jsx";
+import { SpendingCard } from "./SpendingCard.jsx";
 import { LiquidityCard } from "./LiquidityCard.jsx";
 import { Notification } from "./Notification.jsx";
 import { TransactionListCard } from "./TransactionListCard.jsx";
@@ -86,6 +87,9 @@ export function Dashboard({ onMenu = () => {} }) {
           <LiquidityCard wallets={WALLETS} today={today} />
           <CashflowCard transactions={transactions} today={today} />
           <ExpenseCard transactions={transactions} categories={CATEGORIES} today={today} />
+        </section>
+        <section className="dash-span" aria-label="Spending by category">
+          <SpendingCard transactions={transactions} categories={CATEGORIES} today={today} />
         </section>
         <section className="dash-span" aria-label="Calendar">
           <CalendarCard transactions={transactions} today={now} focus={today} onToday={() => setMonthOffset(0)} />

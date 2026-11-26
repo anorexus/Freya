@@ -8,6 +8,7 @@ import { CalendarCard } from "./CalendarCard.jsx";
 import { CashflowCard } from "./CashflowCard.jsx";
 import { CashflowCardV2 } from "./CashflowCardV2.jsx";
 import { ExpenseCard } from "./ExpenseCard.jsx";
+import { SpendingCard } from "./SpendingCard.jsx";
 import { LiquidityCard } from "./LiquidityCard.jsx";
 import { Notification } from "./Notification.jsx";
 import { TrendCard } from "./TrendCard.jsx";
@@ -334,6 +335,15 @@ export function DesignSystem({ onMenu = () => {} }) {
               <LiquidityCard wallets={WALLETS} />
               <CashflowCard transactions={sampleTransactions()} />
               <ExpenseCard transactions={sampleTransactions()} categories={CATEGORIES} />
+            </div>
+          </div>
+          <div className="docs-group">
+            <div className="docs-head">
+              <h3>Spending by category</h3>
+              <p>Half ring of this month’s expenses. Each slice uses that category’s primitive color. Hovering a slice or a row dims the rest. The figure is this month’s total.</p>
+            </div>
+            <div className="docs-cards is-wide">
+              <SpendingCard transactions={sampleTransactions()} categories={CATEGORIES} />
             </div>
           </div>
           <div className="docs-group">

@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-11-26 — Spending by category
+
+- Add a spending-by-category card on the dashboard: a half ring of this month’s expenses, with rows that highlight the matching slice.
+- Use checkboxes for people on the add-transaction card, and split category rows so the name expands and the control selects.
+
 ## 2026-11-26 — Calendar and add transaction
 
 - Add a calendar on the dashboard that follows the selected month, and let the cashflow and spending trends page with that same focus.
