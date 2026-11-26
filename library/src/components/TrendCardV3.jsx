@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Button, buttonIcons, useDismiss } from "./Button.jsx";
 import { ChartTip } from "./ChartTip.jsx";
 import { CopyAmount } from "./CopyAmount.jsx";
@@ -82,21 +82,29 @@ function Column({ point, active, ratio, minimum, onSelect }) {
   );
 }
 
-export function TrendCardV3({ transactions, today = new Date() }) {
+export function TrendCardV3({ transactions, today = new Date(), focus = today }) {
   const [range, setRange] = useState("week");
   const [page, setPage] = useState(0);
   const [open, setOpen] = useState(false);
   const [selectedTime, setSelectedTime] = useState(null);
+  const focusTime = new Date(focus.getFullYear(), focus.getMonth(), focus.getDate()).getTime();
+
+  useEffect(() => {
+    setPage(0);
+    setSelectedTime(null);
+  }, [focusTime]);
   const dropRef = useRef(null);
   useDismiss(open, dropRef, () => setOpen(false));
 
   const monthly = range === "month";
   const earliest = earliestTrendDate(transactions, "expense");
-  const history = earliest ? (monthly ? monthsBefore(earliest, today) : dayOffset(today, earliest)) : 0;
+  const history = earliest ? (monthly ? monthsBefore(earliest, focus) : dayOffset(focus, earliest)) : 0;
+  const ahead = monthly ? monthsBefore(focus, today) : dayOffset(today, focus);
   const maxPage = Math.max(0, history - (WINDOW - 1));
-  const safePage = Math.min(page, maxPage);
-  const summary = expenseTrend(transactions, range, today, safePage, WINDOW, "expense");
-  const previous = expenseTrend(transactions, range, today, safePage + WINDOW, WINDOW, "expense");
+  const minPage = -Math.max(0, ahead);
+  const safePage = Math.max(minPage, Math.min(page, maxPage));
+  const summary = expenseTrend(transactions, range, focus, safePage, WINDOW, "expense");
+  const previous = expenseTrend(transactions, range, focus, safePage + WINDOW, WINDOW, "expense");
   const overall = previous.total === 0 ? null : (summary.total - previous.total) / previous.total;
   const selected = summary.points.find((point) => point.date.getTime() === selectedTime) ?? summary.points.at(-1);
   const change = selected ? trendChange(summary.points, selected.date) : null;
@@ -173,8 +181,8 @@ export function TrendCardV3({ transactions, today = new Date() }) {
               variant="navigation"
               icon={buttonIcons.arrowRight}
               aria-label={monthly ? "Next month" : "Next day"}
-              disabled={safePage === 0}
-              onClick={() => setPage((current) => Math.max(0, current - 1))}
+              disabled={safePage <= minPage}
+              onClick={() => setPage((current) => Math.max(minPage, current - 1))}
             />
           </div>
         </div>

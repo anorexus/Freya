@@ -11,8 +11,12 @@ import "./TransactionListCard.css";
 const ROW_LIMIT = 6;
 
 function tintIcon(svg, color, id) {
+  const hex = color.replace("#", "");
+  const channel = (start) => (Number.parseInt(hex.slice(start, start + 2), 16) / 255).toFixed(5);
+  const shadow = `0 0 0 0 ${channel(0)} 0 0 0 0 ${channel(2)} 0 0 0 0 ${channel(4)} 0 0 0 0.24 0`;
   return svg
     .replaceAll("#EC407A", color)
+    .replaceAll("0 0 0 0 0.92549 0 0 0 0 0.25098 0 0 0 0 0.478431 0 0 0 0.24 0", shadow)
     .replaceAll("filter0_i_0_375", `${id}-f`)
     .replaceAll("paint0_linear_0_375", `${id}-p0`)
     .replaceAll("paint1_linear_0_375", `${id}-p1`);

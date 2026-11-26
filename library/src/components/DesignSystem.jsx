@@ -2,7 +2,9 @@ import { useEffect, useState } from "react";
 import { CATEGORIES } from "../../../src/data/categories.ts";
 import systemIcon from "../assets/icons/system.svg?raw";
 import { sampleTransactions } from "../cashflow.js";
+import { AddTransactionCardV2 } from "./AddTransactionCardV2.jsx";
 import { Button, WalletDropdown, buttonIcons } from "./Button.jsx";
+import { CalendarCard } from "./CalendarCard.jsx";
 import { CashflowCard } from "./CashflowCard.jsx";
 import { CashflowCardV2 } from "./CashflowCardV2.jsx";
 import { ExpenseCard } from "./ExpenseCard.jsx";
@@ -292,13 +294,15 @@ export function DesignSystem({ onMenu = () => {} }) {
           <div className="docs-group">
             <div className="docs-head">
               <h3>Button</h3>
-              <p>Secondary is the quiet action, used for Sync. Primary is the single strong action, Add transaction. Navigation is the 28px pager used for months and trend columns. Disabled sits on every variant and removes the action.</p>
+              <p>Secondary is the quiet action, used for Sync. Primary is the single strong action, Add transaction. Nude is the same shape with no fill until hover. Navigation is the 28px pager used for months and trend columns. Disabled sits on every variant and removes the action.</p>
             </div>
             <div className="docs-stage">
               <Button variant="secondary" icon={buttonIcons.sync}>Sync</Button>
               <Button variant="primary" icon={buttonIcons.add}>Add transaction</Button>
+              <Button variant="nude" icon={buttonIcons.sync}>Sync</Button>
               <Button variant="navigation" icon={buttonIcons.arrowRight} aria-label="Next" />
               <Button variant="secondary" disabled>Disabled</Button>
+              <Button variant="nude" icon={buttonIcons.sync} disabled>Sync</Button>
             </div>
           </div>
           <div className="docs-group">
@@ -384,6 +388,24 @@ export function DesignSystem({ onMenu = () => {} }) {
             <div className="cf2-preview">
               <CashflowCardV2 transactions={sampleTransactions()} />
               <CashflowCardV2 transactions={sampleTransactions()} />
+            </div>
+          </div>
+          <div className="docs-group">
+            <div className="docs-head">
+              <h3>Add transaction</h3>
+              <p>Expense, income, and transfer each keep their own fields. Category, account, and beneficiary open as pages inside the card. Receipt is only the row for now.</p>
+            </div>
+            <div className="docs-cards is-wide">
+              <AddTransactionCardV2 wallets={WALLETS} />
+            </div>
+          </div>
+          <div className="docs-group">
+            <div className="docs-head">
+              <h3>Calendar</h3>
+              <p>The current month opens on today. A past month opens on its last day, and the arrows can cross into the months beside it. Today returns to the real current date. A wide card shows seven days, a narrower card five, and a phone card three. Each step moves one day. Past days show expense, then income in the positive color. A selected day uses the darker well. Upcoming days keep the date and a bill label: one name, or a count when there is more than one.</p>
+            </div>
+            <div className="docs-cards is-wide">
+              <CalendarCard transactions={sampleTransactions()} />
             </div>
           </div>
           <div className="docs-group">

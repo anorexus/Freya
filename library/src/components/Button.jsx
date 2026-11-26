@@ -13,6 +13,14 @@ import allIcon from "../assets/icons/all.svg?raw";
 import closeIcon from "../assets/icons/close.svg?raw";
 import menuIcon from "../assets/icons/menu.svg?raw";
 import hamburgerIcon from "../assets/icons/hamburger.svg?raw";
+import expenseIcon from "../assets/icons/expense.svg?raw";
+import incomeIcon from "../assets/icons/income.svg?raw";
+import transferIcon from "../assets/icons/transfer.svg?raw";
+import backIcon from "../assets/icons/back.svg?raw";
+import calendarIcon from "../assets/icons/calendar.svg?raw";
+import userIcon from "../assets/icons/user.svg?raw";
+import addOutlineIcon from "../assets/icons/add-outline.svg?raw";
+import searchIcon from "../assets/icons/search.svg?raw";
 import bcaMark from "../assets/wallets/bca.svg";
 import gopayMark from "../assets/wallets/gopay.png";
 import cashMark from "../assets/wallets/cash.svg";
@@ -151,4 +159,12 @@ export const buttonIcons = {
   menu: menuIcon,
   close: closeIcon,
   hamburger: hamburgerIcon,
+  expense: expenseIcon,
+  income: incomeIcon,
+  transfer: transferIcon,
+  back: backIcon,
+  calendar: calendarIcon,
+  user: userIcon,
+  addOutline: addOutlineIcon,
+  search: searchIcon,
 };
