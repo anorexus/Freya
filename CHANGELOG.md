@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-11-26 — Go stays separate from deploy
+
+- Keep Go as branch, changelog, commit, and merge. Push stays a separate command so the Pages site does not update on every Go.
+- Leave local `mocks/` untracked.
+
 ## 2026-11-26 — Spending by category
 
 - Add a spending-by-category card on the dashboard: a half ring of this month’s expenses, with rows that highlight the matching slice.
