@@ -1,5 +1,6 @@
 import { useEffect, useId, useMemo, useRef, useState } from "react";
 import { CATEGORIES } from "../../../src/data/categories.ts";
+import checkMark from "../assets/checkmark-stroke.svg";
 import bcaMark from "../assets/wallets/bca.svg";
 import cashMark from "../assets/wallets/cash.svg";
 import gopayMark from "../assets/wallets/gopay.png";
@@ -71,6 +72,18 @@ function Radio({ state = "unselected" }) {
     <span className={`at2-radio is-${state}`} aria-hidden="true">
       {state === "selected" ? <span className="at2-radio-fill" /> : null}
       {state === "partial" ? <span className="at2-radio-partial" /> : null}
+    </span>
+  );
+}
+
+function Checkbox({ checked = false }) {
+  return (
+    <span className={`at2-check${checked ? " is-on" : ""}`} aria-hidden="true">
+      {checked ? (
+        <span className="at2-check-fill">
+          <img className="at2-check-mark" src={checkMark} alt="" />
+        </span>
+      ) : null}
     </span>
   );
 }
@@ -396,12 +409,13 @@ export function AddTransactionCardV2({ open, wallets = [], onClose, onSave }) {
               return (
                 <div key={item.l1}>
                   {index > 0 ? <div className="at2-rule" /> : null}
-                  <div className="at2-pick">
-                    <span className="at2-swatch is-lg" style={{ "--swatch": item.color }} />
+                  <div className="at2-pick is-split">
                     <button
                       type="button"
                       className="at2-pick-name"
+                      aria-expanded={item.l2.length ? open : undefined}
                       onClick={() => {
+                        if (!item.l2.length) return;
                         setOpenGroups((current) => {
                           const next = new Set(current);
                           if (next.has(item.l1)) next.delete(item.l1);
@@ -410,8 +424,11 @@ export function AddTransactionCardV2({ open, wallets = [], onClose, onSave }) {
                         });
                       }}
                     >
-                      {item.l1}
-                      {item.l2.length ? <Glyph svg={open ? buttonIcons.arrowDown : buttonIcons.arrowRight} className="at2-chevron" /> : null}
+                      <span className="at2-swatch is-lg" style={{ "--swatch": item.color }} />
+                      <span className="at2-pick-label">
+                        {item.l1}
+                        {item.l2.length ? <Glyph svg={open ? buttonIcons.arrowDown : buttonIcons.arrowRight} className="at2-chevron" /> : null}
+                      </span>
                     </button>
                     <button
                       type="button"
@@ -485,6 +502,7 @@ export function AddTransactionCardV2({ open, wallets = [], onClose, onSave }) {
                   <button
                     type="button"
                     className="at2-pick"
+                    aria-pressed={selected}
                     onClick={() => {
                       patch({
                         people: selected
@@ -495,7 +513,7 @@ export function AddTransactionCardV2({ open, wallets = [], onClose, onSave }) {
                   >
                     <PersonMark />
                     <span className="at2-pick-name">{person.name}</span>
-                    <Radio state={selected ? "selected" : "unselected"} />
+                    <Checkbox checked={selected} />
                   </button>
                 </div>
               );
