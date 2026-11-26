@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-26 — Calendar and add transaction
+
+- Add a calendar on the dashboard that follows the selected month, and let the cashflow and spending trends page with that same focus.
+- Replace the add-transaction dialog with a card that steps through expense, income, and transfer, including category, account, and beneficiary.
+- Add a nude button and soften the pressed state on transaction rows.
+
 ## 2026-11-25 — Accounts page
 
 - Add an Accounts page and rename Wallets to Accounts in the nav, liquidity card, and add-transaction form.

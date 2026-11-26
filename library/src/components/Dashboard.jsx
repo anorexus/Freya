@@ -2,8 +2,9 @@ import { useState } from "react";
 import { CATEGORIES } from "../../../src/data/categories.ts";
 import dashboardIcon from "../assets/icons/dashboard.svg?raw";
 import { sampleTransactions } from "../cashflow.js";
-import { AddTransactionCard } from "./AddTransactionCard.jsx";
+import { AddTransactionCardV2 } from "./AddTransactionCardV2.jsx";
 import { Button, WalletDropdown, buttonIcons } from "./Button.jsx";
+import { CalendarCard } from "./CalendarCard.jsx";
 import { CashflowCard } from "./CashflowCard.jsx";
 import { CashflowCardV2 } from "./CashflowCardV2.jsx";
 import { ExpenseCard } from "./ExpenseCard.jsx";
@@ -86,15 +87,18 @@ export function Dashboard({ onMenu = () => {} }) {
           <CashflowCard transactions={transactions} today={today} />
           <ExpenseCard transactions={transactions} categories={CATEGORIES} today={today} />
         </section>
-        <section className="dash-grid is-trends" aria-label="Trends">
-          <CashflowCardV2 transactions={transactions} today={today} />
-          <TrendCardV3 transactions={transactions} today={today} />
+        <section className="dash-span" aria-label="Calendar">
+          <CalendarCard transactions={transactions} today={now} focus={today} onToday={() => setMonthOffset(0)} />
         </section>
-        <section className="dash-grid" aria-label="Transactions">
+        <section className="dash-grid is-trends" aria-label="Trends">
+          <CashflowCardV2 transactions={transactions} today={now} focus={today} />
+          <TrendCardV3 transactions={transactions} today={now} focus={today} />
+        </section>
+        <section className="dash-span" aria-label="Transactions">
           <TransactionListCard transactions={transactions} today={today} onSeeMore={() => { window.location.hash = "transactions"; }} />
         </section>
       </div>
-      <AddTransactionCard open={logOpen} wallets={WALLETS} onClose={() => setLogOpen(false)} />
+      <AddTransactionCardV2 open={logOpen} wallets={WALLETS} onClose={() => setLogOpen(false)} />
     </main>
   );
 }

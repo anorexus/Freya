@@ -185,6 +185,12 @@
   background: linear-gradient(to top, rgba(255, 255, 255, 0.24), rgba(255, 255, 255, 0.04));
 }
 
+.cf2-col.is-on .cf2-expense {
+  border: 1px solid var(--outline-medium);
+  box-shadow: none;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.24), rgba(255, 255, 255, 0.48));
+}
+
 .cf2-month {
   color: var(--typography-title);
   font-family: var(--type-caption-m-family);

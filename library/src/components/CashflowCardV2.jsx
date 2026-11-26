@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { Button, buttonIcons } from "./Button.jsx";
 import { ChartTip } from "./ChartTip.jsx";
 import { CopyAmount } from "./CopyAmount.jsx";
@@ -82,11 +82,17 @@ function Column({ point, active, incomeHeight, expenseHeight, onSelect }) {
   );
 }
 
-export function CashflowCardV2({ transactions, today = new Date() }) {
+export function CashflowCardV2({ transactions, today = new Date(), focus = today }) {
   const chartRef = useRef(null);
   const [chartWidth, setChartWidth] = useState(0);
   const [page, setPage] = useState(0);
   const [selectedTime, setSelectedTime] = useState(null);
+  const focusTime = new Date(focus.getFullYear(), focus.getMonth(), focus.getDate()).getTime();
+
+  useEffect(() => {
+    setPage(0);
+    setSelectedTime(null);
+  }, [focusTime]);
 
   useLayoutEffect(() => {
     const node = chartRef.current;
@@ -100,14 +106,15 @@ export function CashflowCardV2({ transactions, today = new Date() }) {
 
   const span = windowSpan(chartWidth);
   const earliest = earliestTrendDate(transactions, "cashflow");
-  const history = earliest ? monthsBefore(earliest, today) : 0;
+  const history = earliest ? monthsBefore(earliest, focus) : 0;
   const maxPage = Math.max(0, history - (span - 1));
-  const safePage = Math.min(page, maxPage);
-  const summary = expenseTrend(transactions, "month", today, safePage, span, "cashflow");
-  const previous = expenseTrend(transactions, "month", today, safePage + span, span, "cashflow");
+  const minPage = -Math.max(0, monthsBefore(focus, today));
+  const safePage = Math.max(minPage, Math.min(page, maxPage));
+  const summary = expenseTrend(transactions, "month", focus, safePage, span, "cashflow");
+  const previous = expenseTrend(transactions, "month", focus, safePage + span, span, "cashflow");
   const overall = changeRatio(summary.total, previous.total);
   const selected = summary.points.find((point) => point.date.getTime() === selectedTime) ?? summary.points.at(-1);
-  const priorMonth = expenseTrend(transactions, "month", today, safePage + 1, 1, "cashflow").points[0];
+  const priorMonth = expenseTrend(transactions, "month", focus, safePage + 1, 1, "cashflow").points[0];
   const priorAmount = priorMonth ? priorMonth.amount : null;
   const change = selected
     ? trendChange(summary.points, selected.date) ?? changeRatio(selected.amount, selected.date.getTime() === summary.points[0]?.date.getTime() ? priorAmount : null)
@@ -161,9 +168,9 @@ export function CashflowCardV2({ transactions, today = new Date() }) {
               variant="navigation"
               icon={buttonIcons.arrowRight}
               aria-label="Later months"
-              disabled={safePage === 0}
+              disabled={safePage <= minPage}
               onClick={() => {
-                setPage((current) => Math.max(0, current - 1));
+                setPage((current) => Math.max(minPage, current - 1));
                 setSelectedTime(null);
               }}
             />

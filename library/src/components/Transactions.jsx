@@ -4,7 +4,7 @@ import transactionsIcon from "../assets/icons/transactions.svg?raw";
 import searchIcon from "../assets/icons/search.svg?raw";
 import { sampleTransactions } from "../cashflow.js";
 import { formatRupiah } from "../money.js";
-import { AddTransactionCard } from "./AddTransactionCard.jsx";
+import { AddTransactionCardV2 } from "./AddTransactionCardV2.jsx";
 import { Button, WalletDropdown, buttonIcons } from "./Button.jsx";
 import { CashflowCard } from "./CashflowCard.jsx";
 import { ExpenseCard } from "./ExpenseCard.jsx";
@@ -103,7 +103,7 @@ export function Transactions({ onMenu = () => {} }) {
         </section>
         <TransactionListCard transactions={visible} today={today} grouped />
       </div>
-      <AddTransactionCard open={logOpen} wallets={WALLETS} onClose={() => setLogOpen(false)} />
+      <AddTransactionCardV2 open={logOpen} wallets={WALLETS} onClose={() => setLogOpen(false)} />
     </main>
   );
 }
