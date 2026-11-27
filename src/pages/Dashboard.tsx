@@ -37,6 +37,8 @@ export function Dashboard({ onMenu = () => {} }: { onMenu?: () => void }) {
       onSeeMore={() => ledger.setView("transactions")}
       onSave={(draft: LibraryDraft) => saveDraft(ledger.addTransaction, draft)}
       addDisabled={!ledger.schema.ok || ledger.busy}
+      loggedIn={Boolean(ledger.session)}
+      onLogIn={ledger.signIn}
     />
   );
 }
