@@ -56,7 +56,7 @@ export function LedgerProvider({ children }: { children: ReactNode }) {
     const grid = await readFreyaSheet(accessToken, link.id);
     const nextLink = { id: link.id, title: grid.title };
     setSheet(nextLink);
-    setSnapshot(snapshotFromGrid(grid.headers, grid.dataRows, grid.tabs, false));
+    setSnapshot(snapshotFromGrid(grid.headers, grid.dataRows, grid.tabs, false, grid.categoryHeaders, grid.categoryRows));
   }
 
   useEffect(() => {
