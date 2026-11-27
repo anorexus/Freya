@@ -91,9 +91,9 @@
   margin: 0;
   color: var(--liq-text);
   font-family: var(--liq-font-numeric);
-  font-weight: var(--type-numeric-xl-weight);
-  font-size: var(--type-numeric-xl-size);
-  line-height: var(--type-numeric-xl-line);
+  font-weight: var(--type-numeric-xxl-weight);
+  font-size: var(--type-numeric-xxl-size);
+  line-height: var(--type-numeric-xxl-line);
   font-variant-numeric: tabular-nums;
 }
 
@@ -123,34 +123,6 @@
   border-radius: 32px;
   background: var(--liq-card);
   box-shadow: 0 2px 1px rgba(255, 255, 255, 0.02);
-}
-
-.liq-scale {
-  position: relative;
-  display: flex;
-  flex: 1;
-  align-items: center;
-  height: 8px;
-  min-width: 0;
-}
-
-.liq-fill {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 8px;
-  border-radius: 32px;
-  background: var(--gradient-positive);
-}
-
-.liq-fill.is-warning,
-.cf-fill.is-warning {
-  background: var(--gradient-warning);
-}
-
-.liq-fill.is-negative,
-.cf-fill.is-negative {
-  background: var(--gradient-negative);
 }
 
 .liq-foot {

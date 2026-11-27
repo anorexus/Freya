@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-27 — Progress bar and spending chart
+
+- Share one progress bar on the liquidity and cashflow cards.
+- Limit the spending ring to the top five categories plus Others, and sit it beside the spending trend.
+- Add Numeric XXL at 40 and move Numeric XL to 32.
+
 ## 2026-11-26 — Go stays separate from deploy
 
 - Keep Go as branch, changelog, commit, and merge. Push stays a separate command so the Pages site does not update on every Go.

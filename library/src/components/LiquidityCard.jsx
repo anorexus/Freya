@@ -2,6 +2,7 @@ import { CopyAmount } from "./CopyAmount.jsx";
 import { availableLiquidity, formatRupiah } from "../money.js";
 import { formatDay, liquidityPeriod } from "../period.js";
 import { Pill } from "./Pill.jsx";
+import { ProgressBar } from "./ProgressBar.jsx";
 import "./LiquidityCard.css";
 
 function daysLabel(daysLeft) {
@@ -38,19 +39,10 @@ export function LiquidityCard({ wallets, periodStartDay = 1, today = new Date() 
           <div className="liq-timeline">
             <span>{formatDay(period.startDate)}</span>
             <div className="liq-track" aria-hidden="true">
-              <div className="liq-scale">
-                {period.elapsedDays > 0 && (
-                  <div
-                    className={`liq-fill is-${level}`}
-                    style={{
-                      width:
-                        period.daysLeft === 0
-                          ? "100%"
-                          : `calc(${((period.elapsedDays - 0.5) / period.totalDays) * 100}% + 4px)`,
-                    }}
-                  />
-                )}
-              </div>
+              <ProgressBar
+                level={level}
+                value={period.totalDays ? (period.elapsedDays / period.totalDays) * 100 : 0}
+              />
             </div>
             <span>{formatDay(period.endDate)}</span>
           </div>

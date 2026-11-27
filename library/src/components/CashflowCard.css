@@ -59,13 +59,6 @@
   box-shadow: 0 2px 1px rgba(255, 255, 255, 0.02);
 }
 
-.cf-fill {
-  height: 8px;
-  max-width: 100%;
-  border-radius: 32px;
-  background: var(--gradient-positive);
-}
-
 .cf-note {
   display: flex;
   flex: none;
