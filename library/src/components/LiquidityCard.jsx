@@ -22,13 +22,13 @@ export function LiquidityCard({ wallets, periodStartDay = 1, today = new Date() 
   const period = liquidityPeriod(today, periodStartDay);
   const walletCount = wallets.length;
   const level = liquidityLevel(period.daysLeft);
-  const footer = period.calendarMonth ? "Days left this month" : "Days left until payday";
+  const footer = period.calendarMonth ? "Days remaining this month" : "Days remaining to payday";
 
   return (
     <article className="liq-card">
       <header className="liq-card-head">
-        <h2>All accounts</h2>
-        <p>From {walletCount} {walletCount === 1 ? "account" : "accounts"}</p>
+        <h2>Overall balance</h2>
+        <p>From {walletCount} {walletCount === 1 ? "wallet" : "wallets"}</p>
       </header>
       <div className="liq-card-body">
         <div className="liq-amount">
@@ -37,14 +37,16 @@ export function LiquidityCard({ wallets, periodStartDay = 1, today = new Date() 
             <p className="liq-amount-value"><CopyAmount>{formatRupiah(total)}</CopyAmount></p>
           </div>
           <div className="liq-timeline">
-            <span>{formatDay(period.startDate)}</span>
+            <div className="liq-dates">
+              <span>{formatDay(period.startDate)}</span>
+              <span>{formatDay(period.endDate)}</span>
+            </div>
             <div className="liq-track" aria-hidden="true">
               <ProgressBar
                 level={level}
                 value={period.totalDays ? (period.elapsedDays / period.totalDays) * 100 : 0}
               />
             </div>
-            <span>{formatDay(period.endDate)}</span>
           </div>
         </div>
         <footer className="liq-foot">

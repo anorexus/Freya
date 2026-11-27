@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-11-27 — Card progress polish
+
+- Soften the shared progress bar and show all three levels in the design system.
+- Rename the liquidity card to Overall balance and place the period dates above the bar.
+- Fade expense segments by category color. Hovering a spending slice replaces the center total, and row amounts use a compact figure.
+- Drop the summary cards from the transactions page.
+
 ## 2026-11-27 — Progress bar and spending chart
 
 - Share one progress bar on the liquidity and cashflow cards.

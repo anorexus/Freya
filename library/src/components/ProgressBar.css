@@ -16,29 +16,50 @@
   border-radius: 32px;
 }
 
+.progress-bar-fill::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 0.5px;
+  background: linear-gradient(90deg, var(--bar-stroke-start), var(--bar-stroke-end));
+  pointer-events: none;
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+}
+
 .progress-bar-fill.is-positive {
+  --bar-stroke-start: color-mix(in srgb, var(--lightblue-50) 4%, transparent);
+  --bar-stroke-end: color-mix(in srgb, var(--green-50) 72%, transparent);
   background: linear-gradient(
-    to right,
-    color-mix(in srgb, var(--lightblue-50) 18%, black) 0%,
-    color-mix(in srgb, var(--lightblue-50) 45%, black) 62%,
-    var(--green-50) 100%
+    90deg,
+    color-mix(in srgb, var(--lightblue-50) 8%, transparent),
+    color-mix(in srgb, var(--green-50) 48%, transparent)
   );
 }
 
 .progress-bar-fill.is-warning {
+  --bar-stroke-start: color-mix(in srgb, var(--yellow-50) 4%, transparent);
+  --bar-stroke-end: color-mix(in srgb, var(--orange-50) 72%, transparent);
   background: linear-gradient(
-    to right,
-    color-mix(in srgb, var(--orange-50) 18%, black) 0%,
-    color-mix(in srgb, var(--orange-50) 45%, black) 62%,
-    var(--yellow-50) 100%
+    90deg,
+    color-mix(in srgb, var(--yellow-50) 8%, transparent),
+    color-mix(in srgb, var(--orange-50) 48%, transparent)
   );
 }
 
 .progress-bar-fill.is-negative {
+  --bar-stroke-start: color-mix(in srgb, var(--purple-50) 4%, transparent);
+  --bar-stroke-end: color-mix(in srgb, var(--pink-50) 72%, transparent);
   background: linear-gradient(
-    to right,
-    color-mix(in srgb, var(--purple-50) 18%, black) 0%,
-    color-mix(in srgb, var(--pink-50) 45%, black) 62%,
-    var(--pink-50) 100%
+    90deg,
+    color-mix(in srgb, var(--purple-50) 8%, transparent),
+    color-mix(in srgb, var(--pink-50) 64%, transparent)
   );
 }

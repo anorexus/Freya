@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { expenseBreakdown, formatShare } from "../expense.js";
 import { formatRupiah } from "../money.js";
+import { formatCompactRupiah } from "../trend.js";
 import { Pill } from "./Pill.jsx";
 import "./SpendingCard.css";
 
@@ -99,6 +100,7 @@ export function SpendingCard({ transactions, categories, today = new Date() }) {
     return { ...slice, share: total > 0 ? slice.amount / total : 0, d: span > gap ? wedge(start, end) : "" };
   });
   const top = arcs[0];
+  const hovered = arcs.find((slice) => slice.name === active) ?? null;
 
   return (
     <article className="spend-card">
@@ -155,8 +157,8 @@ export function SpendingCard({ transactions, categories, today = new Date() }) {
               })}
             </svg>
             <p className="spend-total">
-              <strong>{formatRupiah(total)}</strong>
-              <span>{month}</span>
+              <strong>{formatRupiah(hovered ? hovered.amount : total)}</strong>
+              <span>{hovered ? `${hovered.name} ${formatShare(hovered.share)}` : month}</span>
             </p>
           </div>
           <div className="spend-rows" onPointerLeave={() => setActive(null)}>
@@ -177,7 +179,7 @@ export function SpendingCard({ transactions, categories, today = new Date() }) {
                         <i />
                         <span className="spend-share">{formatShare(slice.share)}</span>
                       </span>
-                      <span className="spend-amt">{formatRupiah(slice.amount)}</span>
+                      <span className="spend-amt">{formatCompactRupiah(slice.amount)}</span>
                     </button>
                   ))}
                 </div>

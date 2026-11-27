@@ -11,6 +11,7 @@ import { ExpenseCard } from "./ExpenseCard.jsx";
 import { SpendingCard } from "./SpendingCard.jsx";
 import { LiquidityCard } from "./LiquidityCard.jsx";
 import { Notification } from "./Notification.jsx";
+import { ProgressBar } from "./ProgressBar.jsx";
 import { TrendCard } from "./TrendCard.jsx";
 import { TrendCardV2 } from "./TrendCardV2.jsx";
 import { TransactionListCard } from "./TransactionListCard.jsx";
@@ -329,6 +330,19 @@ export function DesignSystem({ onMenu = () => {} }) {
           </div>
           <div className="docs-group">
             <div className="docs-head">
+              <h3>Progress bar</h3>
+              <p>The fill width is the value, from 0 to 100. Positive, warning, and negative each use their own gradient.</p>
+            </div>
+            <div className="docs-stack">
+              {["positive", "warning", "negative"].map((level) => (
+                <div className="liq-track" key={level} style={{ width: 280 }}>
+                  <ProgressBar level={level} value={66} />
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="docs-group">
+            <div className="docs-head">
               <h3>Summary cards</h3>
               <p>The shell is secondary, 24px radius. The amount well is primary. Labels use typography body. The large figure is Numeric XXL. A double-click on a money amount copies it and shows a “Copied !” toast. Percentages, dates, and years do not copy.</p>
             </div>
@@ -341,7 +355,7 @@ export function DesignSystem({ onMenu = () => {} }) {
           <div className="docs-group">
             <div className="docs-head">
               <h3>Spending by category</h3>
-              <p>Half ring of this month’s expenses. Each slice uses that category’s primitive color. Hovering a slice or a row dims the rest. The figure is this month’s total.</p>
+              <p>Half ring of this month’s expenses. Each slice uses that category’s primitive color. Hovering a slice or a row dims the rest and replaces the center figure with that category’s amount, name, and share. At rest the figure is this month’s total. Row amounts use M for millions and K for thousands.</p>
             </div>
             <div className="docs-cards is-wide">
               <SpendingCard transactions={sampleTransactions()} categories={CATEGORIES} />
@@ -350,7 +364,7 @@ export function DesignSystem({ onMenu = () => {} }) {
           <div className="docs-group">
             <div className="docs-head">
               <h3>Progress</h3>
-              <p>Liquidity and cashflow fills are 8px inside a 16px track. Width and level stay on the existing rules. Only the paint changes: positive, warning, or negative gradient. Category segments keep their primitive 50 colors and do not use those gradients.</p>
+              <p>Liquidity and cashflow fills are 8px inside a 16px track. Width and level stay on the existing rules. Only the paint changes: positive, warning, or negative gradient. Monthly expense segments fill the track and fade each category color from 48% at the top to 8% at the bottom.</p>
             </div>
           </div>
           <div className="docs-group">

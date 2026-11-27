@@ -46,7 +46,7 @@ export function CashflowCard({ transactions, today = new Date() }) {
         <footer className="liq-foot">
           <Pill tone={trendLevel || "down"}>{formatTrend(summary.trend)}</Pill>
           <p className="cf-note">
-            Average daily spending
+            Average from last month. Spending per day
             <span className="cf-avg"><CopyAmount>{formatRupiah(summary.averageSpend)}</CopyAmount></span>
           </p>
         </footer>

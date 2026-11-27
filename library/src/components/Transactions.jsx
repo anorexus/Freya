@@ -1,14 +1,10 @@
 import { useMemo, useState } from "react";
-import { CATEGORIES } from "../../../src/data/categories.ts";
 import transactionsIcon from "../assets/icons/transactions.svg?raw";
 import searchIcon from "../assets/icons/search.svg?raw";
 import { sampleTransactions } from "../cashflow.js";
 import { formatRupiah } from "../money.js";
 import { AddTransactionCardV2 } from "./AddTransactionCardV2.jsx";
 import { Button, WalletDropdown, buttonIcons } from "./Button.jsx";
-import { CashflowCard } from "./CashflowCard.jsx";
-import { ExpenseCard } from "./ExpenseCard.jsx";
-import { LiquidityCard } from "./LiquidityCard.jsx";
 import { TransactionListCard } from "./TransactionListCard.jsx";
 import "./Dashboard.css";
 import "./Transactions.css";
@@ -96,11 +92,6 @@ export function Transactions({ onMenu = () => {} }) {
             onChange={(event) => setQuery(event.target.value)}
           />
         </label>
-        <section className="dash-grid" aria-label="Summary">
-          <LiquidityCard wallets={WALLETS} today={today} />
-          <CashflowCard transactions={transactions} today={today} />
-          <ExpenseCard transactions={transactions} categories={CATEGORIES} today={today} />
-        </section>
         <TransactionListCard transactions={visible} today={today} grouped />
       </div>
       <AddTransactionCardV2 open={logOpen} wallets={WALLETS} onClose={() => setLogOpen(false)} />

@@ -28,7 +28,7 @@ export function ExpenseCard({ transactions, categories, today = new Date() }) {
                 <div
                   key={slice.name}
                   className="ex-seg"
-                  style={{ flexGrow: slice.amount, background: slice.color }}
+                  style={{ flexGrow: slice.amount, "--seg": slice.color }}
                 />
               ))}
             </div>
