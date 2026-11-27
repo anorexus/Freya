@@ -1,6 +1,19 @@
 import { Button } from "./Button.jsx";
 import "./AuthCard.css";
 
+/**
+ * @param {{
+ *   title: string,
+ *   copy: string,
+ *   error?: string | null,
+ *   primary: string,
+ *   onPrimary: () => void,
+ *   primaryDisabled?: boolean,
+ *   secondary?: string,
+ *   onSecondary?: () => void,
+ *   onSignOut?: () => void,
+ * }} props
+ */
 export function AuthCard({
   title,
   copy,

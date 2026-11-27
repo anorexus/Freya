@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-11-27 — Auth card props
+
+- Make the secondary action and sign-out optional so the create-ledger card typechecks and Pages can build.
+
 ## 2026-11-27 — Login gate
 
 - Open on a login card: Google sign-in, or a simulation that stays in this browser.
