@@ -11,9 +11,10 @@
 
 .cf-split {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  gap: 4px 12px;
   width: 100%;
 }
 
@@ -61,11 +62,12 @@
 
 .cf-note {
   display: flex;
-  flex: none;
+  flex: 1;
+  flex-wrap: wrap;
   align-items: baseline;
   gap: 4px;
+  min-width: 0;
   font-weight: 500;
-  white-space: nowrap;
 }
 
 .cf-avg {

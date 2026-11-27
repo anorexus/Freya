@@ -2,7 +2,10 @@ import { useState } from "react";
 import { expenseBreakdown, formatShare } from "../expense.js";
 import { formatRupiah } from "../money.js";
 import { formatCompactRupiah } from "../trend.js";
+import { CopyAmount } from "./CopyAmount.jsx";
 import { Pill } from "./Pill.jsx";
+import "./CashflowCard.css";
+import "./ExpenseCard.css";
 import "./SpendingCard.css";
 
 const OTHERS = "#5D5D5F";
@@ -190,13 +193,13 @@ export function SpendingCard({ transactions, categories, today = new Date() }) {
         <footer className="spend-foot">
           {top ? (
             <>
-              <Pill className="spend-pill" style={{ "--pill": top.color }}>{top.name}</Pill>
-              <p>
+              <Pill className="ex-pill" style={{ "--pill": top.color }}>{top.name}</Pill>
+              <p className="cf-note">
                 Top category with total
-                <strong>
-                  {formatRupiah(top.amount)}
+                <span className="cf-avg">
+                  <CopyAmount>{formatRupiah(top.amount)}</CopyAmount>
                   {` (${formatShare(top.share)})`}
-                </strong>
+                </span>
               </p>
             </>
           ) : (

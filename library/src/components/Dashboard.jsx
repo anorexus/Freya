@@ -36,11 +36,33 @@ function formatRange(start, end) {
   return sameYear ? `${startLabel} – ${endLabel}` : `${startLabel} ${start.getFullYear()} – ${endLabel}`;
 }
 
-export function Dashboard({ onMenu = () => {} }) {
+const SAMPLE_NOTICE = {
+  title: "Row 14 excluded.",
+  detail: "Invalid amount. Fix it in the sheet, then sync. Logging stays available.",
+};
+
+export function Dashboard({
+  onMenu = () => {},
+  transactions: transactionsProp,
+  wallets: walletsProp,
+  syncedLabel = "Synced 22 Nov 2026, 08:33",
+  onSync,
+  syncDisabled = false,
+  notice,
+  onSeeMore,
+  onSave,
+  addDisabled = false,
+}) {
   const [monthOffset, setMonthOffset] = useState(0);
   const [logOpen, setLogOpen] = useState(false);
+  const [walletId, setWalletId] = useState("all");
   const now = new Date();
-  const transactions = sampleTransactions(now);
+  const transactions = transactionsProp ?? sampleTransactions(now);
+  const wallets = walletsProp ?? WALLETS;
+  const canFilter = transactions.some((row) => row.wallet_id);
+  const visible = !canFilter || walletId === "all" ? transactions : transactions.filter((row) => row.wallet_id === walletId);
+  const visibleWallets = walletId === "all" ? wallets : wallets.filter((wallet) => wallet.id === walletId);
+  const banner = notice === undefined && transactionsProp === undefined ? SAMPLE_NOTICE : notice;
   const view = new Date(now.getFullYear(), now.getMonth() + monthOffset, 1);
   const monthEnd = new Date(view.getFullYear(), view.getMonth() + 1, 0);
   const today = monthOffset === 0 ? now : monthEnd;
@@ -59,11 +81,11 @@ export function Dashboard({ onMenu = () => {} }) {
           <div className="dash-sync">
             <p>
               <span className="dash-dot" />
-              Synced 22 Nov 2026, 08:33
+              {syncedLabel}
             </p>
-            <Button variant="secondary" icon={buttonIcons.sync}>Sync</Button>
+            <Button variant="secondary" icon={buttonIcons.sync} onClick={onSync} disabled={syncDisabled}>Sync</Button>
           </div>
-          <Button className="dash-add" variant="primary" icon={buttonIcons.add} onClick={() => setLogOpen(true)}>Add transaction</Button>
+          <Button className="dash-add" variant="primary" icon={buttonIcons.add} disabled={addDisabled} onClick={() => setLogOpen(true)}>Add transaction</Button>
         </div>
       </header>
       <div className="dash-content">
@@ -78,32 +100,38 @@ export function Dashboard({ onMenu = () => {} }) {
             </div>
             <Button variant="navigation" icon={buttonIcons.arrowRight} aria-label="Next month" disabled={monthOffset >= 0} onClick={() => setMonthOffset((offset) => Math.min(0, offset + 1))} />
           </div>
-          <WalletDropdown wallets={WALLETS} />
+          <WalletDropdown wallets={wallets} value={walletId} onChange={setWalletId} />
         </div>
-        <Notification tone="notice" title="Row 14 excluded.">
-          Invalid amount. Fix it in the sheet, then sync. Logging stays available.
-        </Notification>
+        {banner ? (
+          <Notification tone="notice" title={banner.title}>
+            {banner.detail}
+          </Notification>
+        ) : null}
         <section className="dash-grid" aria-label="Summary">
-          <LiquidityCard wallets={WALLETS} today={today} />
-          <CashflowCard transactions={transactions} today={today} />
-          <ExpenseCard transactions={transactions} categories={CATEGORIES} today={today} />
+          <LiquidityCard wallets={visibleWallets} today={today} />
+          <CashflowCard transactions={visible} today={today} />
+          <ExpenseCard transactions={visible} categories={CATEGORIES} today={today} />
         </section>
         <section className="dash-grid is-trends" aria-label="Spending by category">
-          <SpendingCard transactions={transactions} categories={CATEGORIES} today={today} />
-          <TrendCardV3 transactions={transactions} today={now} focus={today} />
+          <SpendingCard transactions={visible} categories={CATEGORIES} today={today} />
+          <TrendCardV3 transactions={visible} today={now} focus={today} />
         </section>
         <section className="dash-span" aria-label="Calendar">
-          <CalendarCard transactions={transactions} today={now} focus={today} onToday={() => setMonthOffset(0)} />
+          <CalendarCard transactions={visible} today={now} focus={today} onToday={() => setMonthOffset(0)} />
         </section>
         <section className="dash-grid is-trends" aria-label="Trends">
-          <CashflowCardV2 transactions={transactions} today={now} focus={today} />
-          <TrendCardV3 transactions={transactions} today={now} focus={today} />
+          <CashflowCardV2 transactions={visible} today={now} focus={today} />
+          <TrendCardV3 transactions={visible} today={now} focus={today} />
         </section>
         <section className="dash-span" aria-label="Transactions">
-          <TransactionListCard transactions={transactions} today={today} onSeeMore={() => { window.location.hash = "transactions"; }} />
+          <TransactionListCard
+            transactions={visible}
+            today={today}
+            onSeeMore={onSeeMore ?? (() => { window.location.hash = "transactions"; })}
+          />
         </section>
       </div>
-      <AddTransactionCardV2 open={logOpen} wallets={WALLETS} onClose={() => setLogOpen(false)} />
+      <AddTransactionCardV2 open={logOpen} wallets={wallets} onClose={() => setLogOpen(false)} onSave={onSave} />
     </main>
   );
 }

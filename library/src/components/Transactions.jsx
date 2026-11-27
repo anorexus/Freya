@@ -35,19 +35,35 @@ function matches(row, query) {
   return haystack.includes(query);
 }
 
-export function Transactions({ onMenu = () => {} }) {
+export function Transactions({
+  onMenu = () => {},
+  transactions: transactionsProp,
+  wallets: walletsProp,
+  syncedLabel = "Synced 22 Nov 2026, 08:33",
+  onSync,
+  syncDisabled = false,
+  onSave,
+  addDisabled = false,
+}) {
   const [monthOffset, setMonthOffset] = useState(0);
   const [logOpen, setLogOpen] = useState(false);
   const [query, setQuery] = useState("");
+  const [walletId, setWalletId] = useState("all");
   const now = new Date();
-  const transactions = useMemo(() => sampleTransactions(now), [now.getFullYear(), now.getMonth(), now.getDate()]);
+  const transactions = useMemo(
+    () => transactionsProp ?? sampleTransactions(now),
+    [transactionsProp, now.getFullYear(), now.getMonth(), now.getDate()],
+  );
+  const wallets = walletsProp ?? WALLETS;
   const view = new Date(now.getFullYear(), now.getMonth() + monthOffset, 1);
   const monthEnd = new Date(view.getFullYear(), view.getMonth() + 1, 0);
   const today = monthOffset === 0 ? now : monthEnd;
   const rangeStart = new Date(view.getFullYear(), view.getMonth(), 1);
   const rangeEnd = monthOffset === 0 ? now : monthEnd;
   const needle = query.trim().toLowerCase();
-  const visible = needle ? transactions.filter((row) => matches(row, needle)) : transactions;
+  const canFilter = transactions.some((row) => row.wallet_id);
+  const inWallet = !canFilter || walletId === "all" ? transactions : transactions.filter((row) => row.wallet_id === walletId);
+  const visible = needle ? inWallet.filter((row) => matches(row, needle)) : inWallet;
 
   return (
     <main className="dash tx-screen">
@@ -61,11 +77,11 @@ export function Transactions({ onMenu = () => {} }) {
           <div className="dash-sync">
             <p>
               <span className="dash-dot" />
-              Synced 22 Nov 2026, 08:33
+              {syncedLabel}
             </p>
-            <Button variant="secondary" icon={buttonIcons.sync}>Sync</Button>
+            <Button variant="secondary" icon={buttonIcons.sync} onClick={onSync} disabled={syncDisabled}>Sync</Button>
           </div>
-          <Button className="dash-add" variant="primary" icon={buttonIcons.add} onClick={() => setLogOpen(true)}>Add transaction</Button>
+          <Button className="dash-add" variant="primary" icon={buttonIcons.add} disabled={addDisabled} onClick={() => setLogOpen(true)}>Add transaction</Button>
         </div>
       </header>
       <div className="dash-content">
@@ -80,7 +96,7 @@ export function Transactions({ onMenu = () => {} }) {
             </div>
             <Button variant="navigation" icon={buttonIcons.arrowRight} aria-label="Next month" disabled={monthOffset >= 0} onClick={() => setMonthOffset((offset) => Math.min(0, offset + 1))} />
           </div>
-          <WalletDropdown wallets={WALLETS} />
+          <WalletDropdown wallets={wallets} value={walletId} onChange={setWalletId} />
         </div>
         <label className="tx-search">
           <span className="tx-search-icon" dangerouslySetInnerHTML={{ __html: searchIcon }} />
@@ -94,7 +110,7 @@ export function Transactions({ onMenu = () => {} }) {
         </label>
         <TransactionListCard transactions={visible} today={today} grouped />
       </div>
-      <AddTransactionCardV2 open={logOpen} wallets={WALLETS} onClose={() => setLogOpen(false)} />
+      <AddTransactionCardV2 open={logOpen} wallets={wallets} onClose={() => setLogOpen(false)} onSave={onSave} />
     </main>
   );
 }
