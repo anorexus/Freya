@@ -81,10 +81,10 @@ async function requestToken(clientId: string, prompt: "select_account" | "consen
           return;
         }
         if (error.type === "popup_failed_to_open" || error.message === "Failed to open popup window") {
-          reject(new Error("The Google window was blocked. Allow popups for localhost, then try Sign in again."));
+          reject(new Error("The Google window was blocked. Allow popups for this site, then try Login with Google again."));
           return;
         }
-        reject(new Error(error.message || "Google sign-in was blocked. Check that http://localhost:5173 is an authorized origin."));
+        reject(new Error(error.message || `Google sign-in was blocked. Check that ${window.location.origin} is an authorized origin.`));
       },
     });
     client.requestAccessToken({ prompt });

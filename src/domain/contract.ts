@@ -18,7 +18,7 @@ export const TRANSACTION_HEADERS = [
   "beneficiary",
 ] as const satisfies readonly (keyof StoredRow)[];
 
-export const CATEGORY_HEADERS = ["type", "category_l1", "category_l2", "color", "monthly_budget"] as const;
+export const CATEGORY_HEADERS = ["type", "category_l1", "category_l2", "icon", "color", "monthly_budget"] as const;
 
 export const WALLET_HEADERS = [
   "asset_id",
@@ -36,7 +36,7 @@ export type SchemaCheck = {
   message: string | null;
 };
 
-export function validateSheet(input: { tabs: string[]; headers: string[] }): SchemaCheck {
+export function validateSheet(input: { tabs: string[]; headers: string[]; categoryHeaders: string[] }): SchemaCheck {
   const expectedTabs = new Set<string>(SHEET_TABS);
   const extraTabs = input.tabs.filter((tab) => !expectedTabs.has(tab));
   const missingTabs = SHEET_TABS.filter((tab) => !input.tabs.includes(tab));
@@ -55,15 +55,21 @@ export function validateSheet(input: { tabs: string[]; headers: string[] }): Sch
     };
   }
 
-  const expected = TRANSACTION_HEADERS as readonly string[];
-  if (input.headers.length !== expected.length || input.headers.some((header, index) => header !== expected[index])) {
-    const missing = expected.filter((header) => !input.headers.includes(header));
-    const detail = missing.length > 0 ? `Transactions is missing ${missing[0]}.` : "Transactions headers are out of order or renamed.";
-    return {
-      ok: false,
-      message: `Sheet headers no longer match Freya. ${detail} Restore the template headers to log new rows. Reading still works.`,
-    };
-  }
+  const transactions = headerCheck(input.headers, TRANSACTION_HEADERS, "Transactions");
+  if (transactions) return transactions;
+
+  const categories = headerCheck(input.categoryHeaders, CATEGORY_HEADERS, "Config_Categories");
+  if (categories) return categories;
 
   return { ok: true, message: null };
+}
+
+function headerCheck(actual: string[], expected: readonly string[], tab: string): SchemaCheck | null {
+  if (actual.length === expected.length && actual.every((header, index) => header === expected[index])) return null;
+  const missing = expected.filter((header) => !actual.includes(header));
+  const detail = missing.length > 0 ? `${tab} is missing ${missing[0]}.` : `${tab} headers are out of order or renamed.`;
+  return {
+    ok: false,
+    message: `Sheet headers no longer match Freya. ${detail} Restore the template headers to log new rows. Reading still works.`,
+  };
 }

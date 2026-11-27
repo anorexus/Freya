@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-11-27 — Category icons and one account button
+
+- Read each category’s icon and color from the sheet. The parent row owns them, and sub-category rows only add names.
+- Check `Config_Categories` headers the same way as `Transactions`, including the new `icon` column.
+- Show Login with Google or Sign out, not both. Simulation sign-out returns to the login card.
+- Name the current site in the Google sign-in error when the window is blocked.
+
 ## 2026-11-27 — Auth card props
 
 - Make the secondary action and sign-out optional so the create-ledger card typechecks and Pages can build.

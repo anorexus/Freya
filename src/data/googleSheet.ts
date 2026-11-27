@@ -14,6 +14,8 @@ export type SheetGrid = {
   tabs: string[];
   headers: string[];
   dataRows: string[][];
+  categoryHeaders: string[];
+  categoryRows: string[][];
 };
 
 export function readSheetLink(): SheetLink | null {
@@ -112,19 +114,19 @@ export async function readFreyaSheet(accessToken: string, spreadsheetId: string)
     accessToken,
     `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}?fields=properties.title,sheets.properties.title`,
   );
-  const values = await googleJson<{ values?: string[][] }>(
+  const batch = await googleJson<{ valueRanges?: { values?: string[][] }[] }>(
     accessToken,
-    `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${encodeURIComponent("Transactions")}?majorDimension=ROWS`,
+    `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values:batchGet?ranges=${encodeURIComponent("Transactions")}&ranges=${encodeURIComponent("Config_Categories")}&majorDimension=ROWS`,
   );
-  const grid = values.values ?? [];
+  const transactions = batch.valueRanges?.[0]?.values ?? [];
+  const categories = batch.valueRanges?.[1]?.values ?? [];
   return {
     title: meta.properties?.title || "Freya Ledger",
     tabs: (meta.sheets ?? []).map((sheet) => sheet.properties?.title || "").filter(Boolean),
-    headers: (grid[0] ?? []).map((cell) => String(cell ?? "").trim()),
-    dataRows: grid
-      .slice(1)
-      .map((row) => row.map((cell) => String(cell ?? "")))
-      .filter((row) => row.some((cell) => cell.trim() !== "")),
+    headers: headerCells(transactions[0]),
+    dataRows: bodyRows(transactions),
+    categoryHeaders: headerCells(categories[0]),
+    categoryRows: bodyRows(categories),
   };
 }
 
@@ -143,13 +145,21 @@ export async function appendTransactions(accessToken: string, spreadsheetId: str
 function categoryRows(): string[][] {
   const rows: string[][] = [];
   for (const category of CATEGORIES) {
-    if (category.l2.length === 0) {
-      rows.push([category.type, category.l1, "", category.color, ""]);
-      continue;
-    }
-    for (const sub of category.l2) rows.push([category.type, category.l1, sub, category.color, ""]);
+    rows.push([category.type, category.l1, "", category.icon, category.color, ""]);
+    for (const sub of category.l2) rows.push([category.type, category.l1, sub, "", "", ""]);
   }
   return rows;
+}
+
+function headerCells(row: string[] | undefined): string[] {
+  return (row ?? []).map((cell) => String(cell ?? "").trim());
+}
+
+function bodyRows(grid: string[][]): string[][] {
+  return grid
+    .slice(1)
+    .map((row) => row.map((cell) => String(cell ?? "")))
+    .filter((row) => row.some((cell) => cell.trim() !== ""));
 }
 
 async function googleJson<T>(accessToken: string, url: string, init?: RequestInit): Promise<T> {
