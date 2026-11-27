@@ -16,6 +16,8 @@ export function Transactions({ onMenu = () => {} }: { onMenu?: () => void }) {
       syncDisabled={ledger.busy}
       onSave={(draft: LibraryDraft) => saveDraft(ledger.addTransaction, draft)}
       addDisabled={!ledger.schema.ok || ledger.busy}
+      loggedIn={Boolean(ledger.session)}
+      onLogIn={ledger.signIn}
     />
   );
 }

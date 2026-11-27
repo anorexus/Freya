@@ -27,11 +27,6 @@ jobs:
       - run: npm run build
         env:
           VITE_GOOGLE_CLIENT_ID: ${{ secrets.VITE_GOOGLE_CLIENT_ID }}
-      - run: npm ci
-        working-directory: library
-      - run: npm run build
-        working-directory: library
-      - run: mkdir -p dist/library && cp -R library/dist/. dist/library/
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist

@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-11-27 — Login gate
+
+- Open on a login card: Google sign-in, or a simulation that stays in this browser.
+- After sign-in, create the Freya sheet when none is linked, then enter the app.
+- Replace the sidebar profile with Login with Google and Sign out.
+
+## 2026-11-27 — Retire the mock site
+
+- Stop publishing the library preview at `/freya/library/`. The app already uses those components.
+
+## 2026-11-27 — Rotated site icon
+
+- Rotate the Freya mark 45 degrees in the favicon and regenerate the raster sizes.
+
+## 2026-11-27 — Site icons
+
+- Add the Freya favicon, Apple touch icon, and web manifest so the installed site uses the mark on a `#0e0e10` background.
+
 ## 2026-11-27 — Library shell in the app
 
 - Use the library sidebar, dashboard, and transactions page in the app, with the live ledger for sync, accounts, and new transactions.

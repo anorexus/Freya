@@ -63,6 +63,11 @@
   color: var(--liq-text);
 }
 
+.dash-add.is-login {
+  padding-right: 16px;
+  padding-left: 16px;
+}
+
 .dash-actions,
 .dash-sync,
 .dash-period,
