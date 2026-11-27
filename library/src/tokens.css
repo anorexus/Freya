@@ -473,9 +473,14 @@
   --type-numeric-l-tracking: 0px;
   --type-numeric-xl-family: "Space Grotesk", sans-serif;
   --type-numeric-xl-weight: 300;
-  --type-numeric-xl-size: 40px;
-  --type-numeric-xl-line: 51px;
+  --type-numeric-xl-size: 32px;
+  --type-numeric-xl-line: 40px;
   --type-numeric-xl-tracking: 0px;
+  --type-numeric-xxl-family: "Space Grotesk", sans-serif;
+  --type-numeric-xxl-weight: 300;
+  --type-numeric-xxl-size: 40px;
+  --type-numeric-xxl-line: 51px;
+  --type-numeric-xxl-tracking: 0px;
 
   /* gradient, progress bars only */
   --gradient-positive: linear-gradient(to left, var(--green-50), var(--lightblue-50));

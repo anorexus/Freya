@@ -2,6 +2,7 @@ import { CopyAmount } from "./CopyAmount.jsx";
 import { cashflowSummary, formatTrend } from "../cashflow.js";
 import { formatRupiah, formatSignedRupiah } from "../money.js";
 import { Pill } from "./Pill.jsx";
+import { ProgressBar } from "./ProgressBar.jsx";
 import "./LiquidityCard.css";
 import "./CashflowCard.css";
 
@@ -38,10 +39,7 @@ export function CashflowCard({ transactions, today = new Date() }) {
               </p>
             </div>
             <div className="cf-track" aria-hidden="true">
-              <div
-                className={`cf-fill is-${cashflowLevel(summary.incomeShare)}`}
-                style={{ width: `${summary.incomeShare * 100}%` }}
-              />
+              <ProgressBar level={cashflowLevel(summary.incomeShare)} value={summary.incomeShare * 100} />
             </div>
           </div>
         </div>

@@ -88,8 +88,9 @@ export function Dashboard({ onMenu = () => {} }) {
           <CashflowCard transactions={transactions} today={today} />
           <ExpenseCard transactions={transactions} categories={CATEGORIES} today={today} />
         </section>
-        <section className="dash-span" aria-label="Spending by category">
+        <section className="dash-grid is-trends" aria-label="Spending by category">
           <SpendingCard transactions={transactions} categories={CATEGORIES} today={today} />
+          <TrendCardV3 transactions={transactions} today={now} focus={today} />
         </section>
         <section className="dash-span" aria-label="Calendar">
           <CalendarCard transactions={transactions} today={now} focus={today} onToday={() => setMonthOffset(0)} />

@@ -177,10 +177,10 @@
   border: 0;
   background: transparent;
   color: var(--typography-tertiary);
-  font-family: var(--type-numeric-xl-family);
-  font-size: var(--type-numeric-xl-size);
-  font-weight: var(--type-numeric-xl-weight);
-  line-height: var(--type-numeric-xl-line);
+  font-family: var(--type-numeric-xxl-family);
+  font-size: var(--type-numeric-xxl-size);
+  font-weight: var(--type-numeric-xxl-weight);
+  line-height: var(--type-numeric-xxl-line);
   text-align: center;
 }
 

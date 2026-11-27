@@ -15,6 +15,7 @@
   padding: 4px;
   border-radius: 24px;
   background: var(--background-secondary);
+  box-shadow: 0 1px 0.5px rgba(255, 255, 255, 0.08);
 }
 
 .st3-head {
@@ -45,7 +46,7 @@
   flex-direction: column;
   min-height: 0;
   overflow: hidden;
-  border-radius: 12px;
+  border-radius: 12px 12px 20px 20px;
 }
 
 .st3-panel {
@@ -227,6 +228,7 @@
   align-items: center;
   gap: 8px;
   padding: 16px;
+  border-radius: 0 0 20px 20px;
   background: var(--background-secondary);
 }
 

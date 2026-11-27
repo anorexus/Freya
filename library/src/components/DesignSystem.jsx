@@ -112,7 +112,8 @@ const TYPE = [
   ["Caption L", "caption-l", "Default metadata, timestamps, input helper text."],
   ["Caption M", "caption-m", "Chart axis labels, legal disclaimers, footnotes."],
   ["Caption S", "caption-s", "Micro-annotations, bottom-nav tab captions."],
-  ["Numeric XL", "numeric-xl", "Largest money figure. Space Grotesk light."],
+  ["Numeric XXL", "numeric-xxl", "Largest money figure, 40. Space Grotesk light."],
+  ["Numeric XL", "numeric-xl", "Large money figure, 32. Space Grotesk light."],
   ["Numeric L", "numeric-l", "Secondary money figure. Space Grotesk light."],
   ["Numeric M", "numeric-m", "Numeric text at 16. Space Grotesk light."],
   ["Numeric S", "numeric-s", "Compact money. Space Grotesk medium."],
@@ -329,7 +330,7 @@ export function DesignSystem({ onMenu = () => {} }) {
           <div className="docs-group">
             <div className="docs-head">
               <h3>Summary cards</h3>
-              <p>The shell is secondary, 24px radius. The amount well is primary. Labels use typography body. The large figure is Numeric XL. A double-click on a money amount copies it and shows a “Copied !” toast. Percentages, dates, and years do not copy.</p>
+              <p>The shell is secondary, 24px radius. The amount well is primary. Labels use typography body. The large figure is Numeric XXL. A double-click on a money amount copies it and shows a “Copied !” toast. Percentages, dates, and years do not copy.</p>
             </div>
             <div className="docs-cards">
               <LiquidityCard wallets={WALLETS} />
