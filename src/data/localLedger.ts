@@ -1,4 +1,5 @@
-import { SHEET_TABS, TRANSACTION_HEADERS, validateSheet, type SchemaCheck } from "../domain/contract";
+import { CATEGORIES, categoriesFromSheet, type CategoryOption } from "./categories";
+import { CATEGORY_HEADERS, SHEET_TABS, TRANSACTION_HEADERS, validateSheet, type SchemaCheck } from "../domain/contract";
 import { buildSeed } from "../domain/seed";
 import { todayISO } from "../domain/money";
 import { parseLedger, withRowNumbers } from "../domain/parse";
@@ -10,6 +11,7 @@ export type LedgerSnapshot = {
   rows: ParsedRow[];
   issues: RowIssue[];
   schema: SchemaCheck;
+  categories: CategoryOption[];
   syncedAt: Date;
   isSample: boolean;
 };
@@ -61,16 +63,25 @@ export function readStored(): { rows: StoredRow[]; sample: boolean } {
 }
 
 export function snapshotFrom(rows: StoredRow[], sample: boolean): LedgerSnapshot {
-  return snapshotFromGrid([...TRANSACTION_HEADERS], rows.map(storedToCells), [...SHEET_TABS], sample);
+  const snapshot = snapshotFromGrid([...TRANSACTION_HEADERS], rows.map(storedToCells), [...SHEET_TABS], sample, [...CATEGORY_HEADERS], []);
+  return { ...snapshot, categories: CATEGORIES };
 }
 
-export function snapshotFromGrid(headers: string[], dataRows: string[][], tabs: string[], sample: boolean): LedgerSnapshot {
+export function snapshotFromGrid(
+  headers: string[],
+  dataRows: string[][],
+  tabs: string[],
+  sample: boolean,
+  categoryHeaders: string[],
+  categoryRows: string[][],
+): LedgerSnapshot {
   const stored = dataRows.map((cells) => rowFromCells(headers, cells));
   const parsed = parseLedger(withRowNumbers(stored));
   return {
     rows: parsed.rows,
     issues: parsed.issues,
-    schema: validateSheet({ tabs, headers }),
+    schema: validateSheet({ tabs, headers, categoryHeaders }),
+    categories: categoriesFromSheet(categoryHeaders, categoryRows),
     syncedAt: new Date(),
     isSample: sample,
   };

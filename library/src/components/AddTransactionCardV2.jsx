@@ -96,12 +96,13 @@ function PersonMark({ empty = false }) {
   );
 }
 
-function freshDraft(wallets) {
+function freshDraft(wallets, categories = CATEGORIES) {
+  const first = categories.find((category) => category.type === "EXPENSE");
   return {
     type: "EXPENSE",
     amount: "",
     name: "",
-    categoryL1: "Groceries",
+    categoryL1: first?.l1 ?? "",
     categoryL2: "",
     account: wallets[0]?.id ?? "bca",
     toAccount: wallets[1]?.id ?? wallets[0]?.id ?? "",
@@ -111,7 +112,7 @@ function freshDraft(wallets) {
   };
 }
 
-export function AddTransactionCardV2({ open, wallets = [], onClose, onSave }) {
+export function AddTransactionCardV2({ open, wallets = [], onClose, onSave, categories = CATEGORIES }) {
   const titleId = useId();
   const dialog = typeof open === "boolean";
   const onCloseRef = useRef(onClose);
@@ -126,7 +127,7 @@ export function AddTransactionCardV2({ open, wallets = [], onClose, onSave }) {
     if (!dialog || !open) return undefined;
     setPage("form");
     setQuery("");
-    setDraft(freshDraft(wallets));
+    setDraft(freshDraft(wallets, categories));
     function onKey(event) {
       if (event.key === "Escape") onCloseRef.current?.();
     }
@@ -137,11 +138,11 @@ export function AddTransactionCardV2({ open, wallets = [], onClose, onSave }) {
       document.removeEventListener("keydown", onKey);
       document.body.style.overflow = previous;
     };
-  }, [dialog, open, wallets]);
+  }, [dialog, open, wallets, categories]);
 
   const expenseCategories = useMemo(
-    () => CATEGORIES.filter((category) => category.type === (draft.type === "INCOME" ? "INCOME" : "EXPENSE")),
-    [draft.type],
+    () => categories.filter((category) => category.type === (draft.type === "INCOME" ? "INCOME" : "EXPENSE")),
+    [categories, draft.type],
   );
 
   function patch(next) {
@@ -228,7 +229,7 @@ export function AddTransactionCardV2({ open, wallets = [], onClose, onSave }) {
                   aria-selected={draft.type === type.id}
                   className={draft.type === type.id ? "at2-type is-on" : "at2-type"}
                   onClick={() => {
-                    const nextCategories = CATEGORIES.filter((item) => item.type === (type.id === "INCOME" ? "INCOME" : "EXPENSE"));
+                    const nextCategories = categories.filter((item) => item.type === (type.id === "INCOME" ? "INCOME" : "EXPENSE"));
                     patch({
                       type: type.id,
                       categoryL1: nextCategories[0]?.l1 ?? "",

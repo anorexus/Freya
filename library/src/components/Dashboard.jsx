@@ -54,6 +54,7 @@ export function Dashboard({
   addDisabled = false,
   loggedIn = false,
   onLogIn,
+  categories = CATEGORIES,
 }) {
   const [monthOffset, setMonthOffset] = useState(0);
   const [logOpen, setLogOpen] = useState(false);
@@ -116,10 +117,10 @@ export function Dashboard({
         <section className="dash-grid" aria-label="Summary">
           <LiquidityCard wallets={visibleWallets} today={today} />
           <CashflowCard transactions={visible} today={today} />
-          <ExpenseCard transactions={visible} categories={CATEGORIES} today={today} />
+          <ExpenseCard transactions={visible} categories={categories} today={today} />
         </section>
         <section className="dash-grid is-trends" aria-label="Spending by category">
-          <SpendingCard transactions={visible} categories={CATEGORIES} today={today} />
+          <SpendingCard transactions={visible} categories={categories} today={today} />
           <TrendCardV3 transactions={visible} today={now} focus={today} />
         </section>
         <section className="dash-span" aria-label="Calendar">
@@ -137,7 +138,7 @@ export function Dashboard({
           />
         </section>
       </div>
-      <AddTransactionCardV2 open={logOpen} wallets={wallets} onClose={() => setLogOpen(false)} onSave={onSave} />
+      <AddTransactionCardV2 open={logOpen} wallets={wallets} categories={categories} onClose={() => setLogOpen(false)} onSave={onSave} />
     </main>
   );
 }

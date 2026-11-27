@@ -117,14 +117,15 @@ export function Sidebar({ page = "dashboard", onNavigate = () => {}, mobileOpen 
         {items.length === 0 && <p className="side-empty">No matches</p>}
       </nav>
       <div className="side-spacer" />
-      <Button variant="primary" className="side-login" onClick={onLogIn ?? undefined} disabled={loginDisabled}>
-        Login with Google
-      </Button>
       {onSignOut ? (
-        <Button variant="nude" className="side-login" onClick={onSignOut}>
+        <Button variant="nude" className="side-login" onClick={onSignOut} disabled={loginDisabled}>
           Sign out
         </Button>
-      ) : null}
+      ) : (
+        <Button variant="primary" className="side-login" onClick={onLogIn ?? undefined} disabled={loginDisabled}>
+          Login with Google
+        </Button>
+      )}
     </aside>
     </>
   );

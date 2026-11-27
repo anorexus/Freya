@@ -12,12 +12,12 @@ type LineDraft = {
 };
 
 export function LogDialog() {
-  const { logOpen, setLogOpen, addTransaction, schema } = useLedger();
+  const { logOpen, setLogOpen, addTransaction, schema, categories } = useLedger();
   const [mode, setMode] = useState<"single" | "receipt">("single");
   const [date, setDate] = useState(todayISO());
   const [type, setType] = useState<"INCOME" | "EXPENSE">("EXPENSE");
   const [notes, setNotes] = useState("");
-  const [lines, setLines] = useState<LineDraft[]>([blankLine("EXPENSE")]);
+  const [lines, setLines] = useState<LineDraft[]>([blankLine("EXPENSE", categories)]);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -25,10 +25,10 @@ export function LogDialog() {
     setDate(todayISO());
     setType("EXPENSE");
     setNotes("");
-    setLines([blankLine("EXPENSE")]);
+    setLines([blankLine("EXPENSE", categories)]);
     setMode("single");
     setError(null);
-  }, [logOpen]);
+  }, [logOpen, categories]);
 
   useEffect(() => {
     if (!logOpen) return;
@@ -41,7 +41,7 @@ export function LogDialog() {
 
   if (!logOpen) return null;
 
-  const options = categoriesFor(type);
+  const options = categoriesFor(type, categories);
   const activeLines = mode === "single" ? lines.slice(0, 1) : lines;
 
   function updateLine(index: number, patch: Partial<LineDraft>) {
@@ -50,7 +50,7 @@ export function LogDialog() {
 
   function changeType(next: "INCOME" | "EXPENSE") {
     setType(next);
-    const nextCategory = categoriesFor(next)[0]?.l1 ?? "";
+    const nextCategory = categoriesFor(next, categories)[0]?.l1 ?? "";
     setLines((current) => current.map((line) => ({ ...line, categoryL1: nextCategory, categoryL2: "" })));
   }
 
@@ -196,7 +196,7 @@ export function LogDialog() {
               <button
                 className="fy-btn fy-btn-ghost"
                 type="button"
-                onClick={() => setLines((current) => [...current, blankLine(type)])}
+                onClick={() => setLines((current) => [...current, blankLine(type, categories)])}
               >
                 Add line
               </button>
@@ -211,10 +211,10 @@ export function LogDialog() {
   );
 }
 
-function blankLine(type: "INCOME" | "EXPENSE"): LineDraft {
+function blankLine(type: "INCOME" | "EXPENSE", source: Parameters<typeof categoriesFor>[1]): LineDraft {
   return {
     amount: "",
-    categoryL1: categoriesFor(type)[0]?.l1 ?? "",
+    categoryL1: categoriesFor(type, source)[0]?.l1 ?? "",
     categoryL2: "",
     itemName: "",
   };

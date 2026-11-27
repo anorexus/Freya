@@ -1,4 +1,6 @@
 import { useMemo, useState } from "react";
+import { CatIcon } from "../components/Icons";
+import { categoriesFor } from "../data/categories";
 import { categoryBreakdown, rangeForPreset } from "../domain/aggregate";
 import { formatAmount, todayISO } from "../domain/money";
 import { useLedger } from "../state/LedgerContext";
@@ -15,7 +17,9 @@ export function Categories() {
     const all = categoryBreakdown(ledger.rows, range.from, range.to);
     return category === "All" ? all : all.filter((slice) => slice.categoryL1 === category);
   }, [ledger.rows, preset, category, today]);
-  const options = [...new Set(ledger.rows.filter((row) => row.type === "EXPENSE").map((row) => row.categoryL1))].sort();
+  const configured = categoriesFor("EXPENSE", ledger.categories);
+  const iconFor = new Map(configured.map((option) => [option.l1, option.icon]));
+  const options = configured.map((option) => option.l1);
   const total = slices.reduce((sum, slice) => sum + slice.amount, 0);
 
   return (
@@ -67,7 +71,12 @@ export function Categories() {
             <tbody>
               {slices.map((slice) => (
                 <tr key={`${slice.categoryL1}-${slice.categoryL2}`}>
-                  <td>{slice.categoryL1}</td>
+                  <td>
+                    <span className="fy-actions">
+                      <CatIcon name={iconFor.get(slice.categoryL1) ?? slice.categoryL1} />
+                      {slice.categoryL1}
+                    </span>
+                  </td>
                   <td>{slice.categoryL2}</td>
                   <td className="is-num">{Math.round(slice.share * 100)}%</td>
                   <td className="is-num">{formatAmount(slice.amount)}</td>

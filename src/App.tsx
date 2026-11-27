@@ -103,8 +103,8 @@ function Frame() {
           if (id === "dashboard" || id === "transactions" || id === "categories" || id === "system") ledger.setView(id);
           setMenuOpen(false);
         }}
-        onLogIn={ledger.signIn}
-        onSignOut={ledger.session ? ledger.signOut : undefined}
+        onLogIn={ledger.session ? undefined : ledger.signIn}
+        onSignOut={ledger.session || ledger.gate === "simulation" ? ledger.signOut : undefined}
         loginDisabled={ledger.busy}
       />
       {ledger.view === "transactions" ? (

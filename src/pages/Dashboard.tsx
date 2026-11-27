@@ -39,6 +39,7 @@ export function Dashboard({ onMenu = () => {} }: { onMenu?: () => void }) {
       addDisabled={!ledger.schema.ok || ledger.busy}
       loggedIn={Boolean(ledger.session)}
       onLogIn={ledger.signIn}
+      categories={ledger.categories}
     />
   );
 }
