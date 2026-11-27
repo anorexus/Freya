@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-11-27 — Site icons
+
+- Add the Freya favicon, Apple touch icon, and web manifest so the installed site uses the mark on a `#0e0e10` background.
+
 ## 2026-11-27 — Library shell in the app
 
 - Use the library sidebar, dashboard, and transactions page in the app, with the live ledger for sync, accounts, and new transactions.
