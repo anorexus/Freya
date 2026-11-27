@@ -100,18 +100,31 @@
 .liq-timeline {
   display: flex;
   flex: none;
-  align-items: flex-end;
-  gap: 12px;
-  height: 32px;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
 }
 
-.liq-timeline > span {
+.liq-dates {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.liq-dates span {
   flex: none;
   color: var(--typography-body);
   font-family: var(--liq-font-ui);
   font-weight: 500;
   font-size: 14px;
   line-height: 20px;
+  white-space: nowrap;
+}
+
+.liq-dates span:last-child {
+  font-family: var(--liq-font-numeric);
+  line-height: 18px;
 }
 
 .liq-track {

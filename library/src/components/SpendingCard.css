@@ -211,8 +211,9 @@
 }
 
 .spend-pill {
-  background: color-mix(in srgb, var(--pill) 24%, transparent);
-  color: var(--pill);
+  background: var(--pill);
+  border: 0.5px solid var(--outline-low);
+  color: var(--typography-inverted);
 }
 
 .spend-foot p {
