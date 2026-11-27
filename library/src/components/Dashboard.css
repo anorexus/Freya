@@ -109,6 +109,7 @@
 }
 
 .dash-content {
+  container: dash / inline-size;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -162,8 +163,24 @@
   height: 100%;
 }
 
+.dash-grid:not(.is-trends) > .liq-card {
+  height: auto;
+  min-height: 304px;
+}
+
+@container dash (width < 1080px) {
+  .dash-grid:not(.is-trends) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@container dash (width < 680px) {
+  .dash-grid:not(.is-trends) {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 1200px) {
-  .dash-grid,
   .dash-grid.is-trends {
     grid-template-columns: 1fr;
   }

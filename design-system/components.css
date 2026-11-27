@@ -1,3 +1,4 @@
+/* old shell styles stay under .fy-app */
 *,
 *::before,
 *::after {
@@ -31,24 +32,23 @@ body::-webkit-scrollbar {
   display: none;
 }
 
-button,
-input {
+.fy-app button,
+.fy-app input {
   font: inherit;
   color: inherit;
 }
 
-button {
+.fy-app button {
   cursor: pointer;
 }
 
-:focus-visible {
+.fy-app :focus-visible {
   outline: 2px solid var(--fy-text);
   outline-offset: 2px;
 }
 
 /* ---------- App shell (the reference pattern) ---------- */
-
-.fy-shell {
+.fy-app .fy-shell {
   display: flex;
   min-height: 720px;
   background: var(--fy-shell);
@@ -56,8 +56,7 @@ button {
   border-radius: var(--fy-radius-shell);
   overflow: hidden;
 }
-
-.fy-sidebar {
+.fy-app .fy-sidebar {
   width: var(--fy-sidebar-width);
   flex: none;
   display: flex;
@@ -67,16 +66,14 @@ button {
   background: var(--fy-sidebar);
   border-right: 1px solid var(--fy-line);
 }
-
-.fy-brand {
+.fy-app .fy-brand {
   display: flex;
   align-items: center;
   gap: var(--fy-space-3);
   min-height: 36px;
   padding: 0 var(--fy-space-1);
 }
-
-.fy-mark {
+.fy-app .fy-mark {
   width: 22px;
   height: 22px;
   border-radius: 7px;
@@ -84,9 +81,7 @@ button {
   position: relative;
   flex: none;
 }
-
-.fy-mark::before,
-.fy-mark::after {
+.fy-app .fy-mark::before,.fy-app .fy-mark::after {
   content: "";
   position: absolute;
   left: 5px;
@@ -95,23 +90,19 @@ button {
   background: var(--fy-text-on-light);
   border-radius: 1px;
 }
-
-.fy-mark::before {
+.fy-app .fy-mark::before {
   top: 8px;
 }
-
-.fy-mark::after {
+.fy-app .fy-mark::after {
   top: 13px;
   right: 8px;
 }
-
-.fy-brand-name {
+.fy-app .fy-brand-name {
   font-size: var(--fy-text-lg);
   font-weight: 600;
   letter-spacing: -0.03em;
 }
-
-.fy-search {
+.fy-app .fy-search {
   display: flex;
   align-items: center;
   gap: var(--fy-space-2);
@@ -122,8 +113,7 @@ button {
   border-radius: var(--fy-radius-control);
   color: var(--fy-text-3);
 }
-
-.fy-search input {
+.fy-app .fy-search input {
   flex: 1;
   min-width: 0;
   border: 0;
@@ -131,16 +121,13 @@ button {
   background: transparent;
   color: var(--fy-text);
 }
-
-.fy-search input::placeholder {
+.fy-app .fy-search input::placeholder {
   color: var(--fy-text-3);
 }
-
-.fy-search input:focus {
+.fy-app .fy-search input:focus {
   outline: none;
 }
-
-.fy-kbd {
+.fy-app .fy-kbd {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -155,14 +142,12 @@ button {
   font-weight: 500;
   line-height: 1;
 }
-
-.fy-nav {
+.fy-app .fy-nav {
   display: flex;
   flex-direction: column;
   gap: 2px;
 }
-
-.fy-nav-item {
+.fy-app .fy-nav-item {
   display: flex;
   align-items: center;
   gap: var(--fy-space-3);
@@ -176,28 +161,23 @@ button {
   text-align: left;
   text-decoration: none;
 }
-
-.fy-nav-item svg {
+.fy-app .fy-nav-item svg {
   flex: none;
   opacity: 0.8;
 }
-
-.fy-nav-item:hover {
+.fy-app .fy-nav-item:hover {
   background: var(--fy-hover);
   color: var(--fy-text);
 }
-
-.fy-nav-item.is-active {
+.fy-app .fy-nav-item.is-active {
   background: var(--fy-selected);
   color: var(--fy-text);
   font-weight: 500;
 }
-
-.fy-nav-item.is-active svg {
+.fy-app .fy-nav-item.is-active svg {
   opacity: 1;
 }
-
-.fy-sidebar-foot {
+.fy-app .fy-sidebar-foot {
   margin-top: auto;
   padding: var(--fy-space-3);
   border-radius: var(--fy-radius-control);
@@ -206,15 +186,13 @@ button {
   font-size: var(--fy-text-xs);
   line-height: 1.4;
 }
-
-.fy-sidebar-foot strong {
+.fy-app .fy-sidebar-foot strong {
   display: block;
   color: var(--fy-text-2);
   font-weight: 500;
   margin-bottom: 2px;
 }
-
-.fy-main {
+.fy-app .fy-main {
   flex: 1;
   min-width: 0;
   padding: var(--fy-space-6);
@@ -222,8 +200,7 @@ button {
   flex-direction: column;
   gap: var(--fy-space-5);
 }
-
-.fy-topbar {
+.fy-app .fy-topbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -231,42 +208,36 @@ button {
   color: var(--fy-text-3);
   font-size: var(--fy-text-sm);
 }
-
-.fy-crumb {
+.fy-app .fy-crumb {
   display: flex;
   align-items: center;
   gap: var(--fy-space-2);
 }
-
-.fy-actions {
+.fy-app .fy-actions {
   display: flex;
   align-items: center;
   gap: var(--fy-space-2);
 }
-
-.fy-page-title {
+.fy-app .fy-page-title {
   margin: 0;
   font-size: var(--fy-text-xl);
   font-weight: 600;
   letter-spacing: -0.03em;
   line-height: 1.2;
 }
-
-.fy-page-sub {
+.fy-app .fy-page-sub {
   margin: 6px 0 0;
   color: var(--fy-text-2);
   font-size: var(--fy-text-sm);
 }
-
-.fy-page-sub span + span::before {
+.fy-app .fy-page-sub span + span::before {
   content: "·";
   margin: 0 8px;
   color: var(--fy-text-4);
 }
 
 /* ---------- Buttons ---------- */
-
-.fy-btn {
+.fy-app .fy-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -281,136 +252,113 @@ button {
   font-weight: 500;
   letter-spacing: -0.011em;
 }
-
-.fy-btn-primary {
+.fy-app .fy-btn-primary {
   background: var(--fy-text);
   color: var(--fy-text-on-light);
 }
-
-.fy-btn-primary:hover {
+.fy-app .fy-btn-primary:hover {
   background: var(--fy-white);
 }
-
-.fy-btn-secondary {
+.fy-app .fy-btn-secondary {
   background: var(--fy-surface-2);
   border-color: var(--fy-line);
   color: var(--fy-text);
 }
-
-.fy-btn-secondary:hover {
+.fy-app .fy-btn-secondary:hover {
   background: var(--fy-hover);
 }
-
-.fy-btn-ghost {
+.fy-app .fy-btn-ghost {
   color: var(--fy-text-2);
 }
-
-.fy-btn-ghost:hover {
+.fy-app .fy-btn-ghost:hover {
   background: var(--fy-hover);
   color: var(--fy-text);
 }
-
-.fy-btn:disabled {
+.fy-app .fy-btn:disabled {
   opacity: 0.4;
   cursor: not-allowed;
 }
-
-.fy-icon-btn {
+.fy-app .fy-icon-btn {
   width: 34px;
   padding: 0;
 }
 
 /* ---------- Stats, cards, charts ---------- */
-
-.fy-stat-row {
+.fy-app .fy-stat-row {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: var(--fy-space-3);
 }
-
-.fy-stat {
+.fy-app .fy-stat {
   background: var(--fy-surface);
   border: 1px solid var(--fy-line);
   border-radius: var(--fy-radius-card);
   padding: 14px 14px 12px;
   min-width: 0;
 }
-
-.fy-stat-label {
+.fy-app .fy-stat-label {
   margin: 0;
   color: var(--fy-text-3);
   font-size: var(--fy-text-xs);
   font-weight: 500;
 }
-
-.fy-stat-value {
+.fy-app .fy-stat-value {
   margin: 10px 0 0;
   font-size: var(--fy-text-stat);
   font-weight: 600;
   letter-spacing: -0.04em;
   line-height: 1;
 }
-
-.fy-stat-value.is-compact {
+.fy-app .fy-stat-value.is-compact {
   font-size: 22px;
 }
-
-.fy-stat-meta {
+.fy-app .fy-stat-meta {
   margin: 10px 0 0;
   color: var(--fy-text-3);
   font-size: var(--fy-text-xs);
 }
-
-.fy-up {
+.fy-app .fy-up {
   color: var(--fy-income);
 }
-
-.fy-down {
+.fy-app .fy-down {
   color: var(--fy-expense);
 }
-
-.fy-split {
+.fy-app .fy-split {
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
   gap: var(--fy-space-3);
 }
-
-.fy-card {
+.fy-app .fy-card {
   background: var(--fy-surface);
   border: 1px solid var(--fy-line);
   border-radius: var(--fy-radius-card);
   padding: var(--fy-space-4);
   min-width: 0;
 }
-
-.fy-card-head {
+.fy-app .fy-card-head {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
   gap: var(--fy-space-3);
   margin-bottom: var(--fy-space-4);
 }
-
-.fy-card-title {
+.fy-app .fy-card-title {
   margin: 0;
   font-size: var(--fy-text-md);
   font-weight: 600;
   letter-spacing: -0.02em;
 }
-
-.fy-card-note {
+.fy-app .fy-card-note {
   color: var(--fy-text-3);
   font-size: var(--fy-text-xs);
 }
-
-.fy-legend {
+.fy-app .fy-legend {
   display: flex;
   gap: var(--fy-space-3);
   color: var(--fy-text-3);
   font-size: var(--fy-text-xs);
 }
-
-.fy-legend i {
+.fy-app .fy-legend i {
   display: inline-block;
   width: 8px;
   height: 8px;
@@ -418,28 +366,23 @@ button {
   margin-right: 6px;
   vertical-align: 0;
 }
-
-.fy-swatch-income {
+.fy-app .fy-swatch-income {
   background: var(--fy-income);
 }
-
-.fy-swatch-expense {
+.fy-app .fy-swatch-expense {
   background: var(--fy-expense);
 }
-
-.fy-swatch-neutral {
+.fy-app .fy-swatch-neutral {
   background: var(--fy-chart-neutral);
 }
-
-.fy-chart {
+.fy-app .fy-chart {
   display: grid;
   grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: var(--fy-space-3);
   height: 168px;
   align-items: end;
 }
-
-.fy-chart-col {
+.fy-app .fy-chart-col {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -447,8 +390,7 @@ button {
   height: 100%;
   min-width: 0;
 }
-
-.fy-chart-bars {
+.fy-app .fy-chart-bars {
   flex: 1;
   width: 100%;
   display: flex;
@@ -456,36 +398,30 @@ button {
   justify-content: center;
   gap: 4px;
 }
-
-.fy-bar {
+.fy-app .fy-bar {
   width: 14px;
   border-radius: 3px 3px 2px 2px;
   background: var(--fy-chart-neutral);
   min-height: 4px;
 }
-
-.fy-bar-income {
+.fy-app .fy-bar-income {
   background: var(--fy-income);
 }
-
-.fy-bar-expense {
+.fy-app .fy-bar-expense {
   background: var(--fy-expense);
 }
-
-.fy-chart-label {
+.fy-app .fy-chart-label {
   color: var(--fy-text-3);
   font-size: 11px;
 }
-
-.fy-week {
+.fy-app .fy-week {
   display: grid;
   grid-template-columns: repeat(7, minmax(0, 1fr));
   gap: 8px;
   height: 120px;
   align-items: end;
 }
-
-.fy-week-col {
+.fy-app .fy-week-col {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -493,38 +429,32 @@ button {
   height: 100%;
   justify-content: flex-end;
 }
-
-.fy-week-bar {
+.fy-app .fy-week-bar {
   width: 100%;
   max-width: 28px;
   border-radius: 4px 4px 2px 2px;
   background: var(--fy-chart-neutral);
 }
-
-.fy-week-col.is-today .fy-week-bar {
+.fy-app .fy-week-col.is-today .fy-week-bar {
   background: var(--fy-text-2);
 }
 
 /* ---------- Transactions ---------- */
-
-.fy-tx-list {
+.fy-app .fy-tx-list {
   display: flex;
   flex-direction: column;
   gap: 6px;
 }
-
-.fy-tx {
+.fy-app .fy-tx {
   border-radius: var(--fy-radius-control);
   background: var(--fy-shell);
   border: 1px solid transparent;
 }
-
-.fy-tx[open] {
+.fy-app .fy-tx[open] {
   background: var(--fy-surface-2);
   border-color: var(--fy-line);
 }
-
-.fy-tx summary {
+.fy-app .fy-tx summary {
   display: grid;
   grid-template-columns: 16px minmax(0, 1fr) auto 14px;
   gap: var(--fy-space-3);
@@ -533,26 +463,21 @@ button {
   list-style: none;
   cursor: pointer;
 }
-
-.fy-cat {
+.fy-app .fy-cat {
   display: flex;
   color: var(--fy-text-2);
 }
-
-.fy-cat svg {
+.fy-app .fy-cat svg {
   display: block;
 }
-
-.fy-tx summary::-webkit-details-marker {
+.fy-app .fy-tx summary::-webkit-details-marker {
   display: none;
 }
-
-.fy-tx summary:hover {
+.fy-app .fy-tx summary:hover {
   background: rgba(255, 255, 255, 0.03);
   border-radius: inherit;
 }
-
-.fy-chevron {
+.fy-app .fy-chevron {
   width: 6px;
   height: 6px;
   border-right: 1.5px solid var(--fy-text-3);
@@ -560,67 +485,56 @@ button {
   transform: rotate(-45deg);
   justify-self: end;
 }
-
-.fy-tx[open] .fy-chevron {
+.fy-app .fy-tx[open] .fy-chevron {
   transform: rotate(45deg);
   margin-top: -2px;
 }
-
-.fy-tx-date {
+.fy-app .fy-tx-date {
   color: var(--fy-text-3);
   font-size: var(--fy-text-xs);
 }
-
-.fy-tx-name {
+.fy-app .fy-tx-name {
   font-weight: 500;
   letter-spacing: -0.015em;
 }
-
-.fy-tx-detail {
+.fy-app .fy-tx-detail {
   display: block;
   margin-top: 2px;
   color: var(--fy-text-3);
   font-size: var(--fy-text-xs);
   font-weight: 400;
 }
-
-.fy-tx-amount {
+.fy-app .fy-tx-amount {
   font-weight: 560;
   font-size: var(--fy-text-sm);
   letter-spacing: -0.02em;
   text-align: right;
 }
-
-.fy-amount-in {
+.fy-app .fy-amount-in {
   color: var(--fy-income);
 }
-
-.fy-amount-out {
+.fy-app .fy-amount-out {
   color: var(--fy-text);
 }
-
-.fy-skus {
+.fy-app .fy-skus {
   padding: 0 12px 12px 40px;
   display: flex;
   flex-direction: column;
   gap: 6px;
 }
-
-.fy-sku {
+.fy-app .fy-sku {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   gap: var(--fy-space-3);
   color: var(--fy-text-2);
   font-size: var(--fy-text-xs);
 }
-
-.fy-sku span:last-child {
+.fy-app .fy-sku span:last-child {
   color: var(--fy-text);
 }
 
 /* ---------- Pills, banners, fields ---------- */
-
-.fy-pill {
+.fy-app .fy-pill {
   display: inline-flex;
   align-items: center;
   height: 22px;
@@ -633,38 +547,31 @@ button {
   letter-spacing: 0;
   white-space: nowrap;
 }
-
-.fy-pill-income {
+.fy-app .fy-pill-income {
   background: var(--fy-income-bg);
   color: var(--fy-income);
 }
-
-.fy-pill-expense {
+.fy-app .fy-pill-expense {
   background: var(--fy-expense-bg);
   color: var(--fy-expense);
 }
-
-.fy-pill-transfer {
+.fy-app .fy-pill-transfer {
   background: var(--fy-selected);
   color: var(--fy-text-2);
 }
-
-.fy-pill-ok {
+.fy-app .fy-pill-ok {
   background: var(--fy-income-bg);
   color: var(--fy-income);
 }
-
-.fy-pill-warning {
+.fy-app .fy-pill-warning {
   background: var(--fy-warning-bg);
   color: var(--fy-warning);
 }
-
-.fy-pill-over {
+.fy-app .fy-pill-over {
   background: var(--fy-over-bg);
   color: var(--fy-over);
 }
-
-.fy-banner {
+.fy-app .fy-banner {
   display: flex;
   align-items: baseline;
   gap: var(--fy-space-2);
@@ -673,42 +580,34 @@ button {
   font-size: var(--fy-text-sm);
   line-height: 1.4;
 }
-
-.fy-banner strong {
+.fy-app .fy-banner strong {
   font-weight: 600;
 }
-
-.fy-banner-warn {
+.fy-app .fy-banner-warn {
   background: var(--fy-warning-bg);
   color: var(--fy-warning);
 }
-
-.fy-banner-block {
+.fy-app .fy-banner-block {
   background: var(--fy-over-bg);
   color: var(--fy-over);
 }
-
-.fy-banner p {
+.fy-app .fy-banner p {
   margin: 0;
   color: inherit;
   opacity: 0.85;
 }
-
-.fy-field {
+.fy-app .fy-field {
   display: flex;
   flex-direction: column;
   gap: 6px;
   min-width: 0;
 }
-
-.fy-field-label {
+.fy-app .fy-field-label {
   color: var(--fy-text-2);
   font-size: var(--fy-text-xs);
   font-weight: 500;
 }
-
-.fy-input,
-.fy-select {
+.fy-app .fy-input,.fy-app .fy-select {
   height: 36px;
   width: 100%;
   padding: 0 10px;
@@ -717,67 +616,55 @@ button {
   background: var(--fy-sunken);
   color: var(--fy-text);
 }
-
-.fy-input::placeholder {
+.fy-app .fy-input::placeholder {
   color: var(--fy-text-4);
 }
-
-.fy-help {
+.fy-app .fy-help {
   color: var(--fy-text-3);
   font-size: var(--fy-text-xs);
 }
-
-.fy-help.is-error {
+.fy-app .fy-help.is-error {
   color: var(--fy-over);
 }
 
 /* ---------- Budget & wallet (later milestones, specified now) ---------- */
-
-.fy-budget {
+.fy-app .fy-budget {
   display: grid;
   grid-template-columns: 120px minmax(0, 1fr) auto;
   gap: var(--fy-space-3);
   align-items: center;
 }
-
-.fy-budget + .fy-budget {
+.fy-app .fy-budget + .fy-budget {
   margin-top: var(--fy-space-3);
 }
-
-.fy-budget-name {
+.fy-app .fy-budget-name {
   font-size: var(--fy-text-sm);
   font-weight: 500;
 }
-
-.fy-track {
+.fy-app .fy-track {
   height: 6px;
   border-radius: var(--fy-radius-pill);
   background: var(--fy-sunken);
   overflow: hidden;
 }
-
-.fy-track > span {
+.fy-app .fy-track > span {
   display: block;
   height: 100%;
   border-radius: inherit;
   background: var(--fy-text-2);
 }
-
-.fy-track.is-warning > span {
+.fy-app .fy-track.is-warning > span {
   background: var(--fy-warning);
 }
-
-.fy-track.is-over > span {
+.fy-app .fy-track.is-over > span {
   background: var(--fy-over);
 }
-
-.fy-budget-fig {
+.fy-app .fy-budget-fig {
   color: var(--fy-text-2);
   font-size: var(--fy-text-xs);
   text-align: right;
 }
-
-.fy-wallet {
+.fy-app .fy-wallet {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -785,49 +672,40 @@ button {
   padding: 12px 0;
   border-top: 1px solid var(--fy-line);
 }
-
-.fy-wallet:first-of-type {
+.fy-app .fy-wallet:first-of-type {
   border-top: 0;
   padding-top: 0;
 }
-
-.fy-sheet {
+.fy-app .fy-sheet {
   width: 100%;
   border-collapse: collapse;
   font-size: var(--fy-text-xs);
 }
-
-.fy-sheet th {
+.fy-app .fy-sheet th {
   text-align: left;
   color: var(--fy-text-3);
   font-weight: 500;
   padding: 0 12px 8px 0;
 }
-
-.fy-sheet td {
+.fy-app .fy-sheet td {
   padding: 8px 12px 8px 0;
   border-top: 1px solid var(--fy-line);
   color: var(--fy-text-2);
 }
-
-.fy-sheet .is-num {
+.fy-app .fy-sheet .is-num {
   text-align: right;
   color: var(--fy-text);
 }
-
-.fy-sheet .is-in {
+.fy-app .fy-sheet .is-in {
   color: var(--fy-income);
 }
-
-.fy-sheet .is-out {
+.fy-app .fy-sheet .is-out {
   color: var(--fy-expense);
 }
-
-.fy-wallet-name {
+.fy-app .fy-wallet-name {
   font-weight: 500;
 }
-
-.fy-wallet-class {
+.fy-app .fy-wallet-class {
   display: block;
   margin-top: 2px;
   color: var(--fy-text-3);
@@ -835,29 +713,25 @@ button {
 }
 
 /* ---------- Empty ---------- */
-
-.fy-empty {
+.fy-app .fy-empty {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: var(--fy-space-3);
   padding: var(--fy-space-2) 0 var(--fy-space-1);
 }
-
-.fy-empty h3 {
+.fy-app .fy-empty h3 {
   margin: 0;
   font-size: var(--fy-text-lg);
   letter-spacing: -0.02em;
 }
-
-.fy-empty p {
+.fy-app .fy-empty p {
   margin: 0;
   max-width: 42ch;
   color: var(--fy-text-2);
   font-size: var(--fy-text-sm);
 }
-
-.fy-sample {
+.fy-app .fy-sample {
   color: var(--fy-text-4);
   font-size: var(--fy-text-xs);
 }
@@ -1072,19 +946,15 @@ button {
   font-size: 11px;
 }
 
-@media (max-width: 980px) {
-  .fy-stat-row,
-  .fy-split,
+@media (max-width: 980px) {.fy-app .fy-stat-row,.fy-app .fy-split,
   .ds-grid-2,
   .ds-swatches {
     grid-template-columns: 1fr 1fr;
   }
-
-  .fy-shell {
+.fy-app .fy-shell {
     flex-direction: column;
   }
-
-  .fy-sidebar {
+.fy-app .fy-sidebar {
     width: auto;
     border-right: 0;
     border-bottom: 1px solid var(--fy-line);
@@ -1100,30 +970,25 @@ button {
   .ds-header {
     align-items: flex-start;
   }
-
-    .fy-banner {
+.fy-app .fy-banner {
     flex-direction: column;
     align-items: flex-start;
     gap: 2px;
   }
-
-  .fy-budget {
+.fy-app .fy-budget {
     grid-template-columns: minmax(0, 1fr) auto;
     row-gap: 6px;
   }
-
-  .fy-budget-name {
+.fy-app .fy-budget-name {
     grid-column: 1;
     grid-row: 1;
   }
-
-  .fy-budget-fig {
+.fy-app .fy-budget-fig {
     grid-column: 2;
     grid-row: 1;
     white-space: nowrap;
   }
-
-  .fy-track {
+.fy-app .fy-track {
     grid-column: 1 / -1;
     grid-row: 2;
   }

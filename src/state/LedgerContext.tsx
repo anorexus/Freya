@@ -7,7 +7,7 @@ import type { SchemaCheck } from "../domain/contract";
 import { appendTransactions, createFreyaSheet, readFreyaSheet, readSheetLink, transactionRows, type SheetLink } from "../data/googleSheet";
 import { loadSnapshot, readStored, replaceLedger, saveTransaction, snapshotFrom, snapshotFromGrid, type LedgerSnapshot } from "../data/localLedger";
 
-export type AppView = "dashboard" | "transactions" | "categories";
+export type AppView = "dashboard" | "transactions" | "categories" | "system";
 
 type LedgerState = LedgerSnapshot & {
   storedCount: number;

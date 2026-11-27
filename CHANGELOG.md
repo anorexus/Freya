@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-27 — Library shell in the app
+
+- Use the library sidebar, dashboard, and transactions page in the app, with the live ledger for sync, accounts, and new transactions.
+- Let the account dropdown be controlled, and open the design system from the same shell.
+- Load Manrope and Space Grotesk on the app, and allow JavaScript imports from the library.
+
 ## 2026-11-27 — Pages base path
 
 - Serve the app and library from `/freya/` so the renamed GitHub Pages site can load its script and styles.
