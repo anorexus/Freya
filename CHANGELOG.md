@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-11-27 — Rotated site icon
+
+- Rotate the Freya mark 45 degrees in the favicon and regenerate the raster sizes.
+
 ## 2026-11-27 — Site icons
 
 - Add the Freya favicon, Apple touch icon, and web manifest so the installed site uses the mark on a `#0e0e10` background.
