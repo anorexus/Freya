@@ -8,6 +8,7 @@ import { appendTransactions, createFreyaSheet, readFreyaSheet, readSheetLink, tr
 import { loadSnapshot, readStored, replaceLedger, saveTransaction, snapshotFrom, snapshotFromGrid, type LedgerSnapshot } from "../data/localLedger";
 
 export type AppView = "dashboard" | "transactions" | "categories" | "system";
+export type Gate = "login" | "simulation" | "opening" | "create" | "app";
 
 type LedgerState = LedgerSnapshot & {
   storedCount: number;
@@ -18,6 +19,7 @@ type LedgerState = LedgerSnapshot & {
   authError: string | null;
   session: GoogleSession | null;
   sheet: SheetLink | null;
+  gate: Gate;
   setQuery: (query: string) => void;
   setView: (view: AppView) => void;
   setLogOpen: (open: boolean) => void;
@@ -27,20 +29,28 @@ type LedgerState = LedgerSnapshot & {
   loadSample: () => void;
   signIn: () => void;
   signOut: () => void;
+  enterSimulation: () => void;
   createSheet: () => void;
 };
 
 const LedgerContext = createContext<LedgerState | null>(null);
 
+function initialGate(): Gate {
+  const session = readSession();
+  if (!session) return "login";
+  return readSheetLink() ? "opening" : "create";
+}
+
 export function LedgerProvider({ children }: { children: ReactNode }) {
-  const [sheet, setSheet] = useState<SheetLink | null>(() => readSheetLink());
+  const [sheet, setSheet] = useState<SheetLink | null>(null);
   const [session, setSession] = useState<GoogleSession | null>(() => readSession());
-  const [snapshot, setSnapshot] = useState<LedgerSnapshot>(() => (readSheetLink() ? snapshotFrom([], false) : loadSnapshot()));
+  const [snapshot, setSnapshot] = useState<LedgerSnapshot>(() => loadSnapshot());
   const [query, setQuery] = useState("");
   const [view, setView] = useState<AppView>("dashboard");
   const [logOpen, setLogOpen] = useState(false);
   const [busy, setBusy] = useState(false);
   const [authError, setAuthError] = useState<string | null>(null);
+  const [gate, setGate] = useState<Gate>(initialGate);
 
   async function pullSheet(accessToken: string, link: SheetLink) {
     const grid = await readFreyaSheet(accessToken, link.id);
@@ -50,10 +60,18 @@ export function LedgerProvider({ children }: { children: ReactNode }) {
   }
 
   useEffect(() => {
-    if (!sheet || !session) return;
+    const existing = readSession();
+    const linked = readSheetLink();
+    if (!existing || !linked) return;
     let cancelled = false;
     setBusy(true);
-    pullSheet(session.accessToken, sheet)
+    setGate("opening");
+    pullSheet(existing.accessToken, linked)
+      .then(() => {
+        if (cancelled) return;
+        setView("dashboard");
+        setGate("app");
+      })
       .catch((error: unknown) => {
         if (!cancelled) setAuthError(error instanceof Error ? error.message : "Could not read the sheet.");
       })
@@ -63,7 +81,7 @@ export function LedgerProvider({ children }: { children: ReactNode }) {
     return () => {
       cancelled = true;
     };
-    // Load the linked sheet once, when the signed-in session is already available.
+    // Resume a tab session before any dashboard render. Closing the tab drops sessionStorage.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -78,6 +96,7 @@ export function LedgerProvider({ children }: { children: ReactNode }) {
       authError,
       session,
       sheet,
+      gate,
       setQuery,
       setView,
       setLogOpen,
@@ -141,7 +160,15 @@ export function LedgerProvider({ children }: { children: ReactNode }) {
           .then(async (next) => {
             setSession(next);
             const linked = readSheetLink();
-            if (linked) await pullSheet(next.accessToken, linked);
+            if (!linked) {
+              setSheet(null);
+              setGate("create");
+              return;
+            }
+            setGate("opening");
+            await pullSheet(next.accessToken, linked);
+            setView("dashboard");
+            setGate("app");
           })
           .catch((error: unknown) => setAuthError(error instanceof Error ? error.message : "Google sign-in failed."))
           .finally(() => setBusy(false));
@@ -149,7 +176,18 @@ export function LedgerProvider({ children }: { children: ReactNode }) {
       signOut: () => {
         clearSession();
         setSession(null);
-        if (!readSheetLink()) setSnapshot(loadSnapshot());
+        setSheet(null);
+        setAuthError(null);
+        setLogOpen(false);
+        setSnapshot(loadSnapshot());
+        setGate("login");
+      },
+      enterSimulation: () => {
+        setSheet(null);
+        setAuthError(null);
+        setSnapshot(loadSnapshot());
+        setView("dashboard");
+        setGate("simulation");
       },
       createSheet: () => {
         if (!session) {
@@ -171,6 +209,7 @@ export function LedgerProvider({ children }: { children: ReactNode }) {
             setSheet(link);
             await pullSheet(accessToken, link);
             setView("dashboard");
+            setGate("app");
           } catch (error: unknown) {
             setAuthError(error instanceof Error ? error.message : "Could not create the sheet.");
           } finally {
@@ -179,7 +218,7 @@ export function LedgerProvider({ children }: { children: ReactNode }) {
         })();
       },
     };
-  }, [snapshot, query, view, logOpen, busy, authError, session, sheet]);
+  }, [snapshot, query, view, logOpen, busy, authError, session, sheet, gate]);
 
   return <LedgerContext.Provider value={api}>{children}</LedgerContext.Provider>;
 }

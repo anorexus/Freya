@@ -353,6 +353,21 @@
   overflow-wrap: anywhere;
 }
 
+.side-login {
+  width: 100%;
+}
+
+.side-sign-out {
+  margin-top: 8px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--liq-body);
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+
 .side-menu p:first-child {
   color: var(--liq-text);
   font-size: 14px;

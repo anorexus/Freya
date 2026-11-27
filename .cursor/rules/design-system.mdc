@@ -1,0 +1,13 @@
+---
+description: New UI uses the library components and tokens only.
+alwaysApply: true
+---
+
+# Design system
+
+When adding or changing product UI, use `library/src/components` and `library/src/tokens.css`.
+
+- Compose screens from existing components such as `Button`, the sidebar, cards, and `Notification`.
+- Color, type, and elevation come from tokens (`--typography-*`, `--background-*`, `--liq-*`, `--type-*`, `--outline-*`). Do not add raw hex, one-off fonts, or the older `fy-btn` styles for new UI.
+- If a piece does not exist, add it under `library/src/components` and style it only with those tokens.
+- Apply the change on the main app (`src`, http://localhost:5173), not only the library preview on port 5176. The preview can use the same components, but the main dashboard and transactions page are what must show the result.

@@ -4,8 +4,6 @@ Personal financial dashboard for logging income and expenses, then reading the m
 
 Live site: [anorexus.github.io/freya](https://anorexus.github.io/freya/)
 
-Mock dashboard: [anorexus.github.io/freya/library](https://anorexus.github.io/freya/library/)
-
 ## What you can do
 
 - See the current month’s income, expense, and net, plus a 6-month cashflow chart and a 7-day expense chart.
@@ -24,9 +22,7 @@ cp .env.example .env.local
 npm run dev
 ```
 
-The app opens at [http://localhost:5173](http://localhost:5173). Google sign-in needs `VITE_GOOGLE_CLIENT_ID` in `.env.local`, and that origin listed on the OAuth client. Without a client ID, the local ledger still works.
-
-The component library is a separate preview in `library/`. From that folder, run `npm install` and `npm run dev`.
+The app opens at [http://localhost:5173](http://localhost:5173). Google sign-in needs `VITE_GOOGLE_CLIENT_ID` in `.env.local`, and that origin listed on the OAuth client. Without a client ID, the local ledger still works. Shared UI lives in `library/src/components` and is imported by the app.
 
 ## Change log
 

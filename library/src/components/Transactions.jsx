@@ -44,6 +44,8 @@ export function Transactions({
   syncDisabled = false,
   onSave,
   addDisabled = false,
+  loggedIn = false,
+  onLogIn,
 }) {
   const [monthOffset, setMonthOffset] = useState(0);
   const [logOpen, setLogOpen] = useState(false);
@@ -81,7 +83,11 @@ export function Transactions({
             </p>
             <Button variant="secondary" icon={buttonIcons.sync} onClick={onSync} disabled={syncDisabled}>Sync</Button>
           </div>
-          <Button className="dash-add" variant="primary" icon={buttonIcons.add} disabled={addDisabled} onClick={() => setLogOpen(true)}>Add transaction</Button>
+          {loggedIn ? (
+            <Button className="dash-add" variant="primary" icon={buttonIcons.add} disabled={addDisabled} onClick={() => setLogOpen(true)}>Add transaction</Button>
+          ) : (
+            <Button className="dash-add is-login" variant="primary" onClick={onLogIn}>Login with Google</Button>
+          )}
         </div>
       </header>
       <div className="dash-content">

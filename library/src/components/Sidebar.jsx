@@ -1,9 +1,7 @@
 import { useEffect, useRef, useState } from "react";
-import avatar from "../assets/avatar.jpg";
 import logomark from "../assets/nav/logomark.svg";
 import wordmark from "../assets/nav/wordmark.svg";
 import collapseIcon from "../assets/nav/collapse.svg?raw";
-import chevronIcon from "../assets/nav/chevron.svg?raw";
 import searchIcon from "../assets/icons/search.svg?raw";
 import dashboardIcon from "../assets/icons/dashboard.svg?raw";
 import transactionsIcon from "../assets/icons/transactions.svg?raw";
@@ -11,6 +9,7 @@ import walletIcon from "../assets/icons/wallet.svg?raw";
 import categoryIcon from "../assets/icons/category.svg?raw";
 import settingsIcon from "../assets/icons/settings.svg?raw";
 import systemIcon from "../assets/icons/system.svg?raw";
+import { Button } from "./Button.jsx";
 import "./Sidebar.css";
 
 const NAV = [
@@ -26,9 +25,8 @@ function Icon({ svg }) {
   return <span className="side-icon" dangerouslySetInnerHTML={{ __html: svg }} />;
 }
 
-export function Sidebar({ page = "dashboard", onNavigate = () => {}, mobileOpen = false, onClose = () => {} }) {
+export function Sidebar({ page = "dashboard", onNavigate = () => {}, mobileOpen = false, onClose = () => {}, onLogIn = null, onSignOut = null, loginDisabled = false }) {
   const [query, setQuery] = useState("");
-  const [accountOpen, setAccountOpen] = useState(false);
   const [collapsed, setCollapsed] = useState(false);
   const searchRef = useRef(null);
   const items = NAV.filter((item) => item.label.toLowerCase().includes(query.trim().toLowerCase()));
@@ -119,28 +117,14 @@ export function Sidebar({ page = "dashboard", onNavigate = () => {}, mobileOpen 
         {items.length === 0 && <p className="side-empty">No matches</p>}
       </nav>
       <div className="side-spacer" />
-      {accountOpen && !collapsed && (
-        <div className="side-menu" role="region" aria-label="Account">
-          <p>Armas Nurbahari Sanubari</p>
-          <p>armasnurbahari2423@gmail.com</p>
-        </div>
-      )}
-      <button
-        type="button"
-        className={accountOpen ? "side-profile is-selected" : "side-profile"}
-        aria-label={accountOpen ? "Hide account" : "Show account"}
-        aria-expanded={accountOpen}
-        onClick={() => setAccountOpen((open) => !open)}
-      >
-        <img src={avatar} alt="" width="32" height="32" />
-        <span className="side-person">
-          <p>Armas Nurbahari Sanubari</p>
-          <p>armasnurbahari2423@gmail.com</p>
-        </span>
-        <span className="side-key" aria-hidden="true">
-          <Icon svg={chevronIcon} />
-        </span>
-      </button>
+      <Button variant="primary" className="side-login" onClick={onLogIn ?? undefined} disabled={loginDisabled}>
+        Login with Google
+      </Button>
+      {onSignOut ? (
+        <Button variant="nude" className="side-login" onClick={onSignOut}>
+          Sign out
+        </Button>
+      ) : null}
     </aside>
     </>
   );

@@ -77,8 +77,8 @@ export function Shell({ children }: { children: ReactNode }) {
               Sign out
             </button>
           ) : (
-            <button className="fy-btn fy-btn-secondary fy-sidebar-action" type="button" onClick={ledger.signIn} disabled={ledger.busy}>
-              Sign in with Google
+            <button className="fy-btn fy-btn-primary fy-sidebar-action" type="button" onClick={ledger.signIn} disabled={ledger.busy}>
+              Login with Google
             </button>
           )}
           {ledger.session && !ledger.sheet ? (
