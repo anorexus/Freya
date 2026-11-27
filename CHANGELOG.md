@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-11-27 — Pages base path
+
+- Serve the app and library from `/freya/` so the renamed GitHub Pages site can load its script and styles.
+
 ## 2026-11-27 — Card progress polish
 
 - Soften the shared progress bar and show all three levels in the design system.
