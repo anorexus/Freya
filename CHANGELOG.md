@@ -1,10 +1,17 @@
 # Changelog
 
+# Changelog
+
 ## 2026-11-28 — Choose an existing ledger
 
 - Show the login screen as a split layout: “Your money. Your control.”
 - After sign-in, open the one Freya sheet, ask when there are several, or offer to create one.
 - Mark sheets Freya creates so the next sign-in can find them. A missing saved sheet is dropped and the search runs again.
+
+## 2026-11-28 — Wallet bar and spending tap
+
+- Show the wallet dropdown in the dashboard and transactions bar, and label the empty choice “All wallets”.
+- On a narrow screen or a touch device, a spending slice stays selected until the next tap.
 
 ## 2026-11-27 — Category icons and one account button
 

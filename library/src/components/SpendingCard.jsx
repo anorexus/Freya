@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { expenseBreakdown, formatShare } from "../expense.js";
 import { formatRupiah } from "../money.js";
 import { formatCompactRupiah } from "../trend.js";
@@ -9,6 +9,21 @@ import "./ExpenseCard.css";
 import "./SpendingCard.css";
 
 const OTHERS = "#5D5D5F";
+const TAP_QUERY = "(width < 1024px), (hover: none), (pointer: coarse)";
+
+function useTapDetails() {
+  const [tap, setTap] = useState(() => window.matchMedia(TAP_QUERY).matches);
+
+  useEffect(() => {
+    const media = window.matchMedia(TAP_QUERY);
+    const update = () => setTap(media.matches);
+    update();
+    media.addEventListener("change", update);
+    return () => media.removeEventListener("change", update);
+  }, []);
+
+  return tap;
+}
 
 function rgbUnit(hex) {
   const raw = hex.replace("#", "");
@@ -77,7 +92,9 @@ function wedge(start, end) {
 
 export function SpendingCard({ transactions, categories, today = new Date() }) {
   const summary = expenseBreakdown(transactions, categories, today);
+  const cardRef = useRef(null);
   const [active, setActive] = useState(null);
+  const tap = useTapDetails();
   const total = summary.total;
   const ranked = summary.slices;
   const slices = ranked.length <= 6
@@ -105,8 +122,32 @@ export function SpendingCard({ transactions, categories, today = new Date() }) {
   const top = arcs[0];
   const hovered = arcs.find((slice) => slice.name === active) ?? null;
 
+  useEffect(() => {
+    if (!tap) setActive(null);
+  }, [tap]);
+
+  useEffect(() => {
+    if (!tap || !active) return undefined;
+    const close = (event) => {
+      if (!cardRef.current?.contains(event.target)) setActive(null);
+    };
+    document.addEventListener("pointerdown", close);
+    return () => document.removeEventListener("pointerdown", close);
+  }, [tap, active]);
+
+  function reveal(name) {
+    setActive((current) => (current === name ? null : name));
+  }
+
   return (
-    <article className="spend-card">
+    <article
+      ref={cardRef}
+      className="spend-card"
+      onClick={(event) => {
+        if (!tap || event.target.closest("path, .spend-row")) return;
+        setActive(null);
+      }}
+    >
       <header className="spend-head">
         <h2>Spending by category</h2>
       </header>
@@ -114,7 +155,9 @@ export function SpendingCard({ transactions, categories, today = new Date() }) {
         <div className="spend-body">
           <div
             className="spend-chart"
-            onPointerLeave={() => setActive(null)}
+            onPointerLeave={() => {
+              if (!tap) setActive(null);
+            }}
           >
             <svg viewBox="0 0 416 208" role="img" aria-label={`Spending by category, ${month}`}>
               <defs>
@@ -154,7 +197,21 @@ export function SpendingCard({ transactions, categories, today = new Date() }) {
                     strokeWidth="1"
                     filter={`url(#spend-inset-${id})`}
                     opacity={active && active !== slice.name ? 0.35 : 1}
-                    onPointerEnter={() => setActive(slice.name)}
+                    role={tap ? "button" : undefined}
+                    tabIndex={tap ? 0 : undefined}
+                    aria-pressed={tap ? active === slice.name : undefined}
+                    aria-label={tap ? `${slice.name}, ${formatShare(slice.share)}` : undefined}
+                    onPointerEnter={() => {
+                      if (!tap) setActive(slice.name);
+                    }}
+                    onClick={() => {
+                      if (tap) reveal(slice.name);
+                    }}
+                    onKeyDown={(event) => {
+                      if (!tap || (event.key !== "Enter" && event.key !== " ")) return;
+                      event.preventDefault();
+                      reveal(slice.name);
+                    }}
                   />
                 ) : null;
               })}
@@ -164,7 +221,12 @@ export function SpendingCard({ transactions, categories, today = new Date() }) {
               <span>{hovered ? `${hovered.name} ${formatShare(hovered.share)}` : month}</span>
             </p>
           </div>
-          <div className="spend-rows" onPointerLeave={() => setActive(null)}>
+          <div
+            className="spend-rows"
+            onPointerLeave={() => {
+              if (!tap) setActive(null);
+            }}
+          >
             {Array.from({ length: Math.ceil(arcs.length / 2) }, (_, row) => (
               <div key={row}>
                 {row > 0 ? <div className="spend-rule" /> : null}
@@ -174,7 +236,13 @@ export function SpendingCard({ transactions, categories, today = new Date() }) {
                       key={slice.name}
                       type="button"
                       className={active && active !== slice.name ? "spend-row is-dim" : "spend-row"}
-                      onPointerEnter={() => setActive(slice.name)}
+                      aria-pressed={tap ? active === slice.name : undefined}
+                      onPointerEnter={() => {
+                        if (!tap) setActive(slice.name);
+                      }}
+                      onClick={() => {
+                        if (tap) reveal(slice.name);
+                      }}
                     >
                       <span className="spend-dot" style={{ background: slice.color }} />
                       <span className="spend-meta">

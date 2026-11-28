@@ -42,7 +42,8 @@
   pointer-events: none;
 }
 
-.dash-menu {
+.dash-menu,
+.dash-wallets-bar {
   display: none;
 }
 
@@ -202,7 +203,7 @@
 
   .dash-bar {
     display: grid;
-    grid-template-columns: 32px minmax(0, 1fr) 32px;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
     height: 56px;
     padding: 0 8px;
@@ -212,9 +213,11 @@
 
   .dash-menu {
     display: inline-flex;
+    justify-self: start;
   }
 
   .dash-title {
+    justify-self: center;
     justify-content: center;
     font-family: var(--type-title-m-family);
     font-size: var(--type-title-m-size);
@@ -227,11 +230,35 @@
   }
 
   .dash-actions {
+    justify-self: end;
     justify-content: flex-end;
     gap: 0;
   }
 
-  .dash-sync p {
+  .dash-sync {
+    display: none;
+  }
+
+  .dash-wallets-bar {
+    display: block;
+  }
+
+  .dash-wallets-bar .fy-btn.is-dropdown {
+    height: 28px;
+    padding: 0 8px 0 16px;
+    font-family: var(--type-label-s-family);
+    font-size: var(--type-label-s-size);
+    font-weight: var(--type-label-s-weight);
+    line-height: var(--type-label-s-line);
+  }
+
+  .dash-wallets-bar .fy-wallet-menu {
+    right: 0;
+    left: auto;
+    width: min(250px, calc(100vw - 32px));
+  }
+
+  .dash-wallets-period {
     display: none;
   }
 
