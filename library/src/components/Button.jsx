@@ -89,13 +89,13 @@ export function useDismiss(open, ref, close) {
   }, [open, ref, close]);
 }
 
-export function WalletDropdown({ wallets, value: valueProp, onChange }) {
+export function WalletDropdown({ wallets, value: valueProp, onChange, className }) {
   const [open, setOpen] = useState(false);
   const [inner, setInner] = useState("all");
   const value = valueProp ?? inner;
   const rootRef = useRef(null);
   const current = wallets.find((wallet) => wallet.id === value);
-  const label = current ? current.name : "All accounts";
+  const label = current ? current.name : "All wallets";
   useDismiss(open, rootRef, () => setOpen(false));
 
   function choose(next) {
@@ -105,7 +105,7 @@ export function WalletDropdown({ wallets, value: valueProp, onChange }) {
   }
 
   return (
-    <div className="fy-drop is-wallets" ref={rootRef}>
+    <div className={["fy-drop", "is-wallets", className].filter(Boolean).join(" ")} ref={rootRef}>
       <Button
         variant="dropdown"
         aria-expanded={open}
@@ -124,7 +124,7 @@ export function WalletDropdown({ wallets, value: valueProp, onChange }) {
               onClick={() => choose("all")}
             >
               <WalletMark id="all" />
-              All accounts
+              All wallets
             </button>
           </li>
           {wallets.map((wallet) => (

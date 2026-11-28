@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-11-28 — Wallet bar and spending tap
+
+- Show the wallet dropdown in the dashboard and transactions bar, and label the empty choice “All wallets”.
+- On a narrow screen or a touch device, a spending slice stays selected until the next tap.
+
 ## 2026-11-27 — Category icons and one account button
 
 - Read each category’s icon and color from the sheet. The parent row owns them, and sub-category rows only add names.
