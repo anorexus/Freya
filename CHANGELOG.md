@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-11-28 — Wallet bar and spending tap
+
+- Show the wallet dropdown in the dashboard and transactions bar, and label the empty choice “All wallets”.
+- On a narrow screen or a touch device, a spending slice stays selected until the next tap.
+
 ## 2026-11-27 — Rotated site icon
 
 - Rotate the Freya mark 45 degrees in the favicon and regenerate the raster sizes.

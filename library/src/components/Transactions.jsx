@@ -82,6 +82,7 @@ export function Transactions({
             <Button variant="secondary" icon={buttonIcons.sync} onClick={onSync} disabled={syncDisabled}>Sync</Button>
           </div>
           <Button className="dash-add" variant="primary" icon={buttonIcons.add} disabled={addDisabled} onClick={() => setLogOpen(true)}>Add transaction</Button>
+          <WalletDropdown className="dash-wallets-bar" wallets={wallets} value={walletId} onChange={setWalletId} />
         </div>
       </header>
       <div className="dash-content">
@@ -96,7 +97,7 @@ export function Transactions({
             </div>
             <Button variant="navigation" icon={buttonIcons.arrowRight} aria-label="Next month" disabled={monthOffset >= 0} onClick={() => setMonthOffset((offset) => Math.min(0, offset + 1))} />
           </div>
-          <WalletDropdown wallets={wallets} value={walletId} onChange={setWalletId} />
+          <WalletDropdown className="dash-wallets-period" wallets={wallets} value={walletId} onChange={setWalletId} />
         </div>
         <label className="tx-search">
           <span className="tx-search-icon" dangerouslySetInnerHTML={{ __html: searchIcon }} />
