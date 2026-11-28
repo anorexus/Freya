@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-28 — Choose an existing ledger
+
+- Show the login screen as a split layout: “Your money. Your control.”
+- After sign-in, open the one Freya sheet, ask when there are several, or offer to create one.
+- Mark sheets Freya creates so the next sign-in can find them. A missing saved sheet is dropped and the search runs again.
+
 ## 2026-11-27 — Category icons and one account button
 
 - Read each category’s icon and color from the sheet. The parent row owns them, and sub-category rows only add names.
