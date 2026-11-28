@@ -3,10 +3,17 @@ import { CATEGORY_HEADERS, SHEET_TABS, TRANSACTION_HEADERS, WALLET_HEADERS } fro
 import type { NewTransaction, StoredRow } from "../domain/types";
 
 const SHEET_KEY = "freya.sheet.v1";
+const LEDGER_MARK = { freya: "ledger", schema: "v1" };
 
 export type SheetLink = {
   id: string;
   title: string;
+};
+
+export type LedgerCandidate = {
+  id: string;
+  title: string;
+  modifiedTime: string;
 };
 
 export type SheetGrid = {
@@ -31,6 +38,10 @@ export function readSheetLink(): SheetLink | null {
 
 export function writeSheetLink(link: SheetLink) {
   localStorage.setItem(SHEET_KEY, JSON.stringify(link));
+}
+
+export function clearSheetLink() {
+  localStorage.removeItem(SHEET_KEY);
 }
 
 export function sheetUrl(id: string): string {
@@ -59,6 +70,7 @@ export async function createFreyaSheet(accessToken: string): Promise<SheetLink> 
     body: JSON.stringify({
       name: "Freya Ledger",
       mimeType: "application/vnd.google-apps.spreadsheet",
+      appProperties: LEDGER_MARK,
     }),
   });
 
@@ -104,6 +116,39 @@ export async function createFreyaSheet(accessToken: string): Promise<SheetLink> 
   const link = { id: created.id, title: "Freya Ledger" };
   writeSheetLink(link);
   return link;
+}
+
+export async function listFreyaLedgers(accessToken: string): Promise<LedgerCandidate[]> {
+  const query = [
+    "mimeType='application/vnd.google-apps.spreadsheet'",
+    "trashed=false",
+    "(appProperties has { key='freya' and value='ledger' } or name='Freya Ledger')",
+  ].join(" and ");
+  const params = new URLSearchParams({
+    q: query,
+    fields: "files(id,name,modifiedTime)",
+    orderBy: "modifiedTime desc",
+    pageSize: "20",
+    spaces: "drive",
+  });
+  const body = await googleJson<{ files?: { id?: string; name?: string; modifiedTime?: string }[] }>(
+    accessToken,
+    `https://www.googleapis.com/drive/v3/files?${params}`,
+  );
+  return (body.files ?? [])
+    .filter((file): file is { id: string; name?: string; modifiedTime?: string } => Boolean(file.id))
+    .map((file) => ({
+      id: file.id,
+      title: file.name || "Freya Ledger",
+      modifiedTime: file.modifiedTime ?? "",
+    }));
+}
+
+export async function stampFreyaLedger(accessToken: string, spreadsheetId: string) {
+  await googleJson(accessToken, `https://www.googleapis.com/drive/v3/files/${spreadsheetId}`, {
+    method: "PATCH",
+    body: JSON.stringify({ appProperties: LEDGER_MARK }),
+  });
 }
 
 export async function readFreyaSheet(accessToken: string, spreadsheetId: string): Promise<SheetGrid> {

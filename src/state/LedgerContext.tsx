@@ -4,11 +4,11 @@ import { buildSeed } from "../domain/seed";
 import { todayISO } from "../domain/money";
 import type { NewTransaction, RowIssue } from "../domain/types";
 import type { SchemaCheck } from "../domain/contract";
-import { appendTransactions, createFreyaSheet, readFreyaSheet, readSheetLink, transactionRows, type SheetLink } from "../data/googleSheet";
+import { appendTransactions, clearSheetLink, createFreyaSheet, listFreyaLedgers, readFreyaSheet, readSheetLink, stampFreyaLedger, transactionRows, writeSheetLink, type LedgerCandidate, type SheetLink } from "../data/googleSheet";
 import { loadSnapshot, readStored, replaceLedger, saveTransaction, snapshotFrom, snapshotFromGrid, type LedgerSnapshot } from "../data/localLedger";
 
 export type AppView = "dashboard" | "transactions" | "categories" | "system";
-export type Gate = "login" | "simulation" | "opening" | "create" | "app";
+export type Gate = "login" | "simulation" | "opening" | "create" | "choose" | "app";
 
 type LedgerState = LedgerSnapshot & {
   storedCount: number;
@@ -20,6 +20,7 @@ type LedgerState = LedgerSnapshot & {
   session: GoogleSession | null;
   sheet: SheetLink | null;
   gate: Gate;
+  choices: LedgerCandidate[];
   setQuery: (query: string) => void;
   setView: (view: AppView) => void;
   setLogOpen: (open: boolean) => void;
@@ -31,14 +32,18 @@ type LedgerState = LedgerSnapshot & {
   signOut: () => void;
   enterSimulation: () => void;
   createSheet: () => void;
+  openChoice: (id: string) => void;
 };
 
 const LedgerContext = createContext<LedgerState | null>(null);
 
 function initialGate(): Gate {
-  const session = readSession();
-  if (!session) return "login";
-  return readSheetLink() ? "opening" : "create";
+  return readSession() ? "opening" : "login";
+}
+
+function sheetGone(error: unknown): boolean {
+  const status = (error as { status?: number }).status;
+  return status === 403 || status === 404;
 }
 
 export function LedgerProvider({ children }: { children: ReactNode }) {
@@ -51,27 +56,53 @@ export function LedgerProvider({ children }: { children: ReactNode }) {
   const [busy, setBusy] = useState(false);
   const [authError, setAuthError] = useState<string | null>(null);
   const [gate, setGate] = useState<Gate>(initialGate);
+  const [choices, setChoices] = useState<LedgerCandidate[]>([]);
 
   async function pullSheet(accessToken: string, link: SheetLink) {
     const grid = await readFreyaSheet(accessToken, link.id);
     const nextLink = { id: link.id, title: grid.title };
+    writeSheetLink(nextLink);
     setSheet(nextLink);
     setSnapshot(snapshotFromGrid(grid.headers, grid.dataRows, grid.tabs, false, grid.categoryHeaders, grid.categoryRows));
+    void stampFreyaLedger(accessToken, link.id).catch(() => undefined);
+  }
+
+  async function discoverLedgers(accessToken: string) {
+    const found = await listFreyaLedgers(accessToken);
+    if (found.length === 1) {
+      await pullSheet(accessToken, found[0]);
+      setView("dashboard");
+      setGate("app");
+      return;
+    }
+    setChoices(found);
+    setGate(found.length === 0 ? "create" : "choose");
+  }
+
+  async function resumeLedger(accessToken: string) {
+    const linked = readSheetLink();
+    if (linked) {
+      try {
+        await pullSheet(accessToken, linked);
+        setView("dashboard");
+        setGate("app");
+        return;
+      } catch (error: unknown) {
+        if (!sheetGone(error)) throw error;
+        clearSheetLink();
+        setSheet(null);
+      }
+    }
+    await discoverLedgers(accessToken);
   }
 
   useEffect(() => {
     const existing = readSession();
-    const linked = readSheetLink();
-    if (!existing || !linked) return;
+    if (!existing) return;
     let cancelled = false;
     setBusy(true);
     setGate("opening");
-    pullSheet(existing.accessToken, linked)
-      .then(() => {
-        if (cancelled) return;
-        setView("dashboard");
-        setGate("app");
-      })
+    resumeLedger(existing.accessToken)
       .catch((error: unknown) => {
         if (!cancelled) setAuthError(error instanceof Error ? error.message : "Could not read the sheet.");
       })
@@ -97,6 +128,7 @@ export function LedgerProvider({ children }: { children: ReactNode }) {
       session,
       sheet,
       gate,
+      choices,
       setQuery,
       setView,
       setLogOpen,
@@ -159,16 +191,8 @@ export function LedgerProvider({ children }: { children: ReactNode }) {
         signInWithGoogle()
           .then(async (next) => {
             setSession(next);
-            const linked = readSheetLink();
-            if (!linked) {
-              setSheet(null);
-              setGate("create");
-              return;
-            }
             setGate("opening");
-            await pullSheet(next.accessToken, linked);
-            setView("dashboard");
-            setGate("app");
+            await resumeLedger(next.accessToken);
           })
           .catch((error: unknown) => setAuthError(error instanceof Error ? error.message : "Google sign-in failed."))
           .finally(() => setBusy(false));
@@ -188,6 +212,28 @@ export function LedgerProvider({ children }: { children: ReactNode }) {
         setSnapshot(loadSnapshot());
         setView("dashboard");
         setGate("simulation");
+      },
+      openChoice: (id: string) => {
+        if (!session) {
+          setAuthError("Sign in again to open the ledger.");
+          return;
+        }
+        const choice = choices.find((item) => item.id === id);
+        if (!choice) return;
+        const current = session;
+        setBusy(true);
+        setAuthError(null);
+        setGate("opening");
+        pullSheet(current.accessToken, choice)
+          .then(() => {
+            setView("dashboard");
+            setGate("app");
+          })
+          .catch((error: unknown) => {
+            setAuthError(error instanceof Error ? error.message : "Could not open the ledger.");
+            setGate("choose");
+          })
+          .finally(() => setBusy(false));
       },
       createSheet: () => {
         if (!session) {
@@ -218,7 +264,7 @@ export function LedgerProvider({ children }: { children: ReactNode }) {
         })();
       },
     };
-  }, [snapshot, query, view, logOpen, busy, authError, session, sheet, gate]);
+  }, [snapshot, query, view, logOpen, busy, authError, session, sheet, gate, choices]);
 
   return <LedgerContext.Provider value={api}>{children}</LedgerContext.Provider>;
 }

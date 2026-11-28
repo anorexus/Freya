@@ -58,8 +58,9 @@ function Frame() {
   if (ledger.gate === "login" || ledger.gate === "opening") {
     return (
       <AuthCard
-        title="Freya"
-        copy="Freya keeps the ledger in a Google Sheet. Simulation stays in this browser."
+        layout="split"
+        title="Your money. Your control."
+        copy="Freya logs your income and expenses, then shows the month as cashflow. The records stay yours, in the browser or in a Google Sheet you can edit."
         error={ledger.authError}
         primary={ledger.gate === "opening" && !ledger.authError ? "Opening your ledger…" : "Login with Google"}
         onPrimary={ledger.signIn}
@@ -67,6 +68,26 @@ function Frame() {
         secondary={ledger.gate === "login" ? "Try simulation" : undefined}
         onSecondary={ledger.enterSimulation}
         onSignOut={ledger.gate === "opening" ? ledger.signOut : undefined}
+      />
+    );
+  }
+
+  if (ledger.gate === "choose") {
+    return (
+      <AuthCard
+        title="Choose a ledger"
+        copy="Freya found more than one sheet it created. Open one, or make another."
+        error={ledger.authError}
+        choices={ledger.choices.map((choice) => ({
+          id: choice.id,
+          title: choice.title,
+          detail: editedLabel(choice.modifiedTime),
+        }))}
+        onChoose={ledger.openChoice}
+        primary={ledger.busy ? "Creating ledger…" : "Create another"}
+        onPrimary={ledger.createSheet}
+        primaryDisabled={ledger.busy}
+        onSignOut={ledger.signOut}
       />
     );
   }
@@ -116,6 +137,13 @@ function Frame() {
       )}
     </div>
   );
+}
+
+function editedLabel(iso: string) {
+  if (!iso) return "Last edited unknown";
+  const date = new Date(iso);
+  if (Number.isNaN(date.getTime())) return "Last edited unknown";
+  return `Edited ${date.toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" })}`;
 }
 
 function PageSwitch() {
